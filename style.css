@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+:root{
+  --red:#ff3838;
+  --btn-color:#e58f00;
+    --about-sec:#1d1d23;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition:all .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body{
+  background:#f7f7f7;
+}
+.header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 9%;
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  z-index: 100;
+}
+
+.header #logo img{
+  width: 60px;
+}
+header .navbar a{
+  font-size: 2rem;
+  margin-left: 2rem;
+  color:black;
+}
+header .navbar a:hover{
+  color: var(--btn-color);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  margin-left: 2rem;
+  color:black;
+}
+
+.dropdown:hover{
+  color: var(--btn-color);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#menu-bars{
+  color: #666;
+  padding: 0.5rem 1rem;
+  border: .1rem solid #666;
+  border-radius: 8px;
+  font-size: 3rem;
+  display: none;
+}
+section{
+  padding: 2rem 9%;
+}
+.heading{
+  text-align: center;
+  font-size: 3.5rem;
+  padding:1rem;
+  color:#666;
+}
+
+.heading span{
+  color:var(--red);
+}
+/* home css design */
+
+.home{
+  background: url(images/home-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home .content{
+  flex: 1 1 40rem;
+  padding-top: 6.5rem;
+}
+
+.home .content h3{
+  font-size: 5rem;
+  color: #333;
+}
+.home .content p{
+  font-size: 1.5rem;
+  color: #333;
+  padding: 1rem 0;
+}
+.home .image{
+  flex: 1 1 40rem;
+}
+.home .image img{
+  width: 100%;
+  padding: 1rem;
+  animation:float 3s linear infinite;
+}
+@keyframes float {
+  0%, 100%{
+    transform: translateY(0rem);
+  }
+  50%{
+    transform: translateY(3rem);
+  }
+}
+.speciality-heading{
+  font-size: 40px;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #333;
+}
+.speciality-heading span{
+  color: #e58f00;
+}
+.main-box-speciality{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.main-box-speciality .box{
+  flex: 1 1 30rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 0.1rem solid var(--btn-color);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.main-box-speciality .box .image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  left: 0;
+}
+
+.main-box-speciality .box:hover .image{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+.main-box-speciality .box .content{
+  background: white;
+  text-align: center;
+  padding: 2rem;
+}
+.main-box-speciality .box .content img{
+  margin: 1.5rem 0;
+}
+.speciality .main-box-speciality .box .content h3{
+  font-size: 2.5rem;
+  color:#333;
+}
+
+.speciality .main-box-speciality .box .content p{
+  font-size: 1.6rem;
+  color:#666;
+  padding:1rem 0;
+}
+.popular .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  
+}
+.Single_topping {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.Double_topping{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.Premium{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.popular .box-container .box{
+  flex: 1 1 30rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 0.1rem solid var(--btn-color);
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 2rem;
+
+}
+.popular .box-container .box .price{
+  position: absolute;
+  left: 3rem;
+  top: 3rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  background-color: var(--btn-color);
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.popular .box-container .box h3{
+  color:#333;
+  font-size: 2.5rem;
+  padding-top: 1rem;
+}
+.popular .box-container .box .icons{
+  position: absolute;  
+  color: #e58f00;
+  display: flex;
+  flex-direction: column;
+  right: -20%;
+  opacity: 0;
+  transition: 0.9s;
+}
+#cart-count{
+  font-size: medium;
+}
+.quantity{
+  display: inline-block;
+    padding: 0.8rem 1rem;
+    /* border: 0.2rem solid var(--btn-color); */
+    color: var(--btn-color);
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+}
+.btn{
+  display: inline-block;
+  padding:.8rem 3rem;
+  border:.2rem solid var(--btn-color);
+  color:var(--btn-color);
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin-top: 1rem;
+}
+
+.btn::before{
+  content: '';
+  position: absolute;
+  top:0; right: 0;
+  width:0%;
+  height:100%;
+  background:var(--red);
+  transition: .3s linear;
+  z-index: -1;
+}
+.btn:hover{
+  color: white;
+  border: .2rem solid var(--about-sec);
+}
+.btn:hover::before{
+  width:100%;
+  left: 0; 
+}
+.content img {
+  height: 66px;
+  width: 100px;
+}
+header img {
+  border-radius: 30px;
+}
+
+.popular .box-container .box:hover .icons{
+  right: 10%;
+  opacity: 0.9;
+
+}
+
+.popular .box-container .box .icons i{
+  background: white;
+  margin: 1rem;
+  font-size: 2rem;
+  border: 1px solid var(--about-sec);
+  padding: 1rem;
+}
+
+.popular .box-container .box img{
+  height:25rem;
+  object-fit: cover;
+  width:100%;
+  border-radius: .5rem;
+}
+.popular .box-container .box .stars i{
+  color:gold;
+  font-size: 1.7rem;
+  padding:1rem .1rem;
+}
+.main-gallery-box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.main-gallery-box .box{
+  height:25rem;
+  flex: 1 1 30rem;
+  border:1rem solid #fff;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  border-radius: .5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.main-gallery-box .box .image{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+
+}
+
+.main-gallery-box .box .content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  left: 0%;
+  bottom: 0;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  padding: 2rem;
+  padding-top: 4rem;
+  
+}
+.main-gallery-box .box .content h3{
+  font-size: 3rem;
+}
+.main-gallery-box .box .content p{
+  font-size: 1.5rem;
+}
+.main-gallery-box .box:hover .content{
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+
+.main-gallery-box .box .image{
+  width: 100%;
+}
+
+.review .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.review .box-container .box{
+  text-align: center;
+  padding:2rem;
+  border:1rem solid #fff;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
+  border-radius: .5rem;
+  flex:1 1 30rem;
+  background: var(--btn-color);
+  margin-top: 6rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.cart-table {
+  width: 100%; /* You can adjust the width value as needed */
+}
+.review .box-container .box img{
+  height: 12rem;
+  width:12rem;
+  border-radius: 50%;
+  border:1rem solid #fff;
+  margin-top: -8rem;
+  object-fit: cover;
+  transform: rotate(30deg);
+  cursor: pointer;
+}
+.review .box-container .box:hover img{
+  transform: rotate(0deg);
+}
+
+.review .box-container .box h3{
+  font-size: 2.5rem;
+  color: var(--about-sec);
+  padding:.5rem 0;
+}
+
+.review .box-container .box .stars i{
+  font-size: 2rem;
+  color:var(--red);
+  padding:.5rem 0;
+}
+
+.review .box-container .box p{
+  font-size: 1.5rem;
+  color: var(--about-sec);
+  padding:1rem 0;
+}
+
+.order .row{
+  padding:2rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  background:#fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  border-radius: .5rem;
+}
+
+.order .row .image{
+  flex:1 1 30rem;
+}
+
+.order .row .image img{
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+.order .row form{
+  flex:1 1 50rem;
+  padding:1rem;
+}
+
+.order .row form .inputBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.order .row form .inputBox input, .order .row form textarea{
+  padding:1rem;
+  margin:1rem 0;
+  font-size: 1.7rem;
+  color:#333;
+  text-transform: none;
+  border:.1rem solid rgba(0,0,0,.3);
+  border-radius: .5rem;
+  width:49%;
+}
+
+.order .row form textarea{
+  width:100%;
+  resize: none;
+  height:15rem;
+}
+
+.order .row form .btn{
+  background:none;
+}
+
+.order .row form .btn:hover{
+  background:var(--red);
+}
+
+
+.footer{
+  background:#000;
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.footer .share{
+  display: flex;
+  gap:1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.footer .credit span{
+  color:var(--red);
+}
+
+/* media queries  */
+@media(max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  header{
+    padding:2rem;
+  }
+
+  section{
+    padding:2rem;
+  }
+  .home .image img{
+    width: 100%;
+    padding-top: 8rem;
+  }
+
+}
+
+
+@media(max-width:768px){
+
+  #menu-bars{
+    display: initial;
+  }
+
+  .navbar{
+    position: absolute;
+    top: 0;
+    left: 0%;
+    right: 0;
+    background: white;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    clip-path: polygon(0 0, 100% 1%, 100% 0, 0 0);
+  }
+
+  .navbar.active{
+    top: 100%;
+    clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%);
+  }
+
+  .navbar a{
+    font-size: 1.5rem;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    display: block;
+    border: .2rem solid var(--about-sec);
+    border-left: 0.5rem solid var(--btn-color);
+  }
+  .home .image{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .home .image img{
+
+    width: 95%;
+    padding-top: 8rem;
+  }
+
+}
+@media(max-width:450px){
+
+  html{
+    font-size: 50%;
+  }
+
+  .order .row form .inputBox input{
+    width:100%;
+  }
+
+}
+/* Styling for the cart modal */
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+}
+
+/* Styling for the modal content */
+.modal-content {
+  background-color: #fff;
+  max-width: 570px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Styling for the close button (x icon) in the modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.header-spaced {
+  /* text-align: center; */
+  color: orange;
+  font-size: large;
+  padding-right: 38px;
+
+}
+
+
+td img{
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  border: 1px solid goldenrod;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center-align {
+  text-align: center;
+  align-items: center;
+  padding-right: 39px;
+  
+}
+.delete-icon {
+  display: flex;
+  justify-content: center; /* Center align horizontally */
+  align-items: center; /* Center align vertically */
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.cart-row {
+  border-bottom: 1px solid black;
+}
+.cart-footer{
+  font-size: large;
+}
+/* -------------------Add CSS styles for dark mode------------------------------ */
+
+body.dark-mode {
+  background-color: rgba(0, 0, 0, 0.237);
+  color: white;
+}
+body.dark-mode .home {
+  background-image: none; 
+  background-color: grey; 
+  
+}
+
+body.dark-mode .home .content h3,
+body.dark-mode .home .content p {
+  color: white; 
+}
+body.dark-mode .header {
+  background-color: black; 
+}
+body.dark-mode .dropdown-content {
+  background-color: black; 
+  color: white;
+}
+body.dark-mode .dropdown{
+  color: white;
+}
+body.dark-mode .dropdown:hover{
+  color: var(--btn-color);
+}
+body.dark-mode .header a {
+  color: white; 
+}
+body.dark-mode .header a:hover{
+  color: var(--btn-color);
+}
+.dark-mode-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem; /* Add some margin to separate it from the cart icon */
+}
+.dark-mode-toggle #mode-icon {
+  font-size: 2.5rem; /* Adjust the font size as needed for visibility */
+}

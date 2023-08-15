@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOODIES HUB </title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- header section starts  -->
+
+  <header class="header">
+
+    <a href="#" id="logo"> <img src="images/logo1.png" alt=""></a>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+      <a href="#home">home</a>
+      <div class="dropdown">
+        <span>Menu</span>
+        <div class="dropdown-content">
+          <a href="#pizza">Pizza</a>
+          <a href="#burger">Burger</a>
+          <a href="#sandwich">Sandwich</a>
+          <a href="#pasta">Pasta</a>
+          <a href="#shake">Shake</a>
+          <a href="#garlic">Garlic_bread</a>
+        </div>
+      </div>
+      <a href="#speciality">speciality</a>
+      <a href="#review">review</a>
+      <a href="#gallery">gallery</a>
+      <a href="#order">order</a>
+
+    </nav>
+
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCartModal()">&times;</span>
+        <div id="cartItems"></div>
+      </div>
+    </div>
+
+    <!-- Modify the cart icon to call the function to show the cart data -->
+    <div id="cart" class="cart" onclick="showCartModal()">
+      <span id="cart-count">0</span>
+      <i class="fas fa-2x fa-shopping-cart"></i>
+    </div>
+
+    <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <i id="mode-icon" class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
+    </div>
+  </header>
+
+  <!-- header section ends -->
+
+  <!-- home section starts  -->
+
+  <section id="home" class="home">
+
+    <div class="image myimage">
+      <img src="images/home-img.png" alt="">
+    </div>
+
+    <div class="content">
+      <h3>FOODIES HUB</h3>
+      <p> Foodies Hub is your go-to resource for discovering new flavors, experimenting in the kitchen, and satisfying
+        your food cravings!</p>
+      <a href="#speciality" class="btn">MENU</a>
+    </div>
+
+  </section>
+
+  <!-- home section ends -->
+
+  <!-- speciality section starts  -->
+
+  <section class="speciality" id="speciality">
+
+    <h1 class="speciality-heading"> our <span>speciality</span></h1>
+
+    <div class="main-box-speciality">
+
+      <div class="box">
+        <a href="#pizza"><img class="image" src="images/s-img-2.jpg" alt="">
+
+          <div class="content">
+            <img src="images/s-img-2.jpg" alt="">
+            <h3>Pizza</h3>
+            <p>Each bite is a delightful symphony of flavors, combining premium ingredients, authentic sauces, and a
+              perfectly baked crust that is crispy on the outside and wonderfully fluffy on the inside.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="#burger"><img class="image" src="images/s-img-1.jpg" alt="">
+
+          <div class="content">
+            <img src="images/s-img-1.jpg" alt="">
+            <h3>Burger</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+              voluptates aperiam tempore libero labore aut.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="#sandwich"> <img class="image" src="images/Sandwich.jpg" alt="">
+
+          <div class="content">
+            <img src="images/Sandwich.jpg" alt="">
+            <h3>Sandwich</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+              voluptates aperiam tempore libero labore aut.</p>
+          </div>
+      </div></a>
+
+      <div class="box">
+        <a href="#pasta"> <img class="image" src="images/whitepasta.jpg" alt="">
+
+          <div class="content">
+            <img src="images/whitepasta.jpg" alt="">
+            <h3>Pasta</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+              voluptates aperiam tempore libero labore aut.</p>
+          </div>
+      </div></a>
+
+      <div class="box">
+        <a href="#shake"> <img class="image" src="images/choco.jpg" alt="">
+
+          <div class="content">
+            <img src="images/choco.jpg" alt="">
+            <h3>Shake</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+              voluptates aperiam tempore libero labore aut.</p>
+          </div>
+      </div></a>
+
+      <div class="box">
+        <a href="#garlic"> <img class="image" src="images/cheesegarlic.jpeg" alt="">
+
+          <div class="content">
+            <img src="images/cheesegarlic.jpeg" alt="">
+            <h3>Garlic Bread</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+              voluptates aperiam tempore libero labore aut.</p>
+          </div>
+      </div></a>
+
+    </div>
+
+  </section>
+
+  <section class="speciality" id="speciality">
+
+    <h1 class="speciality-heading" id="pizza"> Pizza <span>Category</span></h1>
+
+    <div class="main-box-speciality">
+
+      <div class="box">
+        <a href="#pizza_s"><img class="image" src="images/s-img-2.jpg" alt="">
+
+          <div class="content">
+            <img src="images/onion.jpg" alt="">
+            <h3>Single Topping</h3>
+            <p>Each bite is a delightful symphony of flavors, combining premium ingredients, authentic sauces, and a
+              perfectly baked crust that is crispy on the outside and wonderfully fluffy on the inside.</p>
+          </div>
+        </a>
+      </div>
+      <div class="box">
+        <a href="#pizza_d"><img class="image" src="images/s-img-2.jpg" alt="">
+
+          <div class="content">
+            <img src="images/onioncapsicum.jpg" alt="">
+            <h3>Double Topping</h3>
+            <p>Each bite is a delightful symphony of flavors, combining premium ingredients, authentic sauces, and a
+              perfectly baked crust that is crispy on the outside and wonderfully fluffy on the inside.</p>
+          </div>
+        </a>
+      </div>
+      <div class="box">
+        <a href="#pizza_p"><img class="image" src="images/s-img-2.jpg" alt="">
+
+          <div class="content">
+            <img src="images/s-img-2.jpg" alt="">
+            <h3>Premium Category</h3>
+            <p>Each bite is a delightful symphony of flavors, combining premium ingredients, authentic sauces, and a
+              perfectly baked crust that is crispy on the outside and wonderfully fluffy on the inside.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- speciality section ends -->
+
+  <!-- Main Menu section starts  -->
+
+  <section class="popular" id="pizza_s">
+
+    <h1 class="heading"> <span>Single Topping</span> </h1>
+    <div class="box-container">
+      <div class="Single_topping">
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="popular" id="pizza_d">
+
+    <h1 class="heading"> <span>Double Topping</span> </h1>
+    <div class="box-container">
+      <div class="Double_topping">
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="popular" id="pizza_p">
+
+    <h1 class="heading"> <span>Premium Category</span> </h1>
+    <div class="box-container">
+      <div class="Premium">
+
+      </div>
+    </div>
+
+  </section>
+
+  <form id="cartForm" method="post" action="/submit-cart">
+    <input type="hidden" name="cartData" value="">
+  </form>
+
+
+  <!-- popular section ends -->
+
+  <!-- steps section starts  -->
+
+
+
+  <!-- steps section ends -->
+
+  <!-- gallery section starts  -->
+
+  <section class="gallery" id="gallery">
+    <h1 class="heading"><span>Our</span> Gallery </h1>
+    <div class="main-gallery-box">
+
+      <div class="box">
+        <img class="image" src="images/s-img-5.jpg" alt="">
+
+        <div class="content">
+          <img src="images/s-1.png" alt="">
+          <h3>tasty burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+            voluptates aperiam tempore libero labore aut.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="images/s-img-2.jpg" alt="">
+
+        <div class="content">
+          <img src="images/s-1.png" alt="">
+          <h3>tasty burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+            voluptates aperiam tempore libero labore aut.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="images/s-img-3.jpg" alt="">
+
+        <div class="content">
+          <img src="images/s-1.png" alt="">
+          <h3>tasty burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+            voluptates aperiam tempore libero labore aut.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="images/s-img-4.jpg" alt="">
+
+        <div class="content">
+          <img src="images/s-1.png" alt="">
+          <h3>tasty burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+            voluptates aperiam tempore libero labore aut.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="images/s-img-6.jpg" alt="">
+
+        <div class="content">
+          <img src="images/s-1.png" alt="">
+          <h3>tasty burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+            voluptates aperiam tempore libero labore aut.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="images/s-img-5.jpg" alt="">
+
+        <div class="content">
+          <img src="images/s-1.png" alt="">
+          <h3>tasty burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur
+            voluptates aperiam tempore libero labore aut.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- gallery section ends -->
+
+  <!-- review section starts  -->
+
+  <section class="review" id="review">
+
+    <h1 class="heading"> our customers <span>reviews</span> </h1>
+
+    <div class="box-container">
+
+      <div class="box">
+        <img src="images/jatin.JPG" alt="">
+        <h3>Jatin Arora</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>Hands down, a 5-star pizza experience! The crust was perfectly crispy, the toppings were flavorful, and the
+          cheese was wonderfully gooey. Each bite was pure pizza bliss. If you're a pizza lover, this is a must-try. You
+          won't be disappointed!</p>
+      </div>
+      <div class="box">
+        <img src="images/neeraj.jpg" alt="">
+        <h3>Neeraj </h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>An exceptional experience that deserves a resounding 5-star rating. The service was impeccable. The attention
+          to detail and the quality of ingredients were evident in each bite. Highly recommended for an unforgettable
+          experience.</p>
+      </div>
+      <div class="box">
+        <img src="images/jass.jpg" alt="">
+        <h3>jasbir Manchanda</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>Without a doubt, a 5-star sandwich destination. The sandwiches here are nothing short of exceptional. The
+          bread was fresh and perfectly toasted, providing a delightful crunch. The fillings were generous, flavorful,
+          and expertly layered. Each bite offered a harmonious blend of ingredients that left me satisfied and wanting
+          another sandwich. For sandwich enthusiasts, this place is a definite winner</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- review section ends -->
+
+  <!-- order section starts  -->
+
+  <section class="order" id="order">
+
+    <h1 class="heading"> <span>order</span> now </h1>
+
+    <div class="row">
+
+      <form action="" class="myform">
+
+        <div class="inputBox">
+          <input type="text" placeholder="name">
+          <input type="email" placeholder="email">
+        </div>
+
+        <div class="inputBox">
+          <input type="number" placeholder="number">
+          <input type="text" placeholder="food name">
+        </div>
+
+        <textarea placeholder="address" name="" id="" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="order now" class="btn">
+
+      </form>
+
+      <div class="image footer-image">
+        <img src="images/order-img.jpg" alt="">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- order section ends -->
+
+  <!-- footer section  -->
+
+  <section class="footer">
+
+    <div class="share">
+      <a href="#" class="btn">facebook</a>
+      <a href="#" class="btn">twitter</a>
+      <a href="#" class="btn">instagram</a>
+      <a href="#" class="btn">pinterest</a>
+      <a href="#" class="btn">linkedin</a>
+    </div>
+  </section>
+
+  <!-- scroll top button  -->
+  <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
+
+  <!-- loader  -->
+
+
+
+
+
+
+
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- custom js file link  -->
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

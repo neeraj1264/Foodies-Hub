@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "name": "Onion pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Capsicum Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Tomato Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }  ,
+    {
+        "id": 4,
+        "name": "Sweetcorn Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Mushroom Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Margharita Pizza",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }  ,
+    {
+        "id": 7,
+        "name": "Sweetcorn Tomato Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "pricee": {
+            "Regular": 10,
+            "Medium": 15,
+            "Large": 20
+        },
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Onion Capsicum Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "pricee": {
+            "Regular": 10,
+            "Medium": 15,
+            "Large": 20
+        },"image": "images/onion.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Onion Tomato Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "pricee": {
+            "Regular": 10,
+            "Medium": 15,
+            "Large": 20
+        },
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Paneer Onion Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "pricee": {
+            "Regular": 10,
+            "Medium": 15,
+            "Large": 20
+        },
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Capsicum Tomato Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "pricee": {
+            "Regular": 10,
+            "Medium": 15,
+            "Large": 20
+        },
+        "image": "images/onion.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Onion Sweetcorn Pizza ",
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": 70,
+        "pricee": {
+            "Regular": 10,
+            "Medium": 15,
+            "Large": 20
+        },
+        "image": "images/onion.jpg"
+    }
+    ,{
+        "id": 13,
+        "name": "Farm fresh Pizza",
+        "p" : " Topping:- Mushroom + Capsicum + Tomato + Onion",
+        "price": 70,
+        "image": "images/onion.jpg"
+    } ,
+    {
+        "id": 14,
+        "name": "Country Special Pizza",
+        "p" : "Topping:- Onion + capsicum + Tomato + black olives",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }
+    ,
+    {
+        "id": 15,
+        "name": "Veggie spl. pizza",
+        "p" : "Topping:- Capsicum + onion + tomato + corn",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }
+    ,
+    {
+        "id": 16,
+        "name": "mix veg. pizza",
+        "p" : "Topping:- Tomato + Capsicum + mushroom + jalapenos",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }
+    ,
+    {
+        "id": 17,
+        "name": "MAKHNI PIZZA",
+        "p" : "Topping:- Makhni Sauce + Capsicum + paneer+ onion",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }
+    ,
+    {
+        "id": 18,
+        "name": "TANDOORI PIZZA",
+        "p" : "Topping:- Tandoori Sauce + red paprika +  paneer + onion",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }
+    ,
+    {
+        "id": 19,
+        "name": "PAPPY PANEER PIZZA",
+        "p" : "Topping:- Capsicum + paneer + sweet corn + Red paprika",
+        "price": 70,
+        "image": "images/onion.jpg"
+    }
+    ,
+    {
+        "id": 20,
+        "name": "ITALIAN PIZZA ",
+        "p" : "Topping:- Jalapenos + Capsicum + Tomato + mushroom",
+        "price": 70,
+        "image": "images/onion.jpg"
+    } 
+]
