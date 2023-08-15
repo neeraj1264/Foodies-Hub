@@ -137,7 +137,7 @@ function showCartModal() {
     }
     headerRow.appendChild(headerCell);
   }
-  table.appendChild(headerRow); 
+  table.appendChild(headerRow);
 
   for (const itemId in cartData) {
     if (cartData.hasOwnProperty(itemId)) {
