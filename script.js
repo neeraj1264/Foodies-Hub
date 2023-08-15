@@ -177,6 +177,14 @@ function showCartModal() {
       
     }
   }
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-icon')) {
+      const itemId = event.target.getAttribute('data-item-id');
+      delete cartData[itemId];
+      showCartModal(); // Refresh the cart modal after deleting an item
+      updateCartCount();
+    }
+  });
 
 // Create a footer row for sub-total and total
 const footerRow = document.createElement("tr");
@@ -200,49 +208,6 @@ table.appendChild(footerRow);
 
 cartItemsContainer.appendChild(table);
 
-  // Event listener for delete icons
-  const deleteIcons = document.querySelectorAll(".delete-icon");
-  deleteIcons.forEach((deleteIcon) => {
-    deleteIcon.addEventListener("click", () => {
-      const itemId = deleteIcon.getAttribute("data-item-id");
-      delete cartData[itemId];
-      cartCount--; // Decrement cartCount by 1
-      if (cartCount < 0) {
-        cartCount = 0; // Ensure cartCount is not negative
-      }
-      cartCountElement.textContent = cartCount; // Update cartCountElement
-      
-      // Replace increment and decrement buttons with "Add" button
-      const button = document.querySelector(`[data-item-id="${itemId}"]`);
-      if (button) {
-        const quantityContainer = button.parentNode.querySelector('.quantity-controls');
-        const incrementButton = quantityContainer.querySelector('.increment');
-        const decrementButton = quantityContainer.querySelector('.decrement');
-        const addToCartButton = quantityContainer.querySelector('.add-to-cart-button');
-  
-        button.style.display = 'inline-block';
-        quantityContainer.style.display = 'none';
-  
-        if (addToCartButton) {
-          addToCartButton.style.display = 'inline-block';
-        } else {
-          // Create "Add" button if addToCartButton doesn't exist
-          const newAddToCartButton = document.createElement("button");
-          newAddToCartButton.className = "btn add-to-cart-button";
-          newAddToCartButton.textContent = "Add to Cart";
-          quantityContainer.appendChild(newAddToCartButton);
-          newAddToCartButton.addEventListener("click", () => {
-            addToCart(itemId, cartData[itemId].name, cartData[itemId].price, cartData[itemId].image);
-            openCategoryDropdown(button);
-          });
-        }
-  
-        showCartModal(); // Refresh the cart modal after deleting an item
-      } else {
-        console.log(`Button with data-item-id ${itemId} not found.`);
-      }
-    });
-  });
 }
 function closeCartModal() {
   const cartModal = document.getElementById("cartModal");
