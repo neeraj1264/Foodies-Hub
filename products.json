@@ -5,9 +5,9 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
         "image": "images/onion.jpg"
     },
@@ -17,9 +17,9 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
         "image": "images/onion.jpg"
     },
@@ -29,9 +29,9 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
         "image": "images/onion.jpg"
     }  ,
@@ -41,9 +41,9 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
         "image": "images/onion.jpg"
     },
@@ -53,9 +53,9 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
         "image": "images/onion.jpg"
     },
@@ -65,9 +65,9 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
         "image": "images/onion.jpg"
     }  ,
@@ -77,11 +77,11 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/onioncapsicum.jpg"
     },
     {
         "id": 8,
@@ -89,10 +89,11 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
-        },"image": "images/onion.jpg"
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
+        },
+        "image": "images/onioncapsicum.jpg"
     },
     {
         "id": 9,
@@ -100,11 +101,11 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/onioncapsicum.jpg"
     },
     {
         "id": 10,
@@ -112,11 +113,11 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/onioncapsicum.jpg"
     },
     {
         "id": 11,
@@ -124,11 +125,11 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/onioncapsicum.jpg"
     },
     {
         "id": 12,
@@ -136,11 +137,11 @@
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/onioncapsicum.jpg"
     }
     ,{
         "id": 13,
@@ -148,11 +149,11 @@
         "p" : " Topping:- Mushroom + Capsicum + Tomato + Onion",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     } ,
     {
         "id": 14,
@@ -160,11 +161,11 @@
         "p" : "Topping:- Onion + capsicum + Tomato + black olives",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     }
     ,
     {
@@ -173,11 +174,11 @@
         "p" : "Topping:- Capsicum + onion + tomato + corn",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     }
     ,
     {
@@ -186,11 +187,11 @@
         "p" : "Topping:- Tomato + Capsicum + mushroom + jalapenos",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     }
     ,
     {
@@ -199,11 +200,11 @@
         "p" : "Topping:- Makhni Sauce + Capsicum + paneer+ onion",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     }
     ,
     {
@@ -212,11 +213,11 @@
         "p" : "Topping:- Tandoori Sauce + red paprika +  paneer + onion",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     }
     ,
     {
@@ -225,11 +226,11 @@
         "p" : "Topping:- Capsicum + paneer + sweet corn + Red paprika",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     }
     ,
     {
@@ -238,284 +239,276 @@
         "p" : "Topping:- Jalapenos + Capsicum + Tomato + mushroom",
         "price": 70,
         "pricee": {
-            "Regular": 10,
-            "Medium": 15,
-            "Large": 20
+            "Regular": 70,
+            "Medium": 120,
+            "Large": 180
         },
-        "image": "images/onion.jpg"
+        "image": "images/s-img-2.jpg"
     } ,
     {
         "id": 21,
         "name": "Aloo Tikki Burger",
         "price": 45,
-        "image": "images/burger.png"
+        "image": "images/p-1.jpg"
     },
     {
         "id": 22,
         "name": "Veg Cheese Burger",
         "price": 60,
-        "image": "images/burger.png"
+        "image": "images/p-1.jpg"
     },
     {
         "id": 23,
         "name": "Hangover Burger",
         "price": 70,
-        "image": "images/burger.png"
+        "image": "images/p-1.jpg"
     },
     {
         "id": 24,
         "name": "Veg Sandwich",
-        "p" : "A veg grilled sandwich is a delicious creation where assorted vegetables, spreads, and sometimes cheese are assembled between slices of bread and then grilled to perfection, resulting in a warm, crispy, and flavorful delight.",
         "price": 70,
-        "image": "images/burger.png"
+        "image": "images/Sandwich.jpg"
     },
     {
         "id": 25,
         "name": "Pasta Sandwich",
-        "p" : "A pasta grilled sandwich is an inventive dish where pasta, often with sauce and other flavorful ingredients, is placed between slices of bread, grilled to a crispy texture, resulting in a delightful fusion of pasta and sandwich elements.",
         "price": 75,
-        "image": "images/burger.png"
+        "image": "images/Sandwich.jpg"
     },
     {
         "id": 26,
         "name": "Sweet Corn Sandwich",
-        "p" : "A sweetcorn grilled sandwich is a delectable delight that features a mixture of sweetcorn, often combined with other vegetables and seasonings, sandwiched between slices of bread and then grilled to achieve a crispy exterior and a flavorful, warm filling.",
         "price": 85,
-        "image": "images/burger.png"
+        "image": "images/Sandwich.jpg"
     },
     {
         "id": 27,
         "name": "Paneer Sandwich",
-        "p" : "A paneer grilled sandwich is a delectable dish that includes marinated and grilled paneer (Indian cottage cheese) along with various vegetables, sauces, and seasonings, all nestled between slices of bread and toasted to perfection, resulting in a satisfying blend of flavors and textures.",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/Sandwich.jpg"
     },
     {
         "id": 28,
         "name": "Aloo Tikki wrap",
-        "p" : "An aloo tikki wrap is a flavorful Indian-inspired dish where spiced potato patties (aloo tikki) are wrapped in a flatbread (such as tortilla or roti) along with a mix of fresh vegetables, sauces, and condiments, creating a portable and scrumptious handheld meal.",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/p-1.jpg"
     },
     {
         "id": 29,
         "name": "Paneer Tikki wrap",
         "p" : "A paneer tikki wrap is a flavorful and satisfying dish that involves placing spiced paneer tikki (Indian cottage cheese patty) along with fresh vegetables, sauces, and condiments onto a flatbread (like tortilla or paratha), which is then rolled up to create a convenient and delicious handheld meal.",
         "price": 110,
-        "image": "images/burger.png"
+        "image": "images/p-1.jpg"
     },
     {
         "id": 30,
         "name": "Special wrap",
         "p" : "Foodies Hub special wrap specific establishment, potentially incorporating a variety of ingredients such as proteins, vegetables, sauces, and seasonings, all wrapped in a flatbread to provide a special and flavorful experience.",
         "price": 120,
-        "image": "images/burger.png"
+        "image": "images/p-1.jpg"
     },
     {
         "id": 31,
         "name": "Plain Garlic Bread",
-        "p" : "",
-        "price": 120,
-        "image": "images/burger.png"
+        "price": 80,
+        "image": "images/gb.jpg"
     },
     {
         "id": 32,
         "name": "Cheese Corn Garlic Bread",
-        "p" : "",
-        "price": 120,
-        "image": "images/burger.png"
+        "price": 110,
+        "image": "images/gb.jpg"
     },
     {
         "id": 33,
         "name": "Stuff Garlic Bread",
-        "p" : "",
         "price": 120,
-        "image": "images/burger.png"
+        "image": "images/gb.jpg"
     },
     {
         "id": 34,
         "name": "Red sauce Pasta",
         "price": 110,
-        "image": "images/burger.png"
+        "image": "images/whitepasta.jpg"
     },
     {
         "id": 35,
         "name": "White sauce Pasta",
         "price": 120,
-        "image": "images/burger.png"
+        "image": "images/whitepasta.jpg"
     },
     {
         "id": 36,
         "name": "Tandoori Pasta",
         "price": 130,
-        "image": "images/burger.png"
+        "image": "images/whitepasta.jpg"
     },
     {
         "id": 37,
         "name": "Makhni Pasta",
         "price": 130,
-        "image": "images/burger.png"
+        "image": "images/whitepasta.jpg"
     },
     {
         "id": 38,
         "name": "Mix sauce Pasta",
         "price": 140,
-        "image": "images/burger.png"
+        "image": "images/whitepasta.jpg"
     },
     {
         "id": 39,
         "name": "Cold Coffee",
         "price": 80,
-        "image": "images/burger.png"
+        "image": "images/choco.jpg"
     },
     {
         "id": 40,
         "name": "Strawberry Shake",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/choco.jpg"
     },
     {
         "id": 41,
         "name": "Oreo Shake",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/choco.jpg"
     },
     {
         "id": 42,
         "name": "Vanilla Shake",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/choco.jpg"
     },
     {
         "id": 43,
         "name": "Chocolate Shake",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/choco.jpg"
     },
     {
         "id": 44,
         "name": "Butter Scotch Shake",
         "price": 100,
-        "image": "images/burger.png"
+        "image": "images/choco.jpg"
     },
     {
         "id": 45,
         "name": "Malai Chaap",
         "price": 130,
-        "image": "images/burger.png"
+        "image": "images/chaap1.jpg"
     },
     {
         "id": 46,
         "name": "Masala Chaap",
         "price": 130,
-        "image": "images/burger.png"
+        "image": "images/chaap1.jpg"
     },
     {
         "id": 47,
         "name": "Afgani Chaap",
         "price": 130,
-        "image": "images/burger.png"
+        "image": "images/chaap1.jpg"
     },
     {
         "id": 48,
         "name": "Lemon Chaap",
         "price": 140,
-        "image": "images/burger.png"
+        "image": "images/chaap1.jpg"
     },
     {
         "id": 49,
         "name": "KFC Chaap",
         "price": 100,
-        "image": "images/burger.png"
+        "image": "images/chaap1.jpg"
     },
     {
         "id": 50,
         "name": "Paneer Tikka",
         "price": 150,
-        "image": "images/burger.png"
+        "image": "images/chaap1.jpg"
     },
     {
         "id": 51,
-        "name": "Veg Noodle",
+        "name": "Veg noodles",
         "price": 80,
-        "image": "images/burger.png"
+        "image": "images/noodles1.jpg"
     },
     {
         "id": 52,
-        "name": "White Noodle",
+        "name": "White noodles",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/noodles1.jpg"
     },
     {
         "id": 53,
-        "name": "Cheese Noodle",
+        "name": "Cheese noodles",
         "price": 100,
-        "image": "images/burger.png"
+        "image": "images/noodles1.jpg"
     },
     {
         "id": 54,
-        "name": "Hakka Noodle",
+        "name": "Hakka noodles",
         "price": 120,
-        "image": "images/burger.png"
+        "image": "images/noodles1.jpg"
     },
     {
         "id": 55,
-        "name": "Singapori Noodle",
+        "name": "Singapori noodles",
         "price": 120,
-        "image": "images/burger.png"
+        "image": "images/noodles1.jpg"
     },
     {
         "id": 56,
         "name": "Spring Roll",
         "price": 80,
-        "image": "images/burger.png"
+        "image": "images/springroll.jpg"
     },
     {
         "id": 57,
         "name": "Dry Manchurian",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/dryman.jpg"
     },
     {
         "id": 58,
         "name": "Gravy Manchurian",
         "price": 100,
-        "image": "images/burger.png"
+        "image": "images/gravyman.jpg"
     },
     {
         "id": 59,
         "name": "Pav Bhaji",
         "price": 90,
-        "image": "images/burger.png"
+        "image": "images/pavbhaji.jpg"
     },
     {
         "id": 60,
         "name": "Cheese Chilli",
         "price": 140,
-        "image": "images/burger.png"
+        "image": "images/cheesepan.jpg"
     },
     {
         "id": 61,
         "name": "Honey Chilli Potato",
         "price": 130,
-        "image": "images/burger.png"
+        "image": "images/honeychil.jpg"
     },
     {
         "id": 62,
         "name": "Veg Momos",
         "price": 70,
-        "image": "images/burger.png"
+        "image": "images/momo.jpg"
     },
     {
         "id": 63,
         "name": "Fried Momos",
         "price": 80,
-        "image": "images/burger.png"
+        "image": "images/friedmomo.jpg"
     },
     {
         "id": 64,
         "name": "Kfc Momos",
         "price": 100,
-        "image": "images/burger.png"
+        "image": "images/momo.jpg"
     }
 ]

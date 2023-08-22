@@ -17,7 +17,6 @@ menubar.onclick = () => {
 // sr.reveal(".home .content", { delay: 350, origin: "right" });
 // sr.reveal(".speciality", { delay: 350, origin: "top" });
 // sr.reveal(".popular", { delay: 350, origin: "bottom" });
-// sr.reveal(".gallery", { delay: 350, origin: "bottom" });
 // sr.reveal(".review .box", { delay: 350, origin: "top" });
 // sr.reveal(".myform", { delay: 350, origin: "bottom" });
 
@@ -27,47 +26,71 @@ let cartCount = 0;
 let cartCountElement = document.getElementById("cart-count"); // Declare cartCountElement in the global scope
 
 // Event delegation for "Add to Cart" functionality
-document.querySelector('.Burger').addEventListener('click', (event) => {
+document.querySelector(".Burger").addEventListener("click", (event) => {
   handleAddToCartClick(event);
 });
 
-document.querySelector('.Sandwich').addEventListener('click', (event) => {
+document.querySelector(".Sandwich").addEventListener("click", (event) => {
   handleAddToCartClick(event);
 });
 
-document.querySelector('.Single_topping').addEventListener('click', (event) => {
+document.querySelector(".Pasta").addEventListener("click", (event) => {
   handleAddToCartClick(event);
 });
 
-document.querySelector('.Double_topping').addEventListener('click', (event) => {
+document.querySelector(".Single_topping").addEventListener("click", (event) => {
   handleAddToCartClick(event);
 });
 
-document.querySelector('.Premium').addEventListener('click', (event) => {
+document.querySelector(".Double_topping").addEventListener("click", (event) => {
   handleAddToCartClick(event);
 });
 
-  function handleAddToCartClick(event) {
-  const button = event.target.closest('.add-to-cart');
+document.querySelector(".Premium").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Chinese").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Shakes").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Garlic").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Wrap").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Chaap").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Momos").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+function handleAddToCartClick(event) {
+  const button = event.target.closest(".add-to-cart");
   if (button) {
-    const GotoCart = button.parentNode.querySelector('.Go-to-Cart');
-    const quantityElement = GotoCart.querySelector('.quantity');
+    const GotoCart = button.parentNode.querySelector(".Go-to-Cart");
+    const quantityElement = GotoCart.querySelector(".quantity");
 
-    button.style.display = 'none';
-    GotoCart.style.display = 'flex';
+    button.style.display = "none";
+    GotoCart.style.display = "flex";
 
     // Update cart count only when "Order Now" button is clicked
     cartCount++;
     cartCountElement.textContent = cartCount;
-  
   }
-
-};
-
-
+}
 
 // ---------------------cart Data code-----------------------------
-let cartData = {}; 
+let cartData = {};
 
 // Calculate and return the sub-total of all items in the cart
 function calculateTotal() {
@@ -95,7 +118,13 @@ function showCartModal() {
   for (const headerName of headerNames) {
     const headerCell = document.createElement("th");
     headerCell.textContent = headerName;
-    if (headerName === "Name" || headerName === "Quantity" || headerName === "Image" || headerName === "Price" || headerName === "Delete") {
+    if (
+      headerName === "Name" ||
+      headerName === "Quantity" ||
+      headerName === "Image" ||
+      headerName === "Price" ||
+      headerName === "Delete"
+    ) {
       headerCell.classList.add("header-spaced"); // Add the class for spacing
     }
     headerRow.appendChild(headerCell);
@@ -131,46 +160,43 @@ function showCartModal() {
 
       const deleteCell = document.createElement("td");
       const deleteIcon = document.createElement("i");
-      deleteIcon.classList.add("fas", "fa-trash-alt", "delete-icon" );
+      deleteIcon.classList.add("fas", "fa-trash-alt", "delete-icon");
       deleteIcon.setAttribute("data-item-id", itemId);
       deleteCell.appendChild(deleteIcon);
       cartRow.appendChild(deleteCell);
 
       table.appendChild(cartRow);
-      
     }
   }
-  document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('delete-icon')) {
-      const itemId = event.target.getAttribute('data-item-id');
+  document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("delete-icon")) {
+      const itemId = event.target.getAttribute("data-item-id");
       delete cartData[itemId];
       showCartModal(); // Refresh the cart modal after deleting an item
       updateCartCount();
     }
   });
 
-// Create a footer row for sub-total and total
-const footerRow = document.createElement("tr");
+  // Create a footer row for sub-total and total
+  const footerRow = document.createElement("tr");
 
-const emptyCell = document.createElement("td");
-emptyCell.setAttribute("colspan", "1"); // Span 1 columns for sub-total and total
-footerRow.appendChild(emptyCell);
+  const emptyCell = document.createElement("td");
+  emptyCell.setAttribute("colspan", "1"); // Span 1 columns for sub-total and total
+  footerRow.appendChild(emptyCell);
 
-const TotalCell = document.createElement("td");
-TotalCell.textContent = "total:";
-TotalCell.classList.add("cart-footer");
-footerRow.appendChild(TotalCell);
+  const TotalCell = document.createElement("td");
+  TotalCell.textContent = "total:";
+  TotalCell.classList.add("cart-footer");
+  footerRow.appendChild(TotalCell);
 
-const TotalAmountCell = document.createElement("td");
-TotalAmountCell.textContent = calculateTotal(); // Calculate sub-total
-TotalAmountCell.classList.add("cart-footer");
-footerRow.appendChild(TotalAmountCell);
+  const TotalAmountCell = document.createElement("td");
+  TotalAmountCell.textContent = calculateTotal(); // Calculate sub-total
+  TotalAmountCell.classList.add("cart-footer");
+  footerRow.appendChild(TotalAmountCell);
 
-table.appendChild(footerRow);
+  table.appendChild(footerRow);
 
-
-cartItemsContainer.appendChild(table);
-
+  cartItemsContainer.appendChild(table);
 }
 function closeCartModal() {
   const cartModal = document.getElementById("cartModal");
@@ -185,7 +211,7 @@ function addToCart(id, name, price, image, quantity) {
       name: name,
       price: price,
       image: image,
-      quantity: +1 ,
+      quantity: +1,
     };
   }
 
@@ -203,6 +229,7 @@ function updateCartCount() {
   cartCountElement.textContent = cartItemCount;
 }
 
+
 // ------------------- fetching json data------------------------------------
 
 let http = new XMLHttpRequest();
@@ -213,140 +240,122 @@ http.send();
 
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
-    let products = JSON.parse(this.responseText);
-    let Burger = "";
-    let Sandwich = "";
-    let Single = "";
-    let Double = "";
-    let Premium = "";
-    for (let i = 0; i < products.length; i++) {
-      const item = products[i];
-      if (i >= 20 && i < 23){
-        Burger +=
-        `
+let products = JSON.parse(this.responseText);
+let Burger = "";
+let Sandwich = "";
+let Pasta = "";
+let Single = "";
+let Double = "";
+let Premium = "";
+let Chinese = "";
+let Shakes = "";
+let Garlic = "";
+let Wrap = "";
+let Chaap = "";
+let Momos = "";
+for (let i = 0; i < products.length; i++) {
+const item = products[i];
+if (i < 6) {
+  Single += `
   <div class="box" >
- <span class="price product-price"> ₹ ${item.price}</span>
- <img src="${item.image}" alt="img">
- <h3 class="product-name" id="1">${item.name}</h3>
- <div class="stars">
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
-</div>
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
-      }
-      if (i >= 23 && i < 27){
-        Sandwich +=
-        `
-  <div class="box" >
- <span class="price product-price"> ₹ ${item.price}</span>
- <img src="${item.image}" alt="img">
- <h3 class="product-name" id="1">${item.name}</h3>
- <div class="stars">
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
-</div>
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
-      }
-      if (i < 6) {
-      Single += 
-      `
-  <div class="box" >
- <span class="price product-price"> ₹ ${item.price}</span>
- <img src="${item.image}" alt="img">
- <h3 class="product-name" id="1">${item.name}</h3>
- <div class="stars">
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
-</div>
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<select class="category-dropdown">
-  <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
-  <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
-  <option value="Large">Large ₹ ${item.pricee.Large}</option>
-</select>
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
-} else if (i >= 6 && i < 12 )  {
-  Double +=  `
-  <div class="box">
   <span class="price product-price"> ₹ ${item.price}</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" id="1">${item.name}</h3>
   <div class="stars">
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
-</div>
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<select class="category-dropdown">
-  <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
-  <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
-  <option value="Large">Large ₹ ${item.pricee.Large}</option>
-</select>
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.pricee.Regular}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <select class="category-dropdown">
+    <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
+    <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
+    <option value="Large">Large ₹ ${item.pricee.Large}</option>
+  </select>
+  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
+}
+if (i >= 6 && i < 12) {
+  Double += `
+    <div class="box">
+    <span class="price product-price"> ₹ ${item.price}</span>
+    <img src="${item.image}" alt="img">
+    <h3 class="product-name" id="1">${item.name}</h3>
+    <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.pricee.Regular}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <select class="category-dropdown">
+    <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
+    <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
+    <option value="Large">Large ₹ ${item.pricee.Large}</option>
+  </select>
+  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+      </div>
     </div>
   </div>
-</div>
-`    
+  `;
 }
-else if (i >= 12 && i < 20 )  {
-  Premium +=  `
-  <div class="box">
- <span class="price product-price"> ₹ ${item.price}</span>
- <img src="${item.image}" alt="img">
- <h3 class="product-name" id="1">${item.name}</h3>
- <div>
- ${item.p}
- </div>
- <div class="stars">
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
- <i class="fas fa-star"></i>
+if (i >= 12 && i < 20) {
+  Premium += `
+    <div class="box">
+    <span class="price product-price"> ₹ ${item.price}</span>
+    <img src="${item.image}" alt="img">
+    <h3 class="product-name" id="1">${item.name}</h3>
+    <div>
+    ${item.p}
+    </div>
+    <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.pricee.Regular}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <select class="category-dropdown">
+    <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
+    <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
+    <option value="Large">Large ₹ ${item.pricee.Large}</option>
+  </select>
+  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
+}
+if (i >= 20 && i < 23) {
+  Burger += `
+<div class="box" >
+<span class="price product-price"> ₹ ${item.price}</span>
+<img src="${item.image}" alt="img">
+<h3 class="product-name" id="1">${item.name}</h3>
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
 </div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
-<select class="category-dropdown">
-  <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
-  <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
-  <option value="Large">Large ₹ ${item.pricee.Large}</option>
-</select>
 <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
@@ -355,14 +364,204 @@ else if (i >= 12 && i < 20 )  {
 </div>
 `;
 }
-    }
-    document.querySelector(".Burger").innerHTML = Burger;
-    document.querySelector(".Sandwich").innerHTML = Sandwich;
-    document.querySelector(".Single_topping").innerHTML = Single;
-    document.querySelector(".Double_topping").innerHTML = Double;
-    document.querySelector(".Premium").innerHTML = Premium;
+if (i >= 23 && i < 27) {
+  Sandwich += `
+<div class="box" >
+<span class="price product-price"> ₹ ${item.price}</span>
+<img src="${item.image}" alt="img">
+<h3 class="product-name" id="1">${item.name}</h3>
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
 
+</div>
+</div>
+</div>
+`;
+}
+if (i >= 27 && i < 30) {
+  Wrap += `
+  <div class="box" >
+  <span class="price product-price"> ₹ ${item.price}</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" id="1">${item.name}</h3>
+  <div class="stars">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
   }
+if (i >= 30 && i < 33) {
+    Garlic += `
+      <div class="box" >
+     <span class="price product-price"> ₹ ${item.price}</span>
+     <img src="${item.image}" alt="img">
+     <h3 class="product-name" id="1">${item.name}</h3>
+     <div class="stars">
+     <i class="fas fa-star"></i>
+     <i class="fas fa-star"></i>
+     <i class="fas fa-star"></i>
+     <i class="fas fa-star"></i>
+     <i class="fas fa-star"></i>
+    </div>
+    <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+    <div class="Go-to-Cart" style="display: none;">
+    <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    `;
+}
+if (i >= 33 && i < 38) {
+  Pasta += `
+    <div class="box" >
+   <span class="price product-price"> ₹ ${item.price}</span>
+   <img src="${item.image}" alt="img">
+   <h3 class="product-name" id="1">${item.name}</h3>
+   <div class="stars">
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
+}
+if (i >= 38 && i < 44) {
+  Shakes += `
+  <div class="box" >
+  <span class="price product-price"> ₹ ${item.price}</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" id="1">${item.name}</h3>
+  <div class="stars">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
+}
+if (i >= 44 && i < 50) {
+Chaap += `
+<div class="box" >
+<span class="price product-price"> ₹ ${item.price}</span>
+<img src="${item.image}" alt="img">
+<h3 class="product-name" id="1">${item.name}</h3>
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
+
+</div>
+</div>
+</div>
+`;
+}
+if (i >= 50 && i < 61) {
+  Chinese += `
+<div class="box" >
+<span class="price product-price"> ₹ ${item.price}</span>
+<img src="${item.image}" alt="img">
+<h3 class="product-name" id="1">${item.name}</h3>
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
+
+</div>
+</div>
+</div>
+`;
+}
+if (i >= 61 && i < 64) {
+Momos += `
+<div class="box" >
+<span class="price product-price"> ₹ ${item.price}</span>
+<img src="${item.image}" alt="img">
+<h3 class="product-name" id="1">${item.name}</h3>
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
+
+</div>
+</div>
+</div>
+`;
+}
+}
+document.querySelector(".Burger").innerHTML = Burger;
+document.querySelector(".Sandwich").innerHTML = Sandwich;
+document.querySelector(".Pasta").innerHTML = Pasta;
+document.querySelector(".Single_topping").innerHTML = Single;
+document.querySelector(".Double_topping").innerHTML = Double;
+document.querySelector(".Premium").innerHTML = Premium;
+document.querySelector(".Chinese").innerHTML = Chinese;
+document.querySelector(".Shakes").innerHTML = Shakes;
+document.querySelector(".Garlic").innerHTML = Garlic;
+document.querySelector(".Wrap").innerHTML = Wrap;
+document.querySelector(".Chaap").innerHTML = Chaap;
+document.querySelector(".Momos").innerHTML = Momos;
+}
 };
 
 //  ------------------Function to toggle dark mode-----------------------------
