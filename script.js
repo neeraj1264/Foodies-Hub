@@ -27,6 +27,14 @@ let cartCount = 0;
 let cartCountElement = document.getElementById("cart-count"); // Declare cartCountElement in the global scope
 
 // Event delegation for "Add to Cart" functionality
+document.querySelector('.Burger').addEventListener('click', (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector('.Sandwich').addEventListener('click', (event) => {
+  handleAddToCartClick(event);
+});
+
 document.querySelector('.Single_topping').addEventListener('click', (event) => {
   handleAddToCartClick(event);
 });
@@ -42,56 +50,11 @@ document.querySelector('.Premium').addEventListener('click', (event) => {
   function handleAddToCartClick(event) {
   const button = event.target.closest('.add-to-cart');
   if (button) {
-    const quantityContainer = button.parentNode.querySelector('.quantity-controls');
-    const incrementButton = quantityContainer.querySelector('.increment');
-    const quantityElement = quantityContainer.querySelector('.quantity');
-    const decrementButton = quantityContainer.querySelector('.decrement');
-    decrementButton.disabled = false;
-    incrementButton.disabled = false;
+    const GotoCart = button.parentNode.querySelector('.Go-to-Cart');
+    const quantityElement = GotoCart.querySelector('.quantity');
 
     button.style.display = 'none';
-    quantityContainer.style.display = 'flex';
-
-    let quantity = 1; // Set initial quantity to 1
-
-    quantityElement.textContent = quantity;
-
-    incrementButton.addEventListener('click', () => {
-      quantity++;
-      quantityElement.textContent = quantity;
-      console.log(quantity)
-    });
-
-    decrementButton.addEventListener('click', () => {
-      if (quantity === 0) {
-        delete cartData[itemId];
-        return; // Exit the function if quantity is already 0
-      }
-      quantity--;
-      quantityElement.textContent = quantity;
-      if (quantity < 1) {
-        decrementButton.disabled = true;
-        button.style.display = 'inline-block';
-        quantityContainer.style.display = 'none';
-        cartCount--;
-        cartCountElement.textContent = cartCount;
-      
-        // Update the cartData quantity for this item
-        const itemId = button.getAttribute('data-item-id');
-        if (cartData.hasOwnProperty(itemId)) {
-          cartData[itemId].quantity = quantity; // Update the quantity in cartData
-          if (cartData[itemId].quantity < 1) {
-            delete cartData[itemId]; 
-        }
-        showCartModal(); // Refresh the cart modal after deleting an item
-      }
-    
-        if (cartCount < 0) {
-          cartCount = 0; // Ensure cartCount is not negative
-        }
-        cartCountElement.textContent = cartCount;
-      }
-    });
+    GotoCart.style.display = 'flex';
 
     // Update cart count only when "Order Now" button is clicked
     cartCount++;
@@ -239,26 +202,6 @@ function updateCartCount() {
   }
   cartCountElement.textContent = cartItemCount;
 }
-function openCategoryDropdown(button) {
-  const quantityContainer = button.parentNode.querySelector('.quantity-controls');
-  const categoryDropdown = quantityContainer.querySelector('.category-dropdown');
-  const addToCartButton = quantityContainer.querySelector('.add-to-cart-button');
-  const itemId = addToCartButton.getAttribute('data-id');
-  const products = JSON.parse(http.responseText);
-  const selectedItem = products.find(item => item.id.toString() === itemId);
-  if (selectedItem) {
-    quantityContainer.style.display = 'flex';
-
-    categoryDropdown.addEventListener('change', () => {
-      const selectedCategory = categoryDropdown.value;
-      const updatedPrice = selectedItem.pricee[selectedCategory];
-
-      addToCartButton.setAttribute('data-price', updatedPrice);
-    });
-  } else {
-    console.log(`Item with ID ${itemId} not found.`);
-  }  
-}
 
 // ------------------- fetching json data------------------------------------
 
@@ -271,11 +214,61 @@ http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
     let products = JSON.parse(this.responseText);
+    let Burger = "";
+    let Sandwich = "";
     let Single = "";
     let Double = "";
     let Premium = "";
     for (let i = 0; i < products.length; i++) {
       const item = products[i];
+      if (i >= 20 && i < 23){
+        Burger +=
+        `
+  <div class="box" >
+ <span class="price product-price"> ₹ ${item.price}</span>
+ <img src="${item.image}" alt="img">
+ <h3 class="product-name" id="1">${item.name}</h3>
+ <div class="stars">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
+
+</div>
+</div>
+</div>
+`;
+      }
+      if (i >= 23 && i < 27){
+        Sandwich +=
+        `
+  <div class="box" >
+ <span class="price product-price"> ₹ ${item.price}</span>
+ <img src="${item.image}" alt="img">
+ <h3 class="product-name" id="1">${item.name}</h3>
+ <div class="stars">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
+
+</div>
+</div>
+</div>
+`;
+      }
       if (i < 6) {
       Single += 
       `
@@ -283,16 +276,21 @@ http.onload = function () {
  <span class="price product-price"> ₹ ${item.price}</span>
  <img src="${item.image}" alt="img">
  <h3 class="product-name" id="1">${item.name}</h3>
- <div>
- ${item.p}
- </div>
- <div class="quantity-container">
-<div class="quantity-container">
+ <div class="stars">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+</div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="quantity-controls" style="display: none;">
-<button class="btn increment"><i class="fas fa-plus"></i></button>
-<span class="quantity">0</span>
-<button class="btn decrement" disabled><i class="fas fa-minus"></i></button>
+<div class="Go-to-Cart" style="display: none;">
+<select class="category-dropdown">
+  <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
+  <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
+  <option value="Large">Large ₹ ${item.pricee.Large}</option>
+</select>
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
@@ -305,25 +303,22 @@ http.onload = function () {
   <span class="price product-price"> ₹ ${item.price}</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" id="1">${item.name}</h3>
-  <div>
-    ${item.p}
-  </div>
-  <div class="add-button-container">
-    <button class="btn add-to-cart"   onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}'); openCategoryDropdown(this)">
-      ADD
-    </button>
-    <div class="quantity-controls" style="display: none;">
-      <select class="category-dropdown">
-        <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
-        <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
-        <option value="Large">Large ₹ ${item.pricee.Large}</option>
-      </select>
-      <button class="btn increment"><i class="fas fa-plus"></i></button>
-      <span class="quantity">0</span>
-      <button class="btn decrement" disabled><i class="fas fa-minus"></i></button>
-      <button class="btn add-to-cart-button" style="display: none;">
-        Add to Cart
-      </button>
+  <div class="stars">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+</div>
+<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+<div class="Go-to-Cart" style="display: none;">
+<select class="category-dropdown">
+  <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
+  <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
+  <option value="Large">Large ₹ ${item.pricee.Large}</option>
+</select>
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+</div>
     </div>
   </div>
 </div>
@@ -331,20 +326,28 @@ http.onload = function () {
 }
 else if (i >= 12 && i < 20 )  {
   Premium +=  `
-  <div class="box" >
+  <div class="box">
  <span class="price product-price"> ₹ ${item.price}</span>
  <img src="${item.image}" alt="img">
  <h3 class="product-name" id="1">${item.name}</h3>
  <div>
  ${item.p}
  </div>
- <div class="quantity-container">
-<div class="quantity-container">
+ <div class="stars">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+</div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="quantity-controls" style="display: none;">
-<button class="btn increment"><i class="fas fa-plus"></i></button>
-<span class="quantity">0</span>
-<button class="btn decrement" disabled><i class="fas fa-minus"></i></button>
+<div class="Go-to-Cart" style="display: none;">
+<select class="category-dropdown">
+  <option value="Regular">Regular ₹ ${item.pricee.Regular} </option>
+  <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
+  <option value="Large">Large ₹ ${item.pricee.Large}</option>
+</select>
+<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
@@ -353,6 +356,8 @@ else if (i >= 12 && i < 20 )  {
 `;
 }
     }
+    document.querySelector(".Burger").innerHTML = Burger;
+    document.querySelector(".Sandwich").innerHTML = Sandwich;
     document.querySelector(".Single_topping").innerHTML = Single;
     document.querySelector(".Double_topping").innerHTML = Double;
     document.querySelector(".Premium").innerHTML = Premium;
