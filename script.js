@@ -23,7 +23,6 @@ menubar.onclick = () => {
 // ------------------------------------------Add button Code--------------------------------------------------
 
 var cartData = {};
-
 let cartCount = 0;
 let cartCountElement = document.getElementById("cart-count"); // Declare cartCountElement in the global scope
 
@@ -198,11 +197,19 @@ function showCartModal() {
   document.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-icon")) {
       const itemId = event.target.getAttribute("data-item-id");
-      delete cartData[itemId];
-      showCartModal(); // Refresh the cart modal after deleting an item
-      updateCartCount();
+      delete cartData[itemId]; // Remove the item from the cart
+  
+      // Check if the cart is empty
+      if (Object.keys(cartData).length === 0) {
+        closeCartModal(); // Close the cart modal if the cart is empty
+      } else {
+        showCartModal(); // Refresh the cart modal after deleting an item
+      }
+      updateCartCount(); // Update the cart count
     }
   });
+  
+  
 
   // Create a footer row for sub-total and total
   const footerRow = document.createElement("tr");
@@ -268,8 +275,6 @@ function updateCartCount() {
   }
   cartCountElement.textContent = cartItemCount;
 }
-
-
 // ------------------- fetching json data------------------------------------
 
 let http = new XMLHttpRequest();
