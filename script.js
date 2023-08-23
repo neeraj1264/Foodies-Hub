@@ -22,6 +22,8 @@ menubar.onclick = () => {
 
 // ------------------------------------------Add button Code--------------------------------------------------
 
+var cartData = {};
+
 let cartCount = 0;
 let cartCountElement = document.getElementById("cart-count"); // Declare cartCountElement in the global scope
 
@@ -90,7 +92,6 @@ function handleAddToCartClick(event) {
 }
 
 // ---------------------cart Data code-----------------------------
-let cartData = {};
 
 // Calculate and return the sub-total of all items in the cart
 function calculateTotal() {
@@ -102,6 +103,32 @@ function calculateTotal() {
   }
   return `₹ ${Total.toFixed(2)}`;
 }
+
+function submitOrder(cartData) {
+  var message = "I would like to order:\n";
+
+  for (const itemId in cartData) {
+    if (cartData.hasOwnProperty(itemId)) {
+      const item = cartData[itemId];
+      message += `${item.quantity}x ${item.name} - ₹ ${item.price}\n`;
+    }
+  }
+
+  // Calculate the total amount
+  var totalAmount = calculateTotal();
+  message += `\nTotal amount: ${totalAmount}`;
+
+  // Replace 'YOUR_WHATSAPP_NUMBER' with the actual WhatsApp number
+  var whatsappNumber = '+917015823645';
+
+  // Construct the WhatsApp link
+  var whatsappLink = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodeURIComponent(message);
+
+  // Open WhatsApp in a new tab to send the message
+  window.open(whatsappLink, '_blank');
+}
+
+
 
 function showCartModal() {
   const cartModal = document.getElementById("cartModal");
@@ -160,7 +187,7 @@ function showCartModal() {
 
       const deleteCell = document.createElement("td");
       const deleteIcon = document.createElement("i");
-      deleteIcon.classList.add("fas", "fa-trash-alt", "delete-icon");
+      deleteIcon.classList.add("center-align" , "fas", "fa-trash-alt", "delete-icon");
       deleteIcon.setAttribute("data-item-id", itemId);
       deleteCell.appendChild(deleteIcon);
       cartRow.appendChild(deleteCell);
@@ -197,7 +224,20 @@ function showCartModal() {
   table.appendChild(footerRow);
 
   cartItemsContainer.appendChild(table);
+
+   // Create the "Submit Order" button
+   const submitButton = document.createElement("button");
+   submitButton.textContent = "Submit Order";
+   submitButton.classList.add("submit-button");
+   submitButton.addEventListener("click", () => {
+    submitOrder(cartData);
+   });
+ 
+   // Append the button to the cart modal
+   cartItemsContainer.appendChild(submitButton);
 }
+
+
 function closeCartModal() {
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
