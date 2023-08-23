@@ -248,6 +248,7 @@ function showCartModal() {
 function closeCartModal() {
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
+  location.reload();
 }
 
 function addToCart(id, name, price, image, quantity) {
