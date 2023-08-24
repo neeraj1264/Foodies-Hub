@@ -136,6 +136,10 @@ function showCartModal() {
   const cartItemsContainer = document.getElementById("cartItems");
   cartItemsContainer.innerHTML = "";
 
+   // Apply a max-height and overflow-y style to create a scrollbar
+   cartItemsContainer.style.maxHeight = "400px"; // Adjust the value as needed
+   cartItemsContainer.style.overflowY = "auto";
+
   const table = document.createElement("table");
   table.classList.add("cart-table");
 
