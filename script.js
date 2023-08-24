@@ -180,7 +180,7 @@ function showCartModal() {
 
    // Apply a max-height and overflow-y style to create a scrollbar
    cartItemsContainer.style.maxHeight = "400px"; // Adjust the value as needed
-   cartItemsContainer.style.overflowY = "auto";
+   cartItemsContainer.style.overflowX = "auto";
 
   const table = document.createElement("table");
   table.classList.add("cart-table");
@@ -222,7 +222,22 @@ function showCartModal() {
 
       const quantityCell = document.createElement("td");
       quantityCell.classList.add("center-align");
-      quantityCell.textContent = item.quantity;
+      
+      const minusIcon = document.createElement("i");
+      minusIcon.classList.add("fas", "fa-minus", "quantity-icon");
+      minusIcon.setAttribute("data-item-id", itemId);
+      quantityCell.appendChild(minusIcon);
+      
+      const quantityValue = document.createElement("span");
+      quantityValue.classList.add("item-quantity")
+      quantityValue.textContent = item.quantity;
+      quantityCell.appendChild(quantityValue);
+      
+      const plusIcon = document.createElement("i");
+      plusIcon.classList.add("fas", "fa-plus", "quantity-icon");
+      plusIcon.setAttribute("data-item-id", itemId);
+      quantityCell.appendChild(plusIcon);
+      
       cartRow.appendChild(quantityCell);
 
       const priceCell = document.createElement("td");

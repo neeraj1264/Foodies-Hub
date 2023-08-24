@@ -283,6 +283,13 @@ section {
   z-index: 0;
   margin-top: 1rem;
 }
+.quantity-icon {
+  /* border: 1px solid black; */
+  margin: 3px;
+  padding: 3px 3px;
+  background-color: orange;
+  color: white;
+}
 .btn {
   display: inline-block;
   padding: 0.8rem 3rem;
@@ -535,7 +542,10 @@ header img {
   #menu-bars {
     display: initial;
   }
-
+.modal-content {
+min-width: 400px;
+overflow-x: auto;
+}
   .navbar {
     position: absolute;
     top: 0;
@@ -624,10 +634,13 @@ td img {
   align-items: center;
   justify-content: center;
 }
-.center-align {
+.center-align{
   text-align: center;
   align-items: center;
   padding-right: 39px;
+}
+.item-quantity{
+font-size: small;
 }
 .delete-icon {
   display: flex;
