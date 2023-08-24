@@ -139,33 +139,33 @@ function submitOrder(cartData) {
 
 // -------------------------dropdown_menu_Start-----------------------------------
 
-const dropdownContent = document.querySelector(".dropdown-content");
-const menuButton = document.querySelector(".dropbtn");
+// const dropdownContent = document.querySelector(".dropdown-content");
+// const menuButton = document.querySelector(".dropbtn");
 
-dropdownContent.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    // Close the dropdown after an option is clicked
-    dropdownContent.style.display = "none";
-  });
-});
+// dropdownContent.querySelectorAll("a").forEach((link) => {
+//   link.addEventListener("click", () => {
+//     // Close the dropdown after an option is clicked
+//     dropdownContent.style.display = "none";
+//   });
+// }); 
 
-menuButton.addEventListener("click", () => {
-  // Toggle the dropdown when the menu button is clicked
-  if (dropdownContent.style.display === "none") {
-    dropdownContent.style.display = "block";
-  } else {
-    dropdownContent.style.display = "none";
-  }
-});
-menuButton.addEventListener("mouseover", () => {
-  // Open the dropdown when hovering over the menu button
-  dropdownContent.style.display = "block";
-});
+// menuButton.addEventListener("click", () => {
+//   // Toggle the dropdown when the menu button is clicked
+//   if (dropdownContent.style.display === "none") {
+//     dropdownContent.style.display = "block";
+//   } else {
+//     dropdownContent.style.display = "none";
+//   }
+// });
+// menuButton.addEventListener("mouseover", () => {
+//   // Open the dropdown when hovering over the menu button
+//   dropdownContent.style.display = "block";
+// });
 
-// Close the dropdown when the mouse leaves the dropdown area
-dropdownContent.addEventListener("mouseleave", () => {
-  dropdownContent.style.display = "none";
-});
+// // Close the dropdown when the mouse leaves the dropdown area
+// dropdownContent.addEventListener("mouseleave", () => {
+//   dropdownContent.style.display = "none";
+// });
 
 // -------------------------dropdown_menu_End----------------------------------
 
@@ -265,29 +265,32 @@ function showCartModal() {
   footerRow.appendChild(emptyCell);
 
   const TotalCell = document.createElement("td");
-  TotalCell.textContent = "total:";
+  TotalCell.textContent = `total: ${calculateTotal()}`  ;
   TotalCell.classList.add("cart-footer");
   footerRow.appendChild(TotalCell);
-
-  const TotalAmountCell = document.createElement("td");
-  TotalAmountCell.textContent = calculateTotal(); // Calculate sub-total
-  TotalAmountCell.classList.add("cart-footer");
-  footerRow.appendChild(TotalAmountCell);
 
   table.appendChild(footerRow);
 
   cartItemsContainer.appendChild(table);
 
-   // Create the "Submit Order" button
+    // Create a footer row for sub-total and total
+    const submitrow = document.createElement("tr");
+
+    const emptyCell1 = document.createElement("td");
+    emptyCell1.setAttribute("colspan", "3");
+    submitrow.appendChild(emptyCell1);
+
+      // Create the "Submit Order" button
    const submitButton = document.createElement("button");
-   submitButton.textContent = "Submit Order";
+   submitButton.textContent = "Place Order";
    submitButton.classList.add("submit-button");
    submitButton.addEventListener("click", () => {
     submitOrder(cartData);
    });
+  
+   submitrow.appendChild(submitButton);
  
-   // Append the button to the cart modal
-   cartItemsContainer.appendChild(submitButton);
+    table.appendChild(submitrow);
 }
 
 // -------------------------Cart_data_End------------------------------------
@@ -368,7 +371,7 @@ if (i < 6) {
     <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
     <option value="Large">Large ₹ ${item.pricee.Large}</option>
   </select>
-  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   
   </div>
@@ -396,7 +399,7 @@ if (i >= 6 && i < 12) {
     <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
     <option value="Large">Large ₹ ${item.pricee.Large}</option>
   </select>
-  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
       </div>
     </div>
@@ -426,7 +429,7 @@ if (i >= 12 && i < 20) {
     <option value="Medium">Medium ₹ ${item.pricee.Medium}</option>
     <option value="Large">Large ₹ ${item.pricee.Large}</option>
   </select>
-  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   
   </div>
@@ -449,7 +452,7 @@ if (i >= 20 && i < 23) {
 </div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
@@ -472,7 +475,7 @@ if (i >= 23 && i < 27) {
 </div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
@@ -495,7 +498,7 @@ if (i >= 27 && i < 30) {
   </div>
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
-  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   
   </div>
@@ -518,7 +521,7 @@ if (i >= 30 && i < 33) {
     </div>
     <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
-    <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+    <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
     </div>
     
     </div>
@@ -541,7 +544,7 @@ if (i >= 33 && i < 38) {
   </div>
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
-  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   
   </div>
@@ -564,7 +567,7 @@ if (i >= 38 && i < 44) {
   </div>
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
-  <h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   
   </div>
@@ -587,7 +590,7 @@ Chaap += `
 </div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
@@ -610,7 +613,7 @@ if (i >= 50 && i < 61) {
 </div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
@@ -633,7 +636,7 @@ Momos += `
 </div>
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
-<h2 class="btns" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
 </div>
 
 </div>
