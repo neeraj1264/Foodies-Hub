@@ -59,6 +59,7 @@ header .navbar a:hover {
   font-size: 2rem;
   margin-left: 2rem;
   color: black;
+  cursor: pointer;
 }
 
 .dropdown:hover {

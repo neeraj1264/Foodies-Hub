@@ -6,6 +6,16 @@ menubar.onclick = () => {
   menubar.classList.toggle("fa-times");
   mynav.classList.toggle("active");
 };
+// Add a click event listener to all navigation bar elements except the menu icon
+const navbarItems = document.querySelectorAll(".navbar a:not(#menu-bars)");
+navbarItems.forEach(item => {
+  item.addEventListener("click", () => {
+    if (mynav.classList.contains("active")) {
+      menubar.classList.toggle("fa-times");
+      mynav.classList.toggle("active");
+    }
+  });
+});
 
 // const sr = ScrollReveal({
 //   distance: "45px",
@@ -127,7 +137,39 @@ function submitOrder(cartData) {
   window.open(whatsappLink, '_blank');
 }
 
+// -------------------------dropdown_menu_Start-----------------------------------
 
+const dropdownContent = document.querySelector(".dropdown-content");
+const menuButton = document.querySelector(".dropbtn");
+
+dropdownContent.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    // Close the dropdown after an option is clicked
+    dropdownContent.style.display = "none";
+  });
+});
+
+menuButton.addEventListener("click", () => {
+  // Toggle the dropdown when the menu button is clicked
+  if (dropdownContent.style.display === "none") {
+    dropdownContent.style.display = "block";
+  } else {
+    dropdownContent.style.display = "none";
+  }
+});
+menuButton.addEventListener("mouseover", () => {
+  // Open the dropdown when hovering over the menu button
+  dropdownContent.style.display = "block";
+});
+
+// Close the dropdown when the mouse leaves the dropdown area
+dropdownContent.addEventListener("mouseleave", () => {
+  dropdownContent.style.display = "none";
+});
+
+// -------------------------dropdown_menu_End----------------------------------
+
+// -------------------------Cart_data_Start------------------------------------
 
 function showCartModal() {
   const cartModal = document.getElementById("cartModal");
@@ -248,6 +290,7 @@ function showCartModal() {
    cartItemsContainer.appendChild(submitButton);
 }
 
+// -------------------------Cart_data_End------------------------------------
 
 function closeCartModal() {
   const cartModal = document.getElementById("cartModal");
