@@ -221,7 +221,7 @@ function showCartModal() {
       cartRow.appendChild(nameCell);
 
       const quantityCell = document.createElement("td");
-      quantityCell.classList.add("center-align");
+      // quantityCell.classList.add("center-align");
       
       const minusIcon = document.createElement("i");
       minusIcon.classList.add("fas", "fa-minus", "quantity-icon");
