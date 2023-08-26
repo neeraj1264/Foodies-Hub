@@ -89,7 +89,6 @@ function handleAddToCartClick(event) {
   const button = event.target.closest(".add-to-cart");
   if (button) {
     const GotoCart = button.parentNode.querySelector(".Go-to-Cart");
-    const quantityElement = GotoCart.querySelector(".quantity");
 
     button.style.display = "none";
     GotoCart.style.display = "flex";
@@ -172,6 +171,10 @@ function submitOrder(cartData) {
 // -------------------------Cart_data_Start------------------------------------
 
 function showCartModal() {
+  if (cartCount < 1) {
+    alert("Please add items to the cart first.");
+    return;
+  }
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "block";
 
@@ -186,7 +189,7 @@ function showCartModal() {
   table.classList.add("cart-table");
 
   const headerRow = document.createElement("tr");
-  const headerNames = ["Image", "Name", "Quantity", "Price", "Delete"];
+  const headerNames = ["Image", "Name", "Quantity", "Price"];
   for (const headerName of headerNames) {
     const headerCell = document.createElement("th");
     headerCell.textContent = headerName;
@@ -194,9 +197,8 @@ function showCartModal() {
       headerName === "Name" ||
       headerName === "Quantity" ||
       headerName === "Image" ||
-      headerName === "Price" ||
-      headerName === "Delete"
-    ) {
+      headerName === "Price" 
+      ) {
       headerCell.classList.add("header-spaced"); // Add the class for spacing
     }
     headerRow.appendChild(headerCell);
@@ -221,7 +223,7 @@ function showCartModal() {
       cartRow.appendChild(nameCell);
 
       const quantityCell = document.createElement("td");
-      // quantityCell.classList.add("center-align");
+      quantityCell.classList.add("center-align");
       
       const minusIcon = document.createElement("i");
       minusIcon.classList.add("fas", "fa-minus", "quantity-icon");
@@ -232,7 +234,15 @@ function showCartModal() {
           item.quantity--;
           quantityValue.textContent = item.quantity;
           updatePrice(item, priceCell);
+          TotalCell.textContent = `total: ${calculateTotal()}`; // Update the total amount
         }
+        else {
+          // Remove the item from the cart when quantity is less than one
+          delete cartData[itemId];
+          showCartModal(); // Refresh the cart modal after deleting an item
+          updateCartCount(); // Update the cart count
+          TotalCell.textContent = `total: ${calculateTotal()}`; // Update the total amount
+              }
       });
       quantityCell.appendChild(minusIcon);
       
@@ -249,6 +259,7 @@ function showCartModal() {
         item.quantity++;
         quantityValue.textContent = item.quantity;
         updatePrice(item, priceCell);
+        TotalCell.textContent = `total: ${calculateTotal()}`; // Update the total amount
       });
       quantityCell.appendChild(plusIcon);
       
@@ -259,30 +270,10 @@ function showCartModal() {
       priceCell.textContent = `₹ ${item.price * item.quantity}`;
       cartRow.appendChild(priceCell);
 
-      const deleteCell = document.createElement("td");
-      const deleteIcon = document.createElement("i");
-      deleteIcon.classList.add("center-align" , "fas", "fa-trash-alt", "delete-icon");
-      deleteIcon.setAttribute("data-item-id", itemId);
-      deleteCell.appendChild(deleteIcon);
-      cartRow.appendChild(deleteCell);
-
       table.appendChild(cartRow);
     }
   }
-  document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("delete-icon")) {
-      const itemId = event.target.getAttribute("data-item-id");
-      delete cartData[itemId]; // Remove the item from the cart
-  
-      // Check if the cart is empty
-      if (Object.keys(cartData).length === 0) {
-        closeCartModal(); // Close the cart modal if the cart is empty
-      } else {
-        showCartModal(); // Refresh the cart modal after deleting an item
-      }
-      updateCartCount(); // Update the cart count
-    }
-  });
+
   
   const emptyFooterRow = document.createElement("tr");
 const emptyFooterCell = document.createElement("td");
@@ -303,11 +294,11 @@ table.appendChild(emptyFooterRow);
   footerRow.appendChild(TotalCell);
 
   const emptyCell2 = document.createElement("td");
-  emptyCell2.setAttribute("colspan", "2"); 
+  emptyCell2.setAttribute("colspan", "1"); 
   footerRow.appendChild(emptyCell2);
 
     const submitCell = document.createElement("td");
-    submitCell.setAttribute("colspan", "3"); // Span 3 columns for the submit button
+    submitCell.setAttribute("colspan", "1"); // Span 3 columns for the submit button
     submitCell.classList.add("submit-cell"); // Add a custom class to style the submit cell
     footerRow.appendChild(submitCell);
       // Create the "Submit Order" button

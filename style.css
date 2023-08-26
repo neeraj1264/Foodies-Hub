@@ -617,7 +617,7 @@ header img {
   }
 
   .popular .box-container .box img {
-    height: 20rem;
+    height: 15rem;
   }
 
   .popular .box-container .box h3 {
@@ -631,15 +631,15 @@ header img {
   }
 
   .cart-table .header-spaced {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .cart-table .cart-footer {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .cart-table .submit-button {
-    font-size: .7rem;
+    font-size: 1rem;
   }
 
   .cart-table .center-align {
@@ -721,7 +721,8 @@ header img {
   background-color: #fff;
   max-width: 570px;
   margin: 20px auto;
-  padding: 20px;
+  /* padding: 20px; */
+  padding-left: 10px;
   border-radius: 20px;
   position: relative;
 }
