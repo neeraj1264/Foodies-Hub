@@ -226,6 +226,14 @@ function showCartModal() {
       const minusIcon = document.createElement("i");
       minusIcon.classList.add("fas", "fa-minus", "quantity-icon");
       minusIcon.setAttribute("data-item-id", itemId);
+      minusIcon.addEventListener("click", () => {
+        // Decrement the quantity when the minus icon is clicked
+        if (item.quantity > 1) {
+          item.quantity--;
+          quantityValue.textContent = item.quantity;
+          updatePrice(item, priceCell);
+        }
+      });
       quantityCell.appendChild(minusIcon);
       
       const quantityValue = document.createElement("span");
@@ -236,13 +244,19 @@ function showCartModal() {
       const plusIcon = document.createElement("i");
       plusIcon.classList.add("fas", "fa-plus", "quantity-icon");
       plusIcon.setAttribute("data-item-id", itemId);
+      plusIcon.addEventListener("click", () => {
+        // Increment the quantity when the plus icon is clicked
+        item.quantity++;
+        quantityValue.textContent = item.quantity;
+        updatePrice(item, priceCell);
+      });
       quantityCell.appendChild(plusIcon);
       
       cartRow.appendChild(quantityCell);
 
       const priceCell = document.createElement("td");
       priceCell.classList.add("center-align");
-      priceCell.textContent = `₹ ${item.price}`;
+      priceCell.textContent = `₹ ${item.price * item.quantity}`;
       cartRow.appendChild(priceCell);
 
       const deleteCell = document.createElement("td");
@@ -309,7 +323,10 @@ table.appendChild(emptyFooterRow);
    
    cartItemsContainer.appendChild(table);
 }
-
+function updatePrice(item, priceCell) {
+  // Update the price cell with the new calculated price
+  priceCell.textContent = `₹ ${item.price * item.quantity}`;
+}
 // -------------------------Cart_data_End------------------------------------
 
 function closeCartModal() {
