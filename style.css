@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
 :root {
   --red: #ff3838;
   --green: green;
@@ -28,6 +29,7 @@ html {
 body {
   background: #f7f7f7;
 }
+
 .header {
   position: fixed;
   left: 0;
@@ -45,11 +47,13 @@ body {
 .header #logo img {
   width: 60px;
 }
+
 header .navbar a {
   font-size: 2rem;
   margin-left: 2rem;
   color: black;
 }
+
 /* .content .dropdown a {
   font-size: 2rem;
   margin-left: 2rem;
@@ -58,6 +62,7 @@ header .navbar a {
 header .navbar a:hover {
   color: var(--btn-color);
 }
+
 /* .content .dropdown a:hover {
   color: var(--btn-color);
 } */
@@ -87,6 +92,7 @@ header .navbar a:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 #menu-bars {
   color: #666;
   padding: 0.5rem 1rem;
@@ -95,9 +101,11 @@ header .navbar a:hover {
   font-size: 3rem;
   display: none;
 }
+
 section {
   padding: 2rem 9%;
 }
+
 .heading {
   text-align: center;
   font-size: 3.5rem;
@@ -109,6 +117,7 @@ section {
 .heading span {
   color: var(--red);
 }
+
 /* home css design */
 
 .home {
@@ -121,6 +130,7 @@ section {
   align-items: center;
   flex-wrap: wrap;
 }
+
 .home .content {
   flex: 1 1 40rem;
   padding-top: 6.5rem;
@@ -130,6 +140,7 @@ section {
   font-size: 5rem;
   color: #333;
 }
+
 .home .content p {
   font-size: 1.5rem;
   color: #333;
@@ -316,11 +327,13 @@ section {
   background-color: orange;
   color: white;
 }
-.category-dropdown{
+
+.category-dropdown {
   height: 3rem;
   margin-top: 1.7rem;
   background: transparent;
 }
+
 .btn {
   display: inline-block;
   padding: 0.8rem 3rem;
@@ -334,6 +347,7 @@ section {
   z-index: 0;
   margin-top: 1rem;
 }
+
 .btn::before {
   content: "";
   position: absolute;
@@ -616,27 +630,33 @@ header img {
     font-size: 12px;
   }
 
- .cart-table .header-spaced{
+  .cart-table .header-spaced {
     font-size: 1rem;
   }
- .cart-table .cart-footer{
-    font-size: 1.4rem;
+
+  .cart-table .cart-footer {
+    font-size: 1rem;
   }
- .cart-table .submit-button{
+
+  .cart-table .submit-button {
     font-size: .7rem;
   }
-  .cart-table .center-align{
+
+  .cart-table .center-align {
     font-size: 1rem;
     font-weight: bold;
   }
-  .cart-table td img{
+
+  .cart-table td img {
     width: 25px;
     height: 25px;
   }
-  .cart-table .item-quantity{
-font-size: 1rem;
+
+  .cart-table .item-quantity {
+    font-size: 1rem;
   }
- .cart-table .navbar {
+
+  .navbar {
     position: absolute;
     top: 0;
     left: 0%;
@@ -645,9 +665,7 @@ font-size: 1rem;
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     clip-path: polygon(0 0, 100% 1%, 100% 0, 0 0);
   }
-.cart-table .quantity-icon{
-  font-size: .6rem;
-}
+
   .navbar.active {
     top: 100%;
     clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%);
@@ -658,7 +676,7 @@ font-size: 1rem;
     margin: 1.5rem;
     padding: 1.5rem;
     background: white;
-    display: none;
+    display: block;
     border: 0.2rem solid var(--about-sec);
     border-left: 0.5rem solid var(--btn-color);
   }
@@ -672,7 +690,7 @@ font-size: 1rem;
   .home .image img {
     width: 95%;
     padding-top: 8rem;
-  } 
+  }
 }
 
 @media (max-width: 450px) {
@@ -765,7 +783,8 @@ td img {
 
 .cart-footer {
   font-size: 1.5rem;
-  font-weight: bold;}
+  font-weight: bold;
+}
 
 /* -------------------Add CSS styles for dark mode------------------------------ */
 

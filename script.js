@@ -270,13 +270,17 @@ function showCartModal() {
     }
   });
   
-  
+  const emptyFooterRow = document.createElement("tr");
+const emptyFooterCell = document.createElement("td");
+emptyFooterCell.setAttribute("colspan", headerNames.length);
+emptyFooterRow.appendChild(emptyFooterCell);
+table.appendChild(emptyFooterRow);
 
   // Create a footer row for sub-total and total
   const footerRow = document.createElement("tr");
 
   const emptyCell = document.createElement("td");
-  emptyCell.setAttribute("colspan", "1"); // Span 1 columns for sub-total and total
+  emptyCell.setAttribute("colspan", "1"); 
   footerRow.appendChild(emptyCell);
 
   const TotalCell = document.createElement("td");
@@ -284,17 +288,14 @@ function showCartModal() {
   TotalCell.classList.add("cart-footer");
   footerRow.appendChild(TotalCell);
 
-  table.appendChild(footerRow);
+  const emptyCell2 = document.createElement("td");
+  emptyCell2.setAttribute("colspan", "2"); 
+  footerRow.appendChild(emptyCell2);
 
-  cartItemsContainer.appendChild(table);
-
-    // Create a footer row for sub-total and total
-    const submitrow = document.createElement("tr");
-
-    const emptyCell1 = document.createElement("td");
-    emptyCell1.setAttribute("colspan", "3");
-    submitrow.appendChild(emptyCell1);
-
+    const submitCell = document.createElement("td");
+    submitCell.setAttribute("colspan", "3"); // Span 3 columns for the submit button
+    submitCell.classList.add("submit-cell"); // Add a custom class to style the submit cell
+    footerRow.appendChild(submitCell);
       // Create the "Submit Order" button
    const submitButton = document.createElement("button");
    submitButton.textContent = "Place Order";
@@ -302,10 +303,11 @@ function showCartModal() {
    submitButton.addEventListener("click", () => {
     submitOrder(cartData);
    });
-  
-   submitrow.appendChild(submitButton);
- 
-    table.appendChild(submitrow);
+   submitCell.appendChild(submitButton); // Append the button to the submit cell
+
+   table.appendChild(footerRow);
+   
+   cartItemsContainer.appendChild(table);
 }
 
 // -------------------------Cart_data_End------------------------------------
