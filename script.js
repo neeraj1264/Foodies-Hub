@@ -115,6 +115,8 @@ function handleeAddToCartClick(event) {
 
     newButtonsContainer.style.display = "none";
     goButtonContainer.style.display = "flex";
+    cartCount++;
+    cartCountElement.textContent = cartCount;
   }
 }
 
