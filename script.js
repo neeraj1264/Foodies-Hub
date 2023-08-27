@@ -50,15 +50,15 @@ document.querySelector(".Pasta").addEventListener("click", (event) => {
 });
 
 document.querySelector(".Single_topping").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
+  handleeAddToCartClick(event);
 });
 
 document.querySelector(".Double_topping").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
+  handleeAddToCartClick(event);
 });
 
 document.querySelector(".Premium").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
+  handleeAddToCartClick(event);
 });
 
 document.querySelector(".Chinese").addEventListener("click", (event) => {
@@ -96,6 +96,25 @@ function handleAddToCartClick(event) {
     // Update cart count only when "Order Now" button is clicked
     cartCount++;
     cartCountElement.textContent = cartCount;
+  }
+}
+function handleeAddToCartClick(event) {
+  const btnn = event.target.closest(".btnn");
+
+  if (btnn) {
+    const newButtonsContainer = btnn.parentNode.querySelector('.new-buttons');
+
+    btnn.style.display = "none";
+    // goButtonContainer.style.display = "none";
+    newButtonsContainer.style.display = "flex";
+  }
+  const newButtonsContainer = event.target.closest(".new-buttons");
+
+  if (newButtonsContainer) {
+    const goButtonContainer = newButtonsContainer.parentNode.querySelector(".Go-to-Cart , .add-to-cart");
+
+    newButtonsContainer.style.display = "none";
+    goButtonContainer.style.display = "flex";
   }
 }
 
@@ -379,7 +398,7 @@ const item = products[i];
 if (i < 6) {
   Single += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price}</span>
+  <span class="price product-price"> ₹ ${item.price.Regular}</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" id="1">${item.name}</h3>
   <div class="stars">
@@ -389,72 +408,65 @@ if (i < 6) {
   <i class="fas fa-star"></i>
   <i class="fas fa-star"></i>
   </div>
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price.Regular}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  
-  // <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  <h2 class="btnn">ADD</h2>
+    <div class="Go-to-Cart" style="display: none;">
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
-  
-  </div>
-  </div>
+  <div class="new-buttons" style="display: none;">
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ 10</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
+</div>
   </div>
   `;
 }
 if (i >= 6 && i < 12) {
   Double += `
-    <div class="box">
-    <span class="price product-price"> ₹ ${item.price}</span>
-    <img src="${item.image}" alt="img">
-    <h3 class="product-name" id="1">${item.name}</h3>
-    <div class="stars">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
+  <div class="box" >
+  <span class="price product-price"> ₹ ${item.price.Regular}</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" id="1">${item.name}</h3>
+  <div class="stars">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
   </div>
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price.Regular}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <select class="category-dropdown">
-    <option value="Regular">Regular ₹ ${item.price.Regular} </option>
-    <option value="Medium">Medium ₹ ${item.price.Medium}</option>
-    <option value="Large">Large ₹ ${item.price.Large}</option>
-  </select>
+  <h2 class="btnn">ADD</h2>
+    <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
-      </div>
-    </div>
+  <div class="new-buttons" style="display: none;">
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ 10</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
+</div>
   </div>
   `;
 }
 if (i >= 12 && i < 20) {
   Premium += `
-    <div class="box">
-    <span class="price product-price"> ₹ ${item.price}</span>
-    <img src="${item.image}" alt="img">
-    <h3 class="product-name" id="1">${item.name}</h3>
-    <div>
-    ${item.p}
-    </div>
-    <div class="stars">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
+  <div class="box" >
+  <span class="price product-price"> ₹ ${item.price.Regular}</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" id="1">${item.name}</h3>
+  <div class="stars">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
   </div>
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price.Regular}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <select class="category-dropdown">
-    <option value="Regular">Regular ₹ ${item.price.Regular} </option>
-    <option value="Medium">Medium ₹ ${item.price.Medium}</option>
-    <option value="Large">Large ₹ ${item.price.Large}</option>
-  </select>
+  <h2 class="btnn">ADD</h2>
+    <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
-  
-  </div>
-  </div>
+  <div class="new-buttons" style="display: none;">
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ 10</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
+</div>
   </div>
   `;
 }
