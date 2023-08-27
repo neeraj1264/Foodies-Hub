@@ -2,9 +2,13 @@
     {
         "id": 1,
         "name": "Onion pizza ",
+        "namee": {
+            "R": "Onion Pizza [Reg]",
+            "M": "Onion Pizza [Med]",
+            "L": "Onion Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -14,9 +18,13 @@
     {
         "id": 2,
         "name": "Capsicum Pizza ",
+        "namee": {
+            "R": "Capsicum Pizza [Reg]",
+            "M": "Capsicum Pizza [Med]",
+            "L": "Capsicum Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -26,9 +34,13 @@
     {
         "id": 3,
         "name": "Tomato Pizza ",
+        "namee": {
+            "R": "Tomato Pizza [Reg]",
+            "M": "Tomato Pizza [Med]",
+            "L": "Tomato Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -38,9 +50,13 @@
     {
         "id": 4,
         "name": "Sweetcorn Pizza ",
+        "namee": {
+            "R": "Sweetcorn Pizza [Reg]",
+            "M": "Sweetcorn Pizza [Med]",
+            "L": "Sweetcorn Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -50,9 +66,13 @@
     {
         "id": 5,
         "name": "Mushroom Pizza ",
+        "namee": {
+            "R": "Mushroom Pizza [Reg]",
+            "M": "Mushroom Pizza [Med]",
+            "L": "Mushroom Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -62,9 +82,13 @@
     {
         "id": 6,
         "name": "Margharita Pizza",
+        "namee": {
+            "R": "Margharita Pizza [Reg]",
+            "M": "Margharita Pizza [Med]",
+            "L": "Margharita Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -74,9 +98,13 @@
     {
         "id": 7,
         "name": "Sweetcorn Tomato Pizza ",
+        "namee": {
+            "R": "Sweetcorn Tomato Pizza [Reg]",
+            "M": "Sweetcorn Tomato Pizza [Med]",
+            "L": "Sweetcorn Tomato Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -86,9 +114,13 @@
     {
         "id": 8,
         "name": "Onion Capsicum Pizza ",
+        "namee": {
+            "R": "Onion Capsicum Pizza [Reg]",
+            "M": "Onion Capsicum Pizza [Med]",
+            "L": "Onion Capsicum Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -98,9 +130,13 @@
     {
         "id": 9,
         "name": "Onion Tomato Pizza ",
+        "namee": {
+            "R": "Onion Tomato Pizza [Reg]",
+            "M": "Onion Tomato Pizza [Med]",
+            "L": "Onion Tomato Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -110,9 +146,13 @@
     {
         "id": 10,
         "name": "Paneer Onion Pizza ",
+        "namee": {
+            "R": "Paneer Onion Pizza [Reg]",
+            "M": "Paneer Onion Pizza [Med]",
+            "L": "Paneer Onion Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -122,9 +162,13 @@
     {
         "id": 11,
         "name": "Capsicum Tomato Pizza ",
+        "namee": {
+            "R": "Capsicum Tomato Pizza [Reg]",
+            "M": "Capsicum Tomato Pizza [Med]",
+            "L": "Capsicum Tomato Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -134,9 +178,13 @@
     {
         "id": 12,
         "name": "Onion Sweetcorn Pizza ",
+        "namee": {
+            "R": "Onion Sweetcorn Pizza [Reg]",
+            "M": "Onion Sweetcorn Pizza [Med]",
+            "L": "Onion Sweetcorn Pizza [Large]"
+        },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -146,9 +194,13 @@
     ,{
         "id": 13,
         "name": "Farm fresh Pizza",
+        "namee": {
+            "R": "Farm fresh Pizza [Reg]",
+            "M": "Farm fresh Pizza [Med]",
+            "L": "Farm fresh Pizza [Large]"
+        },
         "p" : " Topping:- Mushroom + Capsicum + Tomato + Onion",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -158,9 +210,13 @@
     {
         "id": 14,
         "name": "Country Special Pizza",
+        "namee": {
+            "R": "Country Special Pizza [Reg]",
+            "M": "Country Special Pizza [Med]",
+            "L": "Country Special Pizza [Large]"
+        },
         "p" : "Topping:- Onion + capsicum + Tomato + black olives",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -171,9 +227,13 @@
     {
         "id": 15,
         "name": "Veggie spl. pizza",
+        "namee": {
+            "R": "Veggie spl. Pizza [Reg]",
+            "M": "Veggie spl. Pizza [Med]",
+            "L": "Veggie spl. Pizza [Large]"
+        },
         "p" : "Topping:- Capsicum + onion + tomato + corn",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -183,10 +243,14 @@
     ,
     {
         "id": 16,
-        "name": "mix veg. pizza",
+        "name": "Mix veg. pizza",
+        "namee": {
+            "R": "Mix veg. Pizza [Reg]",
+            "M": "Mix veg. Pizza [Med]",
+            "L": "Mix veg. Pizza [Large]"
+        },
         "p" : "Topping:- Tomato + Capsicum + mushroom + jalapenos",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -197,9 +261,13 @@
     {
         "id": 17,
         "name": "MAKHNI PIZZA",
+        "namee": {
+            "R": "MAKHNI Pizza [Reg]",
+            "M": "MAKHNI Pizza [Med]",
+            "L": "MAKHNI Pizza [Large]"
+        },
         "p" : "Topping:- Makhni Sauce + Capsicum + paneer+ onion",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -210,9 +278,13 @@
     {
         "id": 18,
         "name": "TANDOORI PIZZA",
+        "namee": {
+            "R": "TANDOORI Pizza [Reg]",
+            "M": "TANDOORI Pizza [Med]",
+            "L": "TANDOORI Pizza [Large]"
+        },
         "p" : "Topping:- Tandoori Sauce + red paprika +  paneer + onion",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -222,10 +294,14 @@
     ,
     {
         "id": 19,
-        "name": "PAPPY PANEER PIZZA",
+        "name": "PAPPY PANEER PIZZA", 
+        "namee": {
+            "R": "PAPPY PANEER Pizza [Reg]",
+            "M": "PAPPY PANEER Pizza [Med]",
+            "L": "PAPPY PANEER Pizza [Large]"
+        },
         "p" : "Topping:- Capsicum + paneer + sweet corn + Red paprika",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
@@ -236,9 +312,13 @@
     {
         "id": 20,
         "name": "ITALIAN PIZZA ",
+        "namee": {
+            "R": "ITALIAN Pizza [Reg]",
+            "M": "ITALIAN Pizza [Med]",
+            "L": "ITALIAN Pizza [Large]"
+        },
         "p" : "Topping:- Jalapenos + Capsicum + Tomato + mushroom",
-        "price": 70,
-        "pricee": {
+        "price": {
             "Regular": 70,
             "Medium": 120,
             "Large": 180
