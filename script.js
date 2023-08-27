@@ -124,7 +124,7 @@ function handleeAddToCartClick(event) {
 
 // Calculate and return the sub-total of all items in the cart
 function calculateTotal() {
-  let Total = 0;
+  let Total = 20;
   for (const itemId in cartData) {
     if (cartData.hasOwnProperty(itemId)) {
       Total += cartData[itemId].quantity * cartData[itemId].price;
@@ -255,7 +255,7 @@ function showCartModal() {
           item.quantity--;
           quantityValue.textContent = item.quantity;
           updatePrice(item, priceCell);
-          TotalCell.textContent = `total: ${calculateTotal()}`; // Update the total amount
+          TotalCell.textContent = `total: ${calculateTotal()}` ; // Update the total amount
         }
         else {
           // Remove the item from the cart when quantity is less than one
@@ -415,7 +415,7 @@ if (i < 6) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ 10</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹:10</button>
   <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
   <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
 </div>
