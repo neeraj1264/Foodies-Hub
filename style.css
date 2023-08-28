@@ -549,6 +549,15 @@ header img {
   flex: 1 1 30rem;
 }
 
+.footer-hr-cell {
+  border-bottom: 1px solid #acaaaa; 
+  padding: 5px 0; 
+}
+
+.footer-hr-cell > * {
+  vertical-align: middle;
+}
+
 .order .row .image img {
   height: 100%;
   width: 100%;
@@ -621,7 +630,7 @@ header img {
   }
 
   section {
-    padding: 2rem;
+    padding: 3rem;
   }
 
   .home .image img {
@@ -634,7 +643,9 @@ header img {
   html {
     font-size: 50%;
   }
-
+.popular{
+  padding: 3rem;
+}
   #menu-bars {
     display: initial;
   }
@@ -652,19 +663,35 @@ header img {
   }
 
   .popular .box-container .box img {
-    height: 15rem;
+    height: 12rem;
   }
 
   .popular .box-container .box h3 {
     font-size: 1.2rem;
   }
 
+  .popular .box-container .box .star i {
+    font-size: 1.5rem;
+  }
+
+  .popular .box-container .box .price {
+   padding: .3rem 1rem;
+    font-size: 1.5rem;
+  }
   .popular .box-container .box .category-dropdown {
     height: 2.5rem;
     width: 4rem;
     font-size: 12px;
   }
 
+  .btnn {
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .popup-option{
+    font-size: .6rem;
+  }
   .cart-table .header-spaced {
     font-size: 1.2rem;
   }
@@ -691,7 +718,7 @@ header img {
     font-size: 1rem;
   }
 .new-buttons{
-  padding: 0;
+
 }
   .navbar {
     position: absolute;
@@ -825,17 +852,34 @@ td img {
 }
 
 /* -------------------Add CSS styles for dark mode------------------------------ */
-/* 
+
 body.dark-mode {
   background-color: rgba(0, 0, 0, 0.237);
   color: white;
+}
+body.dark-mode .popup-option {
+background: black;
+}
+body.dark-mode .navbar {
+  background: black;
 }
 
 body.dark-mode .home {
   background-image: none;
   background-color: grey;
 }
-
+body.dark-mode .popular .box-container .box {
+background-color: black;
+}
+body.dark-mode .review .box-container .box {
+  background-color: black;
+}
+body.dark-mode .review .box-container .box h3 {
+  color: white; 
+}
+body.dark-mode .review .box-container .box p {
+  color: white; 
+}
 body.dark-mode .home .content h3,
 body.dark-mode .home .content p {
   color: white;
@@ -844,12 +888,25 @@ body.dark-mode .home .content p {
 body.dark-mode .header {
   background-color: black;
 }
-
+body.dark-mode .modal-content {
+  background-color: black;
+}
 body.dark-mode .dropdown-content {
   background-color: black;
   color: white;
 }
-
+body.dark-mode .main-box-speciality .box .content {
+background: black;
+}
+body.dark-mode .speciality .main-box-speciality .box .content h3 {
+  color: white
+}
+body.dark-mode .popular .box-container .box h3 {
+  color: white;
+}
+body.dark-mode .contact-col div h5 {
+  color: white;
+}
 body.dark-mode .dropdown {
   color: white;
 }
@@ -860,6 +917,7 @@ body.dark-mode .dropdown:hover {
 
 body.dark-mode .header a {
   color: white;
+  background: black;
 }
 
 body.dark-mode .header a:hover {
@@ -876,7 +934,7 @@ body.dark-mode .header a:hover {
 
 .dark-mode-toggle #mode-icon {
   font-size: 2.5rem;
-} */
+}
 
 /*------------------------contact-us style---------------------------*/
 
@@ -914,6 +972,7 @@ body.dark-mode .header a:hover {
 }
 
 .submit-button {
+  margin: 1rem;
   text-align: center;
   background-color: green;
   color: white;

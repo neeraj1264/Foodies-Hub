@@ -122,9 +122,9 @@ function handleeAddToCartClick(event) {
 
 // ---------------------cart Data code-----------------------------
 
-// Calculate and return the sub-total of all items in the cart
-function calculateTotal() {
-  let Total = 20;
+function  calculateitemTotal() {
+  let Total = 0;
+  
   for (const itemId in cartData) {
     if (cartData.hasOwnProperty(itemId)) {
       Total += cartData[itemId].quantity * cartData[itemId].price;
@@ -133,6 +133,15 @@ function calculateTotal() {
   return `₹ ${Total.toFixed(2)}`;
 }
 
+function  calculateTotal() {
+  let Total = 20;
+  for (const itemId in cartData) {
+    if (cartData.hasOwnProperty(itemId)) {
+      Total += cartData[itemId].quantity * cartData[itemId].price;
+    }
+  }
+  return `₹ ${Total.toFixed(2)}`;
+}
 function submitOrder(cartData) {
   var message = "I would like to order:\n";
 
@@ -144,7 +153,7 @@ function submitOrder(cartData) {
   }
 
   // Calculate the total amount
-  var totalAmount = calculateTotal();
+  var totalAmount =  calculateTotal();
   message += `\nTotal amount: ${totalAmount}`;
 
   // Replace 'YOUR_WHATSAPP_NUMBER' with the actual WhatsApp number
@@ -188,12 +197,18 @@ function submitOrder(cartData) {
 // });
 
 // -------------------------dropdown_menu_End----------------------------------
-
+let isCartModalOpen = false;
 // -------------------------Cart_data_Start------------------------------------
 
 function showCartModal() {
+
+  document.getElementById("cartModal").style.display = "block";
+  isCartModalOpen = true;
+  document.getElementById("dark-mode-toggle").style.display = "none";
+
   if (cartCount < 1) {
     alert("Please add items to the cart first.");
+    closeCartModal();
     return;
   }
   const cartModal = document.getElementById("cartModal");
@@ -255,14 +270,18 @@ function showCartModal() {
           item.quantity--;
           quantityValue.textContent = item.quantity;
           updatePrice(item, priceCell);
-          TotalCell.textContent = `total: ${calculateTotal()}` ; // Update the total amount
+           Itemtotalcell.textContent = `${ calculateitemTotal()}` ; // Update the total amount
+           totalcell.textContent = `${ calculateTotal()}` ; // Update the total amount
+
         }
         else {
           // Remove the item from the cart when quantity is less than one
           delete cartData[itemId];
           showCartModal(); // Refresh the cart modal after deleting an item
           updateCartCount(); // Update the cart count
-          TotalCell.textContent = `total: ${calculateTotal()}`; // Update the total amount
+           Itemtotalcell.textContent = `${ calculateitemTotal()}`; // Update the total amount
+           totalcell.textContent = `${ calculateTotal()}` ; // Update the total amount
+
               }
       });
       quantityCell.appendChild(minusIcon);
@@ -280,7 +299,8 @@ function showCartModal() {
         item.quantity++;
         quantityValue.textContent = item.quantity;
         updatePrice(item, priceCell);
-        TotalCell.textContent = `total: ${calculateTotal()}`; // Update the total amount
+         Itemtotalcell.textContent = `${ calculateitemTotal()}`; // Update the total amount
+         totalcell.textContent = `${ calculateTotal()}` ; // Update the total amount
       });
       quantityCell.appendChild(plusIcon);
       
@@ -292,36 +312,114 @@ function showCartModal() {
       cartRow.appendChild(priceCell);
 
       table.appendChild(cartRow);
-    }
-  }
 
-  
-  const emptyFooterRow = document.createElement("tr");
+     }
+  }
+// ------------------------------------horizontal-line start------------------------------------
+
+const emptyFooterRow1 = document.createElement("tr");
+
+const emptyFooterCell1 = document.createElement("td");
+emptyFooterCell1.classList.add("footer-hr-cell"); // Add a class to this cell
+emptyFooterRow1.appendChild(emptyFooterCell1);
+
+const emptyFooterCell2 = document.createElement("td");
+emptyFooterCell2.classList.add("footer-hr-cell"); // Add a class to this cell
+emptyFooterRow1.appendChild(emptyFooterCell2);
+
+const emptyFooterCell3 = document.createElement("td");
+emptyFooterCell3.classList.add("footer-hr-cell"); // Add a class to this cell
+emptyFooterRow1.appendChild(emptyFooterCell3);
+
+const emptyFooterCell4 = document.createElement("td");
+emptyFooterCell4.classList.add("footer-hr-cell"); // Add a class to this cell
+emptyFooterRow1.appendChild(emptyFooterCell4);
+
+table.appendChild(emptyFooterRow1);
+
+// ------------------------------------Empty-row------------------------------------
+
+const emptyFooterRow = document.createElement("tr");
 const emptyFooterCell = document.createElement("td");
 emptyFooterCell.setAttribute("colspan", headerNames.length);
 emptyFooterRow.appendChild(emptyFooterCell);
 table.appendChild(emptyFooterRow);
 
-  // Create a footer row for sub-total and total
-  const footerRow = document.createElement("tr");
+// ------------------------------------itemtotal-row------------------------------------
+
+const itemtotal = document.createElement("tr");
+
+const emptyCell3 = document.createElement("td");
+      emptyCell3.textContent = ("Item-Total");
+      emptyCell3.classList.add("cart-footer");
+      itemtotal.appendChild(emptyCell3);
+
+const emptyCell4 = document.createElement("td");
+  emptyCell4.setAttribute("colspan", "2"); 
+  itemtotal.appendChild(emptyCell4);
+
+  const  Itemtotalcell = document.createElement("td");
+   Itemtotalcell.textContent = `${ calculateitemTotal()}`  ;
+   Itemtotalcell.classList.add("cart-footer");
+  itemtotal.appendChild( Itemtotalcell);
+
+  table.appendChild(itemtotal);
+
+// ------------------------------------delivery-row------------------------------------
+
+const delivery = document.createElement("tr");
+
+const emptyCell5 = document.createElement("td");
+      emptyCell5.textContent = ("Delivery");
+      emptyCell5.classList.add("cart-footer");
+      delivery.appendChild(emptyCell5);
+
+const emptyCell6 = document.createElement("td");
+  emptyCell6.setAttribute("colspan", "2"); 
+  delivery.appendChild(emptyCell6);
+
+  const deliverycell = document.createElement("td");
+  deliverycell.textContent = ("₹ 20")  ;
+  deliverycell.classList.add("cart-footer");
+  delivery.appendChild(deliverycell);
+
+  table.appendChild(delivery);
+  
+// ------------------------------------Total-row------------------------------------
+
+const Total = document.createElement("tr");
+
+const emptyCell7 = document.createElement("td");
+      emptyCell7.textContent = ("Total");
+      emptyCell7.classList.add("cart-footer");
+      Total.appendChild(emptyCell7);
+
+const emptyCell8 = document.createElement("td");
+  emptyCell8.setAttribute("colspan", "2"); 
+  Total.appendChild(emptyCell8);
+
+  const  totalcell = document.createElement("td");
+   totalcell.textContent = `${ calculateTotal()}`  ;
+   totalcell.classList.add("cart-footer");
+   Total.appendChild( totalcell);
+
+  table.appendChild(Total);
+// ------------------------------------submit-row------------------------------------
+
+  const submitrow = document.createElement("tr");
 
   const emptyCell = document.createElement("td");
-  emptyCell.setAttribute("colspan", "1"); 
-  footerRow.appendChild(emptyCell);
+  emptyCell.setAttribute("colspan", "3"); 
+ submitrow.appendChild(emptyCell);
 
-  const TotalCell = document.createElement("td");
-  TotalCell.textContent = `total: ${calculateTotal()}`  ;
-  TotalCell.classList.add("cart-footer");
-  footerRow.appendChild(TotalCell);
-
-  const emptyCell2 = document.createElement("td");
-  emptyCell2.setAttribute("colspan", "1"); 
-  footerRow.appendChild(emptyCell2);
+  // const emptyCell2 = document.createElement("td");
+  // emptyCell2.setAttribute("colspan", "1"); 
+  //submitrow.appendChild(emptyCell2);
 
     const submitCell = document.createElement("td");
     submitCell.setAttribute("colspan", "1"); // Span 3 columns for the submit button
     submitCell.classList.add("submit-cell"); // Add a custom class to style the submit cell
-    footerRow.appendChild(submitCell);
+   submitrow.appendChild(submitCell);
       // Create the "Submit Order" button
    const submitButton = document.createElement("button");
    submitButton.textContent = "Place Order";
@@ -331,8 +429,14 @@ table.appendChild(emptyFooterRow);
    });
    submitCell.appendChild(submitButton); // Append the button to the submit cell
 
-   table.appendChild(footerRow);
+   table.appendChild(submitrow);
    
+const emptyFooterRow2 = document.createElement("tr");
+const emptyFooterCell5 = document.createElement("td");
+emptyFooterCell5.setAttribute("colspan", headerNames.length);
+emptyFooterRow2.appendChild(emptyFooterCell5);
+table.appendChild(emptyFooterRow2);
+
    cartItemsContainer.appendChild(table);
 }
 function updatePrice(item, priceCell) {
@@ -342,6 +446,9 @@ function updatePrice(item, priceCell) {
 // -------------------------Cart_data_End------------------------------------
 
 function closeCartModal() {
+  document.getElementById("cartModal").style.display = "none";
+  isCartModalOpen = false;
+  document.getElementById("dark-mode-toggle").style.display = "block";
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
   location.reload();
@@ -400,7 +507,7 @@ const item = products[i];
 if (i < 6) {
   Single += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price.Regular}</span>
+  <span class="price product-price"> ₹ ${item.price.Small}</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" id="1">${item.name}</h3>
   <div class="stars">
@@ -415,9 +522,8 @@ if (i < 6) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹:10</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.S}', ${item.price.Small}, '${item.image}')">Small ₹ ${item.price.Small}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Regular ₹ ${item.price.Regular}</button>
 </div>
   </div>
   `;
@@ -425,7 +531,7 @@ if (i < 6) {
 if (i >= 6 && i < 12) {
   Double += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price.Regular}</span>
+  <span class="price product-price"> ₹ ${item.price.Small}</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" id="1">${item.name}</h3>
   <div class="stars">
@@ -440,9 +546,9 @@ if (i >= 6 && i < 12) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ 10</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.S}', ${item.price.Small}, '${item.image}')">Small ₹ ${item.price.Small}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ ${item.price.Regular}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ ${item.price.Medium}</button>
 </div>
   </div>
   `;
@@ -466,9 +572,9 @@ if (i >= 12 && i < 20) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ 10</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ 20</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ 30</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ ${item.price.Regular}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ ${item.price.Medium}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ ${item.price.Large}</button>
 </div>
   </div>
   `;
@@ -697,19 +803,19 @@ document.querySelector(".Momos").innerHTML = Momos;
 };
 
 //  ------------------Function to toggle dark mode-----------------------------
-// function toggleDarkMode() {
-//   const body = document.body;
-//   body.classList.toggle("dark-mode");
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
 
-//   // Get the mode icon element
-//   const modeIcon = document.getElementById("mode-icon");
+  // Get the mode icon element
+  const modeIcon = document.getElementById("mode-icon");
 
-//   // Toggle the icon between moon and sun based on the dark mode class
-//   if (body.classList.contains("dark-mode")) {
-//     modeIcon.classList.remove("fa-moon");
-//     modeIcon.classList.add("fa-sun");
-//   } else {
-//     modeIcon.classList.remove("fa-sun");
-//     modeIcon.classList.add("fa-moon");
-//   }
-// }
+  // Toggle the icon between moon and sun based on the dark mode class
+  if (body.classList.contains("dark-mode")) {
+    modeIcon.classList.remove("fa-moon");
+    modeIcon.classList.add("fa-sun");
+  } else {
+    modeIcon.classList.remove("fa-sun");
+    modeIcon.classList.add("fa-moon");
+  }
+}

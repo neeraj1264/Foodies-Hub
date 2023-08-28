@@ -3,15 +3,13 @@
         "id": 1,
         "name": "Onion pizza ",
         "namee": {
-            "R": "Onion Pizza [Regular]",
-            "M": "Onion Pizza [Medium]",
-            "L": "Onion Pizza [Large]"
+            "S": "Onion Pizza [Small]",
+            "R": "Onion Pizza [Regular]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 70,
+            "Regular": 100
         },
         "image": "images/onion.jpg"
     },
@@ -19,15 +17,13 @@
         "id": 2,
         "name": "Capsicum Pizza ",
         "namee": {
-            "R": "Capsicum Pizza [Regular]",
-            "M": "Capsicum Pizza [Medium]",
-            "L": "Capsicum Pizza [Large]"
+            "S": "Onion Pizza [Small]",
+            "R": "Onion Pizza [Regular]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 70,
+            "Regular": 100
         },
         "image": "images/onion.jpg"
     },
@@ -35,15 +31,13 @@
         "id": 3,
         "name": "Tomato Pizza ",
         "namee": {
-            "R": "Tomato Pizza [Regular]",
-            "M": "Tomato Pizza [Medium]",
-            "L": "Tomato Pizza [Large]"
+            "S": "Onion Pizza [Small]",
+            "R": "Onion Pizza [Regular]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 70,
+            "Regular": 100
         },
         "image": "images/onion.jpg"
     }  ,
@@ -51,15 +45,13 @@
         "id": 4,
         "name": "Sweetcorn Pizza ",
         "namee": {
-            "R": "Sweetcorn Pizza [Regular]",
-            "M": "Sweetcorn Pizza [Medium]",
-            "L": "Sweetcorn Pizza [Large]"
+            "S": "Onion Pizza [Small]",
+            "R": "Onion Pizza [Regular]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 80,
+            "Regular": 100
         },
         "image": "images/onion.jpg"
     },
@@ -67,15 +59,13 @@
         "id": 5,
         "name": "Mushroom Pizza ",
         "namee": {
-            "R": "Mushroom Pizza [Regular]",
-            "M": "Mushroom Pizza [Medium]",
-            "L": "Mushroom Pizza [Large]"
+            "S": "Onion Pizza [Small]",
+            "R": "Onion Pizza [Regular]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 80,
+            "Regular": 100
         },
         "image": "images/onion.jpg"
     },
@@ -83,63 +73,61 @@
         "id": 6,
         "name": "Margharita Pizza",
         "namee": {
-            "R": "Margharita Pizza [Regular]",
-            "M": "Margharita Pizza [Medium]",
-            "L": "Margharita Pizza [Large]"
+            "S": "Onion Pizza [Small]",
+            "R": "Onion Pizza [Regular]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 80,
+            "Regular": 100
         },
         "image": "images/onion.jpg"
     }  ,
     {
-        "id": 7,
+        "id": 11,
         "name": "Sweetcorn Tomato Pizza ",
         "namee": {
+            "S": "Sweetcorn Tomato Pizza [Small]",
             "R": "Sweetcorn Tomato Pizza [Regular]",
-            "M": "Sweetcorn Tomato Pizza [Medium]",
-            "L": "Sweetcorn Tomato Pizza [Large]"
+            "M": "Sweetcorn Tomato Pizza [Medium]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 100,
+            "Regular": 100,
+            "Medium": 210
+        },
+        "image": "images/onioncapsicum.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Onion Capsicum Pizza ",
+        "namee": {
+            "S": "Sweetcorn Tomato Pizza [Small]",
+            "R": "Sweetcorn Tomato Pizza [Regular]",
+            "M": "Sweetcorn Tomato Pizza [Medium]"
+        },
+        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
+        "price": {
+            "Small": 90,
+            "Regular": 130,
+            "Medium": 210
         },
         "image": "images/onioncapsicum.jpg"
     },
     {
         "id": 8,
-        "name": "Onion Capsicum Pizza ",
-        "namee": {
-            "R": "Onion Capsicum Pizza [Regular]",
-            "M": "Onion Capsicum Pizza [Medium]",
-            "L": "Onion Capsicum Pizza [Large]"
-        },
-        "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
-        "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
-        },
-        "image": "images/onioncapsicum.jpg"
-    },
-    {
-        "id": 9,
         "name": "Onion Tomato Pizza ",
         "namee": {
-            "R": "Onion Tomato Pizza [Regular]",
-            "M": "Onion Tomato Pizza [Medium]",
-            "L": "Onion Tomato Pizza [Large]"
+            "S": "Sweetcorn Tomato Pizza [Small]",
+            "R": "Sweetcorn Tomato Pizza [Regular]",
+            "M": "Sweetcorn Tomato Pizza [Medium]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 90,
+            "Regular": 130,
+            "Medium": 210
         },
         "image": "images/onioncapsicum.jpg"
     },
@@ -147,31 +135,31 @@
         "id": 10,
         "name": "Paneer Onion Pizza ",
         "namee": {
-            "R": "Paneer Onion Pizza [Regular]",
-            "M": "Paneer Onion Pizza [Medium]",
-            "L": "Paneer Onion Pizza [Large]"
+            "S": "Sweetcorn Tomato Pizza [Small]",
+            "R": "Sweetcorn Tomato Pizza [Regular]",
+            "M": "Sweetcorn Tomato Pizza [Medium]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 100,
+            "Regular": 130,
+            "Medium": 210
         },
         "image": "images/onioncapsicum.jpg"
     },
     {
-        "id": 11,
+        "id": 9,
         "name": "Capsicum Tomato Pizza ",
         "namee": {
-            "R": "Capsicum Tomato Pizza [Regular]",
-            "M": "Capsicum Tomato Pizza [Medium]",
-            "L": "Capsicum Tomato Pizza [Large]"
+            "S": "Sweetcorn Tomato Pizza [Small]",
+            "R": "Sweetcorn Tomato Pizza [Regular]",
+            "M": "Sweetcorn Tomato Pizza [Medium]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 90,
+            "Regular": 130,
+            "Medium": 210
         },
         "image": "images/onioncapsicum.jpg"
     },
@@ -179,15 +167,15 @@
         "id": 12,
         "name": "Onion Sweetcorn Pizza ",
         "namee": {
-            "R": "Onion Sweetcorn Pizza [Regular]",
-            "M": "Onion Sweetcorn Pizza [Medium]",
-            "L": "Onion Sweetcorn Pizza [Large]"
+            "S": "Sweetcorn Tomato Pizza [Small]",
+            "R": "Sweetcorn Tomato Pizza [Regular]",
+            "M": "Sweetcorn Tomato Pizza [Medium]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Small": 100,
+            "Regular": 130,
+            "Medium": 210
         },
         "image": "images/onioncapsicum.jpg"
     }
@@ -201,9 +189,9 @@
         },
         "p" : "Topping:- Mushroom + Capsicum + Tomato + Onion",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 160,
+            "Medium": 310,
+            "Large": 420
         },
         "image": "images/s-img-2.jpg"
     } ,
@@ -217,9 +205,9 @@
         },
         "p" : "Topping:- Onion + capsicum + Tomato + black olives",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 160,
+            "Medium": 310,
+            "Large": 420
         },
         "image": "images/s-img-2.jpg"
     }
@@ -234,9 +222,9 @@
         },
         "p" : "Topping:- Capsicum + onion + tomato + corn",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 160,
+            "Medium": 310,
+            "Large": 420
         },
         "image": "images/s-img-2.jpg"
     }
@@ -251,9 +239,9 @@
         },
         "p" : "Topping:- Tomato + Capsicum + mushroom + jalapenos",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 160,
+            "Medium": 310,
+            "Large": 420
         },
         "image": "images/s-img-2.jpg"
     }
@@ -268,9 +256,9 @@
         },
         "p" : "Topping:- Makhni Sauce + Capsicum + paneer+ onion",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 180,
+            "Medium": 370,
+            "Large": 500
         },
         "image": "images/s-img-2.jpg"
     }
@@ -285,9 +273,9 @@
         },
         "p" : "Topping:- Tandoori Sauce + red paprika +  paneer + onion",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 180,
+            "Medium": 370,
+            "Large": 500
         },
         "image": "images/s-img-2.jpg"
     }
@@ -302,9 +290,9 @@
         },
         "p" : "Topping:- Capsicum + paneer + sweet corn + Red paprika",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 180,
+            "Medium": 370,
+            "Large": 500
         },
         "image": "images/s-img-2.jpg"
     }
@@ -319,9 +307,9 @@
         },
         "p" : "Topping:- Jalapenos + Capsicum + Tomato + mushroom",
         "price": {
-            "Regular": 70,
-            "Medium": 120,
-            "Large": 180
+            "Regular": 180,
+            "Medium": 370,
+            "Large": 500
         },
         "image": "images/s-img-2.jpg"
     } ,
