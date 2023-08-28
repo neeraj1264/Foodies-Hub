@@ -460,6 +460,7 @@ if (i >= 12 && i < 20) {
   <i class="fas fa-star"></i>
   <i class="fas fa-star"></i>
   </div>
+  <p>${item.p}</p>
   <h2 class="btnn">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -614,7 +615,7 @@ if (i >= 44 && i < 50) {
 Chaap += `
 <div class="box" >
 <span class="price product-price"> ₹ ${item.price}</span>
-<img src="${item.image}" alt="img">
+<img src="${item.image}" alt="${item.name}">
 <h3 class="product-name" id="1">${item.name}</h3>
 <div class="stars">
 <i class="fas fa-star"></i>
@@ -696,19 +697,19 @@ document.querySelector(".Momos").innerHTML = Momos;
 };
 
 //  ------------------Function to toggle dark mode-----------------------------
-function toggleDarkMode() {
-  const body = document.body;
-  body.classList.toggle("dark-mode");
+// function toggleDarkMode() {
+//   const body = document.body;
+//   body.classList.toggle("dark-mode");
 
-  // Get the mode icon element
-  const modeIcon = document.getElementById("mode-icon");
+//   // Get the mode icon element
+//   const modeIcon = document.getElementById("mode-icon");
 
-  // Toggle the icon between moon and sun based on the dark mode class
-  if (body.classList.contains("dark-mode")) {
-    modeIcon.classList.remove("fa-moon");
-    modeIcon.classList.add("fa-sun");
-  } else {
-    modeIcon.classList.remove("fa-sun");
-    modeIcon.classList.add("fa-moon");
-  }
-}
+//   // Toggle the icon between moon and sun based on the dark mode class
+//   if (body.classList.contains("dark-mode")) {
+//     modeIcon.classList.remove("fa-moon");
+//     modeIcon.classList.add("fa-sun");
+//   } else {
+//     modeIcon.classList.remove("fa-sun");
+//     modeIcon.classList.add("fa-moon");
+//   }
+// }

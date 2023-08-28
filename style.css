@@ -322,7 +322,7 @@ section {
 
 .quantity-icon {
   /* border: 1px solid black; */
-  margin: 3px;
+  margin: 1px;
   padding: 3px 3px;
   background-color: orange;
   color: white;
@@ -596,7 +596,7 @@ header img {
 .footer {
   background: #000;
   text-align: center;
-  padding: 6rem 0;
+  padding: rem 0;
 }
 
 .footer .share {
@@ -825,7 +825,7 @@ td img {
 }
 
 /* -------------------Add CSS styles for dark mode------------------------------ */
-
+/* 
 body.dark-mode {
   background-color: rgba(0, 0, 0, 0.237);
   color: white;
@@ -872,13 +872,11 @@ body.dark-mode .header a:hover {
   align-items: center;
   justify-content: center;
   margin-left: 1rem;
-  /* Add some margin to separate it from the cart icon */
 }
 
 .dark-mode-toggle #mode-icon {
   font-size: 2.5rem;
-  /* Adjust the font size as needed for visibility */
-}
+} */
 
 /*------------------------contact-us style---------------------------*/
 

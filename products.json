@@ -3,8 +3,8 @@
         "id": 1,
         "name": "Onion pizza ",
         "namee": {
-            "R": "Onion Pizza [Reg]",
-            "M": "Onion Pizza [Med]",
+            "R": "Onion Pizza [Regular]",
+            "M": "Onion Pizza [Medium]",
             "L": "Onion Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -19,8 +19,8 @@
         "id": 2,
         "name": "Capsicum Pizza ",
         "namee": {
-            "R": "Capsicum Pizza [Reg]",
-            "M": "Capsicum Pizza [Med]",
+            "R": "Capsicum Pizza [Regular]",
+            "M": "Capsicum Pizza [Medium]",
             "L": "Capsicum Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -35,8 +35,8 @@
         "id": 3,
         "name": "Tomato Pizza ",
         "namee": {
-            "R": "Tomato Pizza [Reg]",
-            "M": "Tomato Pizza [Med]",
+            "R": "Tomato Pizza [Regular]",
+            "M": "Tomato Pizza [Medium]",
             "L": "Tomato Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -51,8 +51,8 @@
         "id": 4,
         "name": "Sweetcorn Pizza ",
         "namee": {
-            "R": "Sweetcorn Pizza [Reg]",
-            "M": "Sweetcorn Pizza [Med]",
+            "R": "Sweetcorn Pizza [Regular]",
+            "M": "Sweetcorn Pizza [Medium]",
             "L": "Sweetcorn Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -67,8 +67,8 @@
         "id": 5,
         "name": "Mushroom Pizza ",
         "namee": {
-            "R": "Mushroom Pizza [Reg]",
-            "M": "Mushroom Pizza [Med]",
+            "R": "Mushroom Pizza [Regular]",
+            "M": "Mushroom Pizza [Medium]",
             "L": "Mushroom Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -83,8 +83,8 @@
         "id": 6,
         "name": "Margharita Pizza",
         "namee": {
-            "R": "Margharita Pizza [Reg]",
-            "M": "Margharita Pizza [Med]",
+            "R": "Margharita Pizza [Regular]",
+            "M": "Margharita Pizza [Medium]",
             "L": "Margharita Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -99,8 +99,8 @@
         "id": 7,
         "name": "Sweetcorn Tomato Pizza ",
         "namee": {
-            "R": "Sweetcorn Tomato Pizza [Reg]",
-            "M": "Sweetcorn Tomato Pizza [Med]",
+            "R": "Sweetcorn Tomato Pizza [Regular]",
+            "M": "Sweetcorn Tomato Pizza [Medium]",
             "L": "Sweetcorn Tomato Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -115,8 +115,8 @@
         "id": 8,
         "name": "Onion Capsicum Pizza ",
         "namee": {
-            "R": "Onion Capsicum Pizza [Reg]",
-            "M": "Onion Capsicum Pizza [Med]",
+            "R": "Onion Capsicum Pizza [Regular]",
+            "M": "Onion Capsicum Pizza [Medium]",
             "L": "Onion Capsicum Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -131,8 +131,8 @@
         "id": 9,
         "name": "Onion Tomato Pizza ",
         "namee": {
-            "R": "Onion Tomato Pizza [Reg]",
-            "M": "Onion Tomato Pizza [Med]",
+            "R": "Onion Tomato Pizza [Regular]",
+            "M": "Onion Tomato Pizza [Medium]",
             "L": "Onion Tomato Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -147,8 +147,8 @@
         "id": 10,
         "name": "Paneer Onion Pizza ",
         "namee": {
-            "R": "Paneer Onion Pizza [Reg]",
-            "M": "Paneer Onion Pizza [Med]",
+            "R": "Paneer Onion Pizza [Regular]",
+            "M": "Paneer Onion Pizza [Medium]",
             "L": "Paneer Onion Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -163,8 +163,8 @@
         "id": 11,
         "name": "Capsicum Tomato Pizza ",
         "namee": {
-            "R": "Capsicum Tomato Pizza [Reg]",
-            "M": "Capsicum Tomato Pizza [Med]",
+            "R": "Capsicum Tomato Pizza [Regular]",
+            "M": "Capsicum Tomato Pizza [Medium]",
             "L": "Capsicum Tomato Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -179,8 +179,8 @@
         "id": 12,
         "name": "Onion Sweetcorn Pizza ",
         "namee": {
-            "R": "Onion Sweetcorn Pizza [Reg]",
-            "M": "Onion Sweetcorn Pizza [Med]",
+            "R": "Onion Sweetcorn Pizza [Regular]",
+            "M": "Onion Sweetcorn Pizza [Medium]",
             "L": "Onion Sweetcorn Pizza [Large]"
         },
         "p" : "A savory delight with caramelized onions, gooey cheese, and a burst of flavor in every bite.",
@@ -195,11 +195,11 @@
         "id": 13,
         "name": "Farm fresh Pizza",
         "namee": {
-            "R": "Farm fresh Pizza [Reg]",
-            "M": "Farm fresh Pizza [Med]",
+            "R": "Farm fresh Pizza [Regular]",
+            "M": "Farm fresh Pizza [Medium]",
             "L": "Farm fresh Pizza [Large]"
         },
-        "p" : " Topping:- Mushroom + Capsicum + Tomato + Onion",
+        "p" : "Topping:- Mushroom + Capsicum + Tomato + Onion",
         "price": {
             "Regular": 70,
             "Medium": 120,
@@ -211,8 +211,8 @@
         "id": 14,
         "name": "Country Special Pizza",
         "namee": {
-            "R": "Country Special Pizza [Reg]",
-            "M": "Country Special Pizza [Med]",
+            "R": "Country Special Pizza [Regular]",
+            "M": "Country Special Pizza [Medium]",
             "L": "Country Special Pizza [Large]"
         },
         "p" : "Topping:- Onion + capsicum + Tomato + black olives",
@@ -228,8 +228,8 @@
         "id": 15,
         "name": "Veggie spl. pizza",
         "namee": {
-            "R": "Veggie spl. Pizza [Reg]",
-            "M": "Veggie spl. Pizza [Med]",
+            "R": "Veggie spl. Pizza [Regular]",
+            "M": "Veggie spl. Pizza [Medium]",
             "L": "Veggie spl. Pizza [Large]"
         },
         "p" : "Topping:- Capsicum + onion + tomato + corn",
@@ -245,8 +245,8 @@
         "id": 16,
         "name": "Mix veg. pizza",
         "namee": {
-            "R": "Mix veg. Pizza [Reg]",
-            "M": "Mix veg. Pizza [Med]",
+            "R": "Mix veg. Pizza [Regular]",
+            "M": "Mix veg. Pizza [Medium]",
             "L": "Mix veg. Pizza [Large]"
         },
         "p" : "Topping:- Tomato + Capsicum + mushroom + jalapenos",
@@ -262,8 +262,8 @@
         "id": 17,
         "name": "MAKHNI PIZZA",
         "namee": {
-            "R": "MAKHNI Pizza [Reg]",
-            "M": "MAKHNI Pizza [Med]",
+            "R": "MAKHNI Pizza [Regular]",
+            "M": "MAKHNI Pizza [Medium]",
             "L": "MAKHNI Pizza [Large]"
         },
         "p" : "Topping:- Makhni Sauce + Capsicum + paneer+ onion",
@@ -279,8 +279,8 @@
         "id": 18,
         "name": "TANDOORI PIZZA",
         "namee": {
-            "R": "TANDOORI Pizza [Reg]",
-            "M": "TANDOORI Pizza [Med]",
+            "R": "TANDOORI Pizza [Regular]",
+            "M": "TANDOORI Pizza [Medium]",
             "L": "TANDOORI Pizza [Large]"
         },
         "p" : "Topping:- Tandoori Sauce + red paprika +  paneer + onion",
@@ -296,8 +296,8 @@
         "id": 19,
         "name": "PAPPY PANEER PIZZA", 
         "namee": {
-            "R": "PAPPY PANEER Pizza [Reg]",
-            "M": "PAPPY PANEER Pizza [Med]",
+            "R": "PAPPY PANEER Pizza [Regular]",
+            "M": "PAPPY PANEER Pizza [Medium]",
             "L": "PAPPY PANEER Pizza [Large]"
         },
         "p" : "Topping:- Capsicum + paneer + sweet corn + Red paprika",
@@ -313,8 +313,8 @@
         "id": 20,
         "name": "ITALIAN PIZZA ",
         "namee": {
-            "R": "ITALIAN Pizza [Reg]",
-            "M": "ITALIAN Pizza [Med]",
+            "R": "ITALIAN Pizza [Regular]",
+            "M": "ITALIAN Pizza [Medium]",
             "L": "ITALIAN Pizza [Large]"
         },
         "p" : "Topping:- Jalapenos + Capsicum + Tomato + mushroom",
@@ -347,19 +347,19 @@
         "id": 24,
         "name": "Veg Sandwich",
         "price": 70,
-        "image": "images/Sandwich.jpg"
+        "image": "images/vegsand.jpg"
     },
     {
         "id": 25,
         "name": "Pasta Sandwich",
         "price": 75,
-        "image": "images/Sandwich.jpg"
+        "image": "images/pastasand.jpg"
     },
     {
         "id": 26,
         "name": "Sweet Corn Sandwich",
         "price": 85,
-        "image": "images/Sandwich.jpg"
+        "image": "images/cornsand.jpg"
     },
     {
         "id": 27,
@@ -371,21 +371,21 @@
         "id": 28,
         "name": "Aloo Tikki wrap",
         "price": 90,
-        "image": "images/p-1.jpg"
+        "image": "images/aloowrap.jpeg"
     },
     {
         "id": 29,
         "name": "Paneer Tikki wrap",
         "p" : "A paneer tikki wrap is a flavorful and satisfying dish that involves placing spiced paneer tikki (Indian cottage cheese patty) along with fresh vegetables, sauces, and condiments onto a flatbread (like tortilla or paratha), which is then rolled up to create a convenient and delicious handheld meal.",
         "price": 110,
-        "image": "images/p-1.jpg"
+        "image": "images/paneerwrap.jpeg"
     },
     {
         "id": 30,
         "name": "Special wrap",
         "p" : "Foodies Hub special wrap specific establishment, potentially incorporating a variety of ingredients such as proteins, vegetables, sauces, and seasonings, all wrapped in a flatbread to provide a special and flavorful experience.",
         "price": 120,
-        "image": "images/p-1.jpg"
+        "image": "images/splwrap.jpeg"
     },
     {
         "id": 31,
@@ -409,7 +409,7 @@
         "id": 34,
         "name": "Red sauce Pasta",
         "price": 110,
-        "image": "images/whitepasta.jpg"
+        "image": "images/redpasta.jpg"
     },
     {
         "id": 35,
@@ -421,43 +421,43 @@
         "id": 36,
         "name": "Tandoori Pasta",
         "price": 130,
-        "image": "images/whitepasta.jpg"
+        "image": "images/redpasta.jpg"
     },
     {
         "id": 37,
         "name": "Makhni Pasta",
         "price": 130,
-        "image": "images/whitepasta.jpg"
+        "image": "images/makhnipasta.jpg"
     },
     {
         "id": 38,
         "name": "Mix sauce Pasta",
         "price": 140,
-        "image": "images/whitepasta.jpg"
+        "image": "images/mixpasta.jpg"
     },
     {
         "id": 39,
         "name": "Cold Coffee",
         "price": 80,
-        "image": "images/choco.jpg"
+        "image": "images/coffee.jpeg"
     },
     {
         "id": 40,
         "name": "Strawberry Shake",
         "price": 90,
-        "image": "images/choco.jpg"
+        "image": "images/strawberry.jpg"
     },
     {
         "id": 41,
         "name": "Oreo Shake",
         "price": 90,
-        "image": "images/choco.jpg"
+        "image": "images/oreo.jpg"
     },
     {
         "id": 42,
         "name": "Vanilla Shake",
         "price": 90,
-        "image": "images/choco.jpg"
+        "image": "images/vanilla.jpeg"
     },
     {
         "id": 43,
@@ -469,19 +469,19 @@
         "id": 44,
         "name": "Butter Scotch Shake",
         "price": 100,
-        "image": "images/choco.jpg"
+        "image": "images/butter.jpg"
     },
     {
         "id": 45,
         "name": "Malai Chaap",
         "price": 130,
-        "image": "images/chaap1.jpg"
+        "image": "images/malaichap.jpg"
     },
     {
         "id": 46,
         "name": "Masala Chaap",
         "price": 130,
-        "image": "images/chaap1.jpg"
+        "image": "images/masalachap.jpg"
     },
     {
         "id": 47,
@@ -499,49 +499,49 @@
         "id": 49,
         "name": "KFC Chaap",
         "price": 100,
-        "image": "images/chaap1.jpg"
+        "image": "images/kfcchaap.jpeg"
     },
     {
         "id": 50,
         "name": "Paneer Tikka",
         "price": 150,
-        "image": "images/chaap1.jpg"
+        "image": "images/paneertikka.jpg"
     },
     {
         "id": 51,
         "name": "Veg noodles",
         "price": 80,
-        "image": "images/noodles1.jpg"
+        "image": "images/Veg-Noodles.jpg"
     },
     {
         "id": 52,
         "name": "White noodles",
         "price": 90,
-        "image": "images/noodles1.jpg"
+        "image": "images/whitenoodle.jpg"
     },
     {
         "id": 53,
         "name": "Cheese noodles",
         "price": 100,
-        "image": "images/noodles1.jpg"
+        "image": "images/whitenoodle.jpg"
     },
     {
         "id": 54,
         "name": "Hakka noodles",
         "price": 120,
-        "image": "images/noodles1.jpg"
+        "image": "images/hakkanoodle.jpg"
     },
     {
         "id": 55,
         "name": "Singapori noodles",
         "price": 120,
-        "image": "images/noodles1.jpg"
+        "image": "images/singanoodle.jpg"
     },
     {
         "id": 56,
         "name": "Spring Roll",
         "price": 80,
-        "image": "images/springroll.jpg"
+        "image": "images/spring.jpeg"
     },
     {
         "id": 57,
@@ -589,6 +589,6 @@
         "id": 64,
         "name": "Kfc Momos",
         "price": 100,
-        "image": "images/momo.jpg"
+        "image": "images/kfcmomos.jpeg"
     }
 ]
