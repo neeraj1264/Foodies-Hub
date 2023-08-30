@@ -152,6 +152,10 @@ function submitOrder(cartData) {
     }
   }
 
+   // Calculate the total amount
+   var totalAmount =  calculateitemTotal();
+   message += `\nItem amount: ${totalAmount}\nDelivery:         ₹ 20.00`;
+
   // Calculate the total amount
   var totalAmount =  calculateTotal();
   message += `\nTotal amount: ${totalAmount}`;
@@ -247,6 +251,7 @@ function showCartModal() {
       const cartRow = document.createElement("tr");
 
       const imageCell = document.createElement("td");
+      imageCell.classList.add("center-align");
       const itemImage = document.createElement("img");
       itemImage.src = item.image;
       itemImage.alt = item.name;
@@ -522,8 +527,8 @@ if (i < 6) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.S}', ${item.price.Small}, '${item.image}')">Small ₹ ${item.price.Small}</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Regular ₹ ${item.price.Regular}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')">Small ${item.price.Small}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')">Regular ${item.price.Regular}/-</button>
 </div>
   </div>
   `;
@@ -546,9 +551,9 @@ if (i >= 6 && i < 12) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.S}', ${item.price.Small}, '${item.image}')">Small ₹ ${item.price.Small}</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ ${item.price.Regular}</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ ${item.price.Medium}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')">Small ${item.price.Small}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')">Reg ${item.price.Regular}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')">Med ${item.price.Medium}/-</button>
 </div>
   </div>
   `;
@@ -572,9 +577,9 @@ if (i >= 12 && i < 20) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.R}', ${item.price.Regular}, '${item.image}')">Reg ₹ ${item.price.Regular}</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.M}', ${item.price.Medium}, '${item.image}')">Med ₹ ${item.price.Medium}</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.namee.L}', ${item.price.Large}, '${item.image}')">Large ₹ ${item.price.Large}</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')">Reg ${item.price.Regular}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')">Med ${item.price.Medium}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Large]', ${item.price.Large}, '${item.image}')">Large ${item.price.Large}/-</button>
 </div>
   </div>
   `;
