@@ -189,7 +189,6 @@ section {
 
 .main-box-speciality .box {
   width: calc(33.33% - 20px);
-  /* Adjust the width as needed */
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
@@ -197,6 +196,7 @@ section {
   border: 0.1rem solid var(--btn-color);
   cursor: pointer;
   border-radius: 1rem;
+  max-height: 30rem;
 }
 
 .main-box-speciality .box .image {
@@ -249,6 +249,9 @@ section {
 .Shakes,
 .Garlic,
 .Wrap,
+.Snacks,
+.Roti,
+.Vegetables,
 .Chaap,
 .Momos {
   display: flex;
@@ -685,6 +688,11 @@ header img {
     font-size: 12px;
   }
 
+  .btn {
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+  }
+
   .btnn {
     padding: .5rem 1.5rem;
     font-size: 1rem;
@@ -693,7 +701,7 @@ header img {
   .go{
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
-    margin-left: 9rem;
+    margin-left: 7rem;
   }
   .popup-option{
     font-size: .6rem;

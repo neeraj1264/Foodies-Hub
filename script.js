@@ -85,6 +85,18 @@ document.querySelector(".Momos").addEventListener("click", (event) => {
   handleAddToCartClick(event);
 });
 
+document.querySelector(".Snacks").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
+document.querySelector(".Vegetables").addEventListener("click", (event) => {
+  handleeAddToCartClick(event);
+});
+
+document.querySelector(".Roti").addEventListener("click", (event) => {
+  handleAddToCartClick(event);
+});
+
 function handleAddToCartClick(event) {
   const button = event.target.closest(".add-to-cart");
   if (button) {
@@ -505,6 +517,9 @@ let Chinese = "";
 let Shakes = "";
 let Garlic = "";
 let Wrap = "";
+let Vegetables = "";
+let Roti = "";
+let Snacks = "";
 let Chaap = "";
 let Momos = "";
 for (let i = 0; i < products.length; i++) {
@@ -630,7 +645,7 @@ if (i >= 23 && i < 27) {
 </div>
 `;
 }
-if (i >= 27 && i < 30) {
+if (i >= 27 && i < 30 || i === 68 || i === 69) {
   Wrap += `
   <div class="box" >
   <span class="price product-price"> ₹ ${item.price}</span>
@@ -791,6 +806,76 @@ Momos += `
 </div>
 `;
 }
+if (i >= 64 && i < 68) {
+  Snacks += `
+    <div class="box" >
+   <span class="price product-price"> ₹ ${item.price}</span>
+   <img src="${item.image}" alt="img">
+   <h3 class="product-name" id="1">${item.name}</h3>
+   <div class="stars">
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
+}
+if (i >= 70 && i < 87) {
+  Vegetables += `
+  <div class="box" >
+  <span class="price product-price"> ₹ ${item.price.Half}</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" id="1">${item.name}</h3>
+  <div class="stars">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btnn">ADD</h2>
+    <div class="Go-to-Cart" style="display: none;">
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  <div class="new-buttons" style="display: none;">
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Half]', ${item.price.Half}, '${item.image}')">Half ${item.price.Half}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Full]', ${item.price.Full}, '${item.image}')">Full ${item.price.Full}/-</button>
+</div>
+  </div>
+  `;
+}
+if (i >= 87 && i < 99) {
+  Roti += `
+    <div class="box" >
+   <span class="price product-price"> ₹ ${item.price}</span>
+   <img src="${item.image}" alt="img">
+   <h3 class="product-name" id="1">${item.name}</h3>
+   <div class="stars">
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+  </div>
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
+}
 }
 document.querySelector(".Burger").innerHTML = Burger;
 document.querySelector(".Sandwich").innerHTML = Sandwich;
@@ -804,6 +889,9 @@ document.querySelector(".Garlic").innerHTML = Garlic;
 document.querySelector(".Wrap").innerHTML = Wrap;
 document.querySelector(".Chaap").innerHTML = Chaap;
 document.querySelector(".Momos").innerHTML = Momos;
+document.querySelector(".Snacks").innerHTML = Snacks;
+document.querySelector(".Vegetables").innerHTML = Vegetables;
+document.querySelector(".Roti").innerHTML = Roti;
 }
 };
 
