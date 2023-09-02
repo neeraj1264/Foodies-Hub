@@ -871,22 +871,19 @@ td img {
 /* -------------------Add CSS styles for dark mode------------------------------ */
 
 body.dark-mode {
-  background-color: rgba(0, 0, 0, 0.237);
+  background-color: black;
   color: white;
 }
 body.dark-mode .popup-option {
 background: black;
 }
-body.dark-mode .navbar {
-  background: black;
-}
 
 body.dark-mode .home {
   background-image: none;
-  background-color: grey;
+  background: #333333
 }
 body.dark-mode .popular .box-container .box {
-background-color: black;
+background-color: #333333;
 }
 body.dark-mode .review .box-container .box {
   background-color: black;
@@ -905,6 +902,13 @@ body.dark-mode .home .content p {
 body.dark-mode .header {
   background-color: black;
 }
+body.dark-mode .header a {
+  color: white;
+  background:black
+}
+body.dark-mode .navbar {
+  background: black;
+}
 body.dark-mode .modal-content {
   background-color: black;
 }
@@ -913,7 +917,10 @@ body.dark-mode .dropdown-content {
   color: white;
 }
 body.dark-mode .main-box-speciality .box .content {
-background: black;
+background: #333333
+}
+body.dark-mode .speciality {
+  background-color: black;
 }
 body.dark-mode .speciality .main-box-speciality .box .content h3 {
   color: white
@@ -930,11 +937,6 @@ body.dark-mode .dropdown {
 
 body.dark-mode .dropdown:hover {
   color: var(--btn-color);
-}
-
-body.dark-mode .header a {
-  color: white;
-  background: black;
 }
 
 body.dark-mode .header a:hover {
