@@ -45,8 +45,9 @@ body {
 }
 
 .header #logo img {
-  width: 60px;
-  border: 1px solid  orange;
+  width: 50px;
+  height: 50px;
+  border: 1px solid orange;
 }
 
 header .navbar a {
@@ -99,7 +100,7 @@ header .navbar a:hover {
   padding: 0.5rem 1rem;
   border: 0.1rem solid #666;
   border-radius: 8px;
-  font-size: 3rem;
+  font-size: 4rem;
   display: none;
 }
 
@@ -116,7 +117,7 @@ section {
 }
 
 .heading span {
-  color: var(--red);
+  color: #e58f00;
 }
 
 /* home css design */
@@ -302,7 +303,7 @@ section {
 }
 
 #cart-count {
-  font-size: medium;
+  font-size: large;
   cursor: pointer;
 }
 
@@ -647,23 +648,26 @@ header img {
   html {
     font-size: 50%;
   }
-.popular{
-  padding: 3rem;
+.popular, .speciality{
+  padding: 2rem;
 }
   #menu-bars {
     display: initial;
   }
 
   .main-box-speciality .box {
-    width: calc(50% - 6px);
+    width: calc(47% - 6px);
   }
 
   .main-box-speciality .box p {
     display: none;
   }
+  .main-box-speciality .box .content{
+    height: 22rem;
+  }
 
   .popular .box-container .box {
-    width: calc(50% - 6px);
+    width: calc(47% - 6px);
   }
 
   .popular .box-container .box img {
@@ -680,7 +684,7 @@ header img {
 
   .popular .box-container .box .price {
    padding: .3rem 1rem;
-    font-size: 1.5rem;
+   font-size: 1.5rem;
   }
   .popular .box-container .box .category-dropdown {
     height: 2.5rem;
@@ -874,63 +878,83 @@ body.dark-mode {
   background-color: black;
   color: white;
 }
+body.dark-mode .speciality-heading {
+  color: white;
+}
 body.dark-mode .popup-option {
-background: black;
+  background: #191919;
+}
+body.dark-mode .go {
+  background-color: white;
+  color: #191919;
 }
 
 body.dark-mode .home {
   background-image: none;
-  background: #333333
+  background: black
 }
 body.dark-mode .popular .box-container .box {
-background-color: #333333;
+  background-color: #333333;
 }
+
 body.dark-mode .review .box-container .box {
   background-color: black;
 }
+
 body.dark-mode .review .box-container .box h3 {
-  color: white; 
+  color: white;
 }
+
 body.dark-mode .review .box-container .box p {
-  color: white; 
+  color: white;
 }
+
 body.dark-mode .home .content h3,
 body.dark-mode .home .content p {
   color: white;
 }
 
 body.dark-mode .header {
-  background-color: black;
+  background-color: #191919
 }
 body.dark-mode .header a {
   color: white;
-  background:black
+  background: #191919
 }
+
 body.dark-mode .navbar {
-  background: black;
+  background: #191919
 }
+
 body.dark-mode .modal-content {
-  background-color: black;
+  background-color: #191919;
 }
+
 body.dark-mode .dropdown-content {
   background-color: black;
   color: white;
 }
+
 body.dark-mode .main-box-speciality .box .content {
-background: #333333
+  background: #333333
 }
+
 body.dark-mode .speciality {
   background-color: black;
 }
+
 body.dark-mode .speciality .main-box-speciality .box .content h3 {
   color: white
 }
+
 body.dark-mode .popular .box-container .box h3 {
   color: white;
 }
+
 body.dark-mode .contact-col div h5 {
   color: white;
 }
+
 body.dark-mode .dropdown {
   color: white;
 }
@@ -952,7 +976,7 @@ body.dark-mode .header a:hover {
 }
 
 .dark-mode-toggle #mode-icon {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 /*------------------------contact-us style---------------------------*/
@@ -995,7 +1019,7 @@ body.dark-mode .header a:hover {
   text-align: center;
   background-color: green;
   color: white;
-  padding: 5px 13px;
+  padding: 7px 5px;
   border-radius: 33px;
   font-size: 1rem;
   font-weight: bold;
@@ -1012,8 +1036,9 @@ body.dark-mode .header a:hover {
   position: relative;
   overflow: hidden;
   z-index: 0;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 }
+
 .popup-option::before {
   content: "";
   position: absolute;
@@ -1035,6 +1060,7 @@ body.dark-mode .header a:hover {
   width: 100%;
   left: 0;
 }
+
 .scroll-down {
   position: fixed;
   bottom: 20px;

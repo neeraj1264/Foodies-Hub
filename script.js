@@ -180,6 +180,9 @@ function submitOrder(cartData) {
 
   // Open WhatsApp in a new tab to send the message
   window.open(whatsappLink, '_blank');
+  
+  location.reload();
+ 
 }
 
 // -------------------------dropdown_menu_Start-----------------------------------
@@ -234,7 +237,7 @@ function showCartModal() {
   cartItemsContainer.innerHTML = "";
 
    // Apply a max-height and overflow-y style to create a scrollbar
-   cartItemsContainer.style.maxHeight = "400px"; // Adjust the value as needed
+   cartItemsContainer.style.maxHeight = "500px"; // Adjust the value as needed
    cartItemsContainer.style.overflowX = "auto";
 
   const table = document.createElement("table");
