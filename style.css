@@ -197,7 +197,7 @@ section {
   border: 0.1rem solid var(--btn-color);
   cursor: pointer;
   border-radius: 1rem;
-  max-height: 30rem;
+  max-height: 32rem;
 }
 
 .main-box-speciality .box .image {
@@ -331,6 +331,7 @@ section {
   padding: 3px 3px;
   background-color: orange;
   color: white;
+  cursor: pointer;
 }
 
 .category-dropdown {
@@ -727,6 +728,7 @@ header img {
   }
 
   .cart-table .center-align {
+    text-align: left;
     font-size: 1.8rem;
     font-weight: bold;
     /* border: 1px solid black; */
@@ -839,7 +841,7 @@ td img {
 }
 
 .center-align {
-  text-align: left;
+  text-align: center;
   align-items: center;
   padding-right: 39px;
   font-size: 1.4rem;
