@@ -545,8 +545,8 @@ if (i < 6) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')">Small ${item.price.Small}/-</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')">Regular ${item.price.Regular}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')"><h2>Small ${item.price.Small}/-</h2></button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')"><h2>Regular ${item.price.Regular}/-</h2></button>
 </div>
   </div>
   `;
