@@ -495,7 +495,7 @@ header img {
   gap: 1.5rem;
 }
 .review {
-  padding-top: 10rem;
+  padding-top: 18rem;
 }
 .review .box-container .box {
   text-align: center;
@@ -1005,7 +1005,7 @@ body.dark-mode .header a:hover {
   /* padding: 2rem 16rem; */
 }
 .contact {
-  padding-top: 10rem;
+  padding-top: 18rem;
 }
 
 .contact-col {
