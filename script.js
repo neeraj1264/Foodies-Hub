@@ -910,8 +910,30 @@ function toggleDarkMode() {
   if (body.classList.contains("dark-mode")) {
     modeIcon.classList.remove("fa-moon");
     modeIcon.classList.add("fa-sun");
+
+    localStorage.setItem("darkMode", "enabled");
   } else {
     modeIcon.classList.remove("fa-sun");
     modeIcon.classList.add("fa-moon");
+
+    localStorage.setItem("darkMode", "disabled");
+
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const modeIcon = document.getElementById("mode-icon");
+
+  // Check if the user has a preference in localStorage
+  const darkModePreference = localStorage.getItem("darkMode");
+
+  if (darkModePreference === "enabled") {
+    body.classList.add("dark-mode");
+    modeIcon.classList.remove("fa-moon");
+    modeIcon.classList.add("fa-sun");
+  } else {
+    body.classList.remove("dark-mode");
+    modeIcon.classList.remove("fa-sun");
+    modeIcon.classList.add("fa-moon");
+  }
+});

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" id="logo"> <img src="images/logo1.png" alt=""></a>
+
+        <div id="menu-bars" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="review.html">review</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+
+        </nav>
+        <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <i id="mode-icon" class="fas fa-3x fa-moon"></i>
+        </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <section class="contact" id="contact">
+        <h1 class="heading"> <span>About</span> Us </h1>
+
+        <section class="contact-us">
+
+            <h2>Welcome to Foodies Hub, your ultimate destination for fast food and dinner cravings! We are passionate
+                food enthusiasts dedicated to bringing you a delectable array of mouthwatering dishes that satisfy your
+                taste buds and keep you coming back for more.<br><br>
+
+                At Foodies Hub, we understand that life can be busy, and sometimes you just crave a quick, delicious
+                meal that hits the spot. That's why we've curated a menu bursting with flavors and options that cater to
+                all your fast food and dinner desires. From scrumptious burgers to sizzling pizzas, from comforting
+                pastas to exotic Asian delicacies, we have it all under one roof.</h2>
+
+        </section>
+        <h1 class="heading"> <span>Our </span> Mission </h1>
+
+        <section class="contact-us">
+
+            <h2>Our mission is simple - to provide you with high-quality, affordable, and incredibly tasty food that
+                makes your dining experience memorable. We believe that great food doesn't have to come with a hefty
+                price tag. That's why we've designed our menu to offer you the best of both worlds - exceptional taste
+                and affordability.</h2>
+
+        </section>
+
+        <h1 class="heading"> <span>Your Satisfaction </span> Matters </h1>
+
+        <section class="contact-us">
+
+            <h2>Your satisfaction is our top priority. We take pride in delivering more than just food; we deliver an experience. With Foodies Hub, you can expect excellent customer service, reliable delivery, and a commitment to exceeding your expectations.
+
+                Thank you for choosing Foodies Hub as your go-to destination for fast food and dinner. We look forward to serving you with culinary delights that keep you coming back for more. Join us in this gastronomic journey, and let's explore the world of flavors together!
+                
+                Satisfy your cravings with Foodies Hub today!</h2>
+
+        </section>
+    </section>
+</body>
+<script>
+    // navbar
+    let menubar = document.querySelector("#menu-bars");
+    let mynav = document.querySelector(".navbar");
+
+    menubar.onclick = () => {
+        menubar.classList.toggle("fa-times");
+        mynav.classList.toggle("active");
+    };
+    // Add a click event listener to all navigation bar elements except the menu icon
+    const navbarItems = document.querySelectorAll(".navbar a:not(#menu-bars)");
+    navbarItems.forEach(item => {
+        item.addEventListener("click", () => {
+            if (mynav.classList.contains("active")) {
+                menubar.classList.toggle("fa-times");
+                mynav.classList.toggle("active");
+            }
+        });
+    });
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+
+        // Get the mode icon element
+        const modeIcon = document.getElementById("mode-icon");
+
+        // Toggle the icon between moon and sun based on the dark mode class
+        if (body.classList.contains("dark-mode")) {
+            modeIcon.classList.remove("fa-moon");
+            modeIcon.classList.add("fa-sun");
+
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            modeIcon.classList.remove("fa-sun");
+            modeIcon.classList.add("fa-moon");
+
+            localStorage.setItem("darkMode", "disabled");
+
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+        const modeIcon = document.getElementById("mode-icon");
+
+        // Check if the user has a preference in localStorage
+        const darkModePreference = localStorage.getItem("darkMode");
+
+        if (darkModePreference === "enabled") {
+            body.classList.add("dark-mode");
+            modeIcon.classList.remove("fa-moon");
+            modeIcon.classList.add("fa-sun");
+        } else {
+            body.classList.remove("dark-mode");
+            modeIcon.classList.remove("fa-sun");
+            modeIcon.classList.add("fa-moon");
+        }
+    });
+</script>
+
+</html>

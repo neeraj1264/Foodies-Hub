@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Review</title>
+</head>
+
+<body>
+
+  <!-- header section starts  -->
+
+  <header class="header">
+
+    <a href="#" id="logo"> <img src="images/logo1.png" alt=""></a>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+      <a href="index.html">home</a>
+      <a href="review.html">review</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+
+    </nav>
+    <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <i id="mode-icon" class="fas fa-3x fa-moon"></i>
+    </div>
+  </header>
+
+  <!-- header section ends -->
+
+  <!-- review section starts  -->
+
+  <section class="review" id="review">
+
+    <h1 class="heading"> our customers <span>reviews</span> </h1>
+
+    <div class="box-container">
+
+      <div class="box">
+        <img src="images/jatin.JPG" alt="">
+        <h3>Jatin Arora</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>I recently ordered Dal Makhni from FoodiesHub, and I must say, it was an absolute delight! and also pocket
+          friendly. Thank you for the memorable experience!
+        </p>
+      </div>
+      <div class="box">
+        <img src="images/neeraj.jpg" alt="">
+        <h3>Neeraj </h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>I recently had the pleasure of ordering Pasta and Pizza from FoodiesHub, and I'm absolutely thrilled with the
+          experience. The scrumptious flavors of both dishes and the incredible speed of delivery have left me genuinely
+          impressed.</p>
+      </div>
+      <div class="box">
+        <img src="images/jass.jpg" alt="">
+        <h3>jasbir Manchanda</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>FoodiesHub deserves all the praise for their tasty Manchurian and Noodles that come at an affordable price. I
+          will undoubtedly be a repeat customer and look forward to exploring more of their menu. Thank you, FoodiesHub,
+          for providing such a fantastic experience that doesn't break the bank!</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- review section ends -->
+</body>
+<script>
+  // navbar
+  let menubar = document.querySelector("#menu-bars");
+  let mynav = document.querySelector(".navbar");
+
+  menubar.onclick = () => {
+    menubar.classList.toggle("fa-times");
+    mynav.classList.toggle("active");
+  };
+  // Add a click event listener to all navigation bar elements except the menu icon
+  const navbarItems = document.querySelectorAll(".navbar a:not(#menu-bars)");
+  navbarItems.forEach(item => {
+    item.addEventListener("click", () => {
+      if (mynav.classList.contains("active")) {
+        menubar.classList.toggle("fa-times");
+        mynav.classList.toggle("active");
+      }
+    });
+  });
+  function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+
+    // Get the mode icon element
+    const modeIcon = document.getElementById("mode-icon");
+
+    // Toggle the icon between moon and sun based on the dark mode class
+    if (body.classList.contains("dark-mode")) {
+      modeIcon.classList.remove("fa-moon");
+      modeIcon.classList.add("fa-sun");
+
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      modeIcon.classList.remove("fa-sun");
+      modeIcon.classList.add("fa-moon");
+
+      localStorage.setItem("darkMode", "disabled");
+
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+    const modeIcon = document.getElementById("mode-icon");
+
+    // Check if the user has a preference in localStorage
+    const darkModePreference = localStorage.getItem("darkMode");
+
+    if (darkModePreference === "enabled") {
+      body.classList.add("dark-mode");
+      modeIcon.classList.remove("fa-moon");
+      modeIcon.classList.add("fa-sun");
+    } else {
+      body.classList.remove("dark-mode");
+      modeIcon.classList.remove("fa-sun");
+      modeIcon.classList.add("fa-moon");
+    }
+  });
+</script>
+
+</html>

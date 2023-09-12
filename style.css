@@ -361,21 +361,23 @@ section {
   right: 0;
   width: 0%;
   height: 100%;
-  background: var(--red);
+  background: var(--btn-color);
   transition: 0.3s linear;
   z-index: -1;
 }
 
 .btn:hover {
   color: white;
-  border: 0.2rem solid var(--about-sec);
+  border: none
 }
 
 .btn:hover::before {
   width: 100%;
   left: 0;
 }
-
+.btn h4{
+  text-align: center;
+}
 .btnn {
   display: inline-block;
   padding: 0.8rem 3rem;
@@ -399,14 +401,14 @@ section {
   right: 0;
   width: 0%;
   height: 100%;
-  background: var(--red);
+  background: var(--btn-color);
   transition: 0.3s linear;
   z-index: -1;
 }
 
 .btnn:hover {
   color: white;
-  border: 0.2rem solid var(--about-sec);
+  border: none
 }
 
 .btnn:hover::before {
@@ -492,7 +494,9 @@ header img {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-
+.review {
+  padding-top: 10rem;
+}
 .review .box-container .box {
   text-align: center;
   padding: 2rem;
@@ -998,6 +1002,10 @@ body.dark-mode .header a:hover {
 
 .contact-us {
   margin: auto;
+  /* padding: 2rem 16rem; */
+}
+.contact {
+  padding-top: 10rem;
 }
 
 .contact-col {
@@ -1063,14 +1071,14 @@ body.dark-mode .header a:hover {
   right: 0;
   width: 0%;
   height: 100%;
-  background: var(--red);
+  background: var(--btn-color);
   transition: 0.3s linear;
   z-index: -1;
 }
 
 .popup-option:hover {
   color: white;
-  border: 0.2rem solid var(--about-sec);
+  border: none;
 }
 
 .popup-option:hover::before {
