@@ -569,9 +569,9 @@ if (i >= 6 && i < 12) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')">Small ${item.price.Small}/-</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')">Reg ${item.price.Regular}/-</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')">Med ${item.price.Medium}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')"><h2>Small ${item.price.Small}/-</h2></button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')"><h2>Reg ${item.price.Regular}/-</h2></button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')"><h2>Med ${item.price.Medium}/-</h2></button>
 </div>
   </div>
   `;
@@ -595,9 +595,9 @@ if (i >= 12 && i < 20) {
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')">Reg ${item.price.Regular}/-</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')">Med ${item.price.Medium}/-</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Large]', ${item.price.Large}, '${item.image}')">Large ${item.price.Large}/-</button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')"><h2>Reg ${item.price.Regular}/-</h2></button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')"><h2>Med ${item.price.Medium}/-</h2></button>
+  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Large]', ${item.price.Large}, '${item.image}')"><h2>Large ${item.price.Large}/-</h2></button>
 </div>
   </div>
   `;
