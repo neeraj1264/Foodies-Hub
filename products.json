@@ -6,6 +6,7 @@
             "Small": 70,
             "Regular": 130
         },
+        "mrp":100,
         "image": "images/onion.jpg"
     },
     {
@@ -15,6 +16,7 @@
             "Small": 70,
             "Regular": 130
         },
+        "mrp":100,
         "image": "images/onion.jpg"
     },
     {
@@ -24,6 +26,7 @@
             "Small": 70,
             "Regular": 130
         },
+        "mrp":100,
         "image": "images/onion.jpg"
     },
     {
@@ -33,6 +36,7 @@
             "Small": 80,
             "Regular": 130
         },
+        "mrp":100,
         "image": "images/onion.jpg"
     },
     {
@@ -42,6 +46,7 @@
             "Small": 80,
             "Regular": 130
         },
+        "mrp":100,
         "image": "images/onion.jpg"
     },
     {
@@ -51,6 +56,7 @@
             "Small": 80,
             "Regular": 130
         },
+        "mrp":100,
         "image": "images/onion.jpg"
     },
     {
@@ -61,6 +67,7 @@
             "Regular": 130,
             "Medium": 210
         },
+        "mrp":130,
         "image": "images/onioncapsicum.jpg"
     },
     {
@@ -71,6 +78,7 @@
             "Regular": 130,
             "Medium": 210
         },
+        "mrp":130,
         "image": "images/onioncapsicum.jpg"
     },
 {
@@ -81,6 +89,7 @@
             "Regular": 130,
             "Medium": 210
         },
+        "mrp":130,
         "image": "images/onioncapsicum.jpg"
 },
     {
@@ -91,6 +100,7 @@
             "Regular": 130,
             "Medium": 210
         },
+        "mrp":130,
         "image": "images/onioncapsicum.jpg"
 },
     {
@@ -101,6 +111,7 @@
             "Regular": 130,
             "Medium": 210
         },
+        "mrp":130,
         "image": "images/onioncapsicum.jpg"
     },
     {
@@ -111,6 +122,7 @@
             "Regular": 130,
             "Medium": 210
         },
+        "mrp":130,
         "image": "images/onioncapsicum.jpg"
     },
     {
@@ -122,6 +134,7 @@
             "Medium": 310,
             "Large": 420
         },
+        "mrp":200,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -133,6 +146,7 @@
             "Medium": 310,
             "Large": 420
         },
+        "mrp":200,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -144,6 +158,7 @@
             "Medium": 310,
             "Large": 420
         },
+        "mrp":200,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -155,6 +170,7 @@
             "Medium": 310,
             "Large": 420
         },
+        "mrp":200,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -166,6 +182,7 @@
             "Medium": 370,
             "Large": 500
         },
+        "mrp":250,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -177,6 +194,7 @@
             "Medium": 370,
             "Large": 500
         },
+        "mrp":250,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -188,6 +206,7 @@
             "Medium": 370,
             "Large": 500
         },
+        "mrp":250,
         "image": "images/s-img-2.jpg"
     },
     {
@@ -199,306 +218,357 @@
             "Medium": 370,
             "Large": 500
         },
+        "mrp":250,
         "image": "images/s-img-2.jpg"
     },
     {
         "id": 21,
         "name": "Aloo Tikki Burger",
         "price": 45,
+        "mrp":60,
         "image": "images/p-1.jpg"
     },
     {
         "id": 22,
         "name": "Veg Cheese Burger",
         "price": 60,
+        "mrp":80,
         "image": "images/p-1.jpg"
     },
     {
         "id": 23,
         "name": "Hangover Burger",
         "price": 70,
+        "mrp":90,
         "image": "images/p-1.jpg"
     },
     {
         "id": 24,
         "name": "Veg Sandwich",
         "price": 70,
+        "mrp":90,
         "image": "images/vegsand.jpg"
     },
     {
         "id": 25,
         "name": "Pasta Sandwich",
         "price": 75,
+        "mrp":100,
         "image": "images/pastasand.jpg"
     },
     {
         "id": 26,
         "name": "Sweet Corn Sandwich",
         "price": 85,
+        "mrp":120,
         "image": "images/cornsand.jpg"
     },
     {
         "id": 27,
         "name": "Paneer Sandwich",
         "price": 90,
+        "mrp":140,
         "image": "images/Sandwich.jpg"
     },
     {
         "id": 28,
         "name": "Aloo Tikki wrap",
         "price": 90,
+        "mrp":140,
         "image": "images/aloowrap.jpeg"
     },
     {
         "id": 29,
         "name": "Paneer Tikki wrap",
         "price": 110,
+        "mrp":170,
         "image": "images/paneerwrap.jpeg"
     },
     {
         "id": 30,
         "name": "Special wrap",
         "price": 120,
+        "mrp":200,
         "image": "images/splwrap.jpeg"
     },
     {
         "id": 31,
         "name": "Plain Garlic Bread",
         "price": 80,
+        "mrp":100,
         "image": "images/gb.jpg"
     },
     {
         "id": 32,
         "name": "Cheese Corn Garlic Bread",
         "price": 110,
+        "mrp":160,
         "image": "images/gb.jpg"
     },
     {
         "id": 33,
         "name": "Stuff Garlic Bread",
         "price": 120,
+        "mrp":180,
         "image": "images/gb.jpg"
     },
     {
         "id": 34,
         "name": "Red sauce Pasta",
         "price": 110,
+        "mrp":150,
         "image": "images/redpasta.jpg"
     },
     {
         "id": 35,
         "name": "White sauce Pasta",
         "price": 120,
+        "mrp":160,
         "image": "images/whitepasta.jpg"
     },
     {
         "id": 36,
         "name": "Tandoori Pasta",
         "price": 130,
+        "mrp":180,
         "image": "images/redpasta.jpg"
     },
     {
         "id": 37,
         "name": "Makhni Pasta",
         "price": 130,
+        "mrp":180,
         "image": "images/makhnipasta.jpg"
     },
     {
         "id": 38,
         "name": "Mix sauce Pasta",
         "price": 140,
+        "mrp":200,
         "image": "images/mixpasta.jpg"
     },
     {
         "id": 39,
         "name": "Cold Coffee",
         "price": 80,
+        "mrp":100,
         "image": "images/coffee.jpeg"
     },
     {
         "id": 40,
         "name": "Strawberry Shake",
         "price": 90,
+        "mrp":120,
         "image": "images/strawberry.jpg"
     },
     {
         "id": 41,
         "name": "Oreo Shake",
         "price": 90,
+        "mrp":120,
         "image": "images/oreo.jpg"
     },
     {
         "id": 42,
         "name": "Vanilla Shake",
         "price": 90,
+        "mrp":130,
         "image": "images/vanilla.jpeg"
     },
     {
         "id": 43,
         "name": "Chocolate Shake",
         "price": 90,
+        "mrp":130,
         "image": "images/choco.jpg"
     },
     {
         "id": 44,
         "name": "Butter Scotch Shake",
         "price": 100,
+        "mrp":140,
         "image": "images/butter.jpg"
     },
     {
         "id": 45,
         "name": "Malai Chaap",
         "price": 130,
+        "mrp":170,
         "image": "images/malaichap.jpg"
     },
     {
         "id": 46,
         "name": "Masala Chaap",
         "price": 130,
+        "mrp":170,
         "image": "images/masalachap.jpg"
     },
     {
         "id": 47,
         "name": "Afgani Chaap",
         "price": 130,
+        "mrp":170,
         "image": "images/chaap1.jpg"
     },
     {
         "id": 48,
         "name": "Lemon Chaap",
         "price": 140,
+        "mrp":170,
         "image": "images/chaap1.jpg"
     },
     {
         "id": 49,
         "name": "KFC Chaap",
         "price": 100,
+        "mrp":130,
         "image": "images/kfcchaap.jpeg"
     },
     {
         "id": 50,
         "name": "Paneer Tikka",
         "price": 150,
+        "mrp":190,
         "image": "images/paneertikka.jpg"
     },
     {
         "id": 51,
         "name": "Veg noodles",
         "price": 80,
+        "mrp":100,
         "image": "images/Veg-Noodles.jpg"
     },
     {
         "id": 52,
         "name": "White noodles",
         "price": 90,
+        "mrp":110,
         "image": "images/whitenoodle.jpg"
     },
     {
         "id": 53,
         "name": "Cheese noodles",
         "price": 100,
+        "mrp":130,
         "image": "images/whitenoodle.jpg"
     },
     {
         "id": 54,
         "name": "Hakka noodles",
         "price": 120,
+        "mrp":150,
         "image": "images/hakkanoodle.jpg"
     },
     {
         "id": 55,
         "name": "Singapori noodles",
         "price": 120,
+        "mrp":150,
         "image": "images/singanoodle.jpg"
     },
     {
         "id": 56,
         "name": "Spring Roll",
         "price": 80,
+        "mrp":110,
         "image": "images/spring.jpeg"
     },
     {
         "id": 57,
         "name": "Dry Manchurian",
         "price": 90,
+        "mrp":120,
         "image": "images/dryman.jpg"
     },
     {
         "id": 58,
         "name": "Gravy Manchurian",
         "price": 100,
+        "mrp":140,
         "image": "images/gravyman.jpg"
     },
     {
         "id": 59,
         "name": "Pav Bhaji",
         "price": 90,
+        "mrp":140,
         "image": "images/pavbhaji.jpg"
     },
     {
         "id": 60,
         "name": "Cheese Chilli",
         "price": 140,
+        "mrp":200,
         "image": "images/cheesepan.jpg"
     },
     {
         "id": 61,
         "name": "Honey Chilli Potato",
         "price": 130,
+        "mrp":170,
         "image": "images/honeychil.jpg"
     },
     {
         "id": 62,
         "name": "Veg Momos",
         "price": 70,
+        "mrp":90,
         "image": "images/momo.jpg"
     },
     {
         "id": 63,
         "name": "Fried Momos",
         "price": 80,
+        "mrp":100,
         "image": "images/friedmomo.jpg"
     },
     {
         "id": 64,
         "name": "Kfc Momos",
         "price": 100,
+        "mrp":140,
         "image": "images/kfcmomos.jpeg"
     },
     {
         "id": 65,
         "name": "Chole Kulche",
         "price": 45,
+        "mrp":60,
         "image": "images/kulche.jpeg"
     },
     {
         "id": 66,
         "name": "Mix Pakode [250gm]",
         "price": 60,
+        "mrp":70,
         "image": "images/pakore.jpeg"
     },
     {
         "id": 67,
         "name": "Tikki Bhalle[Half]",
         "price": 50,
+        "mrp":60,
         "image": "images/bhalle.jpeg"
     },
     {
         "id": 68,
         "name": "Tikki Bhalle [Full]",
         "price": 70,
+        "mrp":90,
         "image": "images/bhalle.jpeg"
     },
     {
         "id": 69,
         "name": "Paneer Parcel",
         "price": 70,
+        "mrp":100,
         "image": "images/paneerparcel.jpeg"
     },
     {
         "id": 70,
         "name": "Mix Veg Parcel",
         "price": 70,
+        "mrp":100,
         "image": "images/Mixparcel.jpeg"
     },
     {
@@ -508,6 +578,7 @@
             "Half": 90,
             "Full": 150
         },
+        "mrp":120,
         "image": "images/shahipaneer.jpeg"
     },
     {
@@ -517,6 +588,7 @@
             "Half": 100,
             "Full": 160
         },
+        "mrp":130,
         "image": "images/kadaipaneer.jpeg"
     },
     {
@@ -526,6 +598,7 @@
             "Half": 90,
             "Full": 150
         },
+        "mrp":120,
         "image": "images/matarpaneer.jpeg"
     },
     {
@@ -535,6 +608,7 @@
             "Half": 90,
             "Full": 150
         },
+        "mrp":120,
         "image": "images/palakpaneer.jpeg"
     },
     {
@@ -544,6 +618,7 @@
             "Half": 110,
             "Full": 160
         },
+        "mrp":130,
         "image": "images/pyaza.jpeg"
     },
     {
@@ -553,6 +628,7 @@
             "Half": 90,
             "Full": 150
         },
+        "mrp":120,
         "image": "images/cheesetomato.jpeg"
     },
     {
@@ -562,6 +638,7 @@
             "Half": 90,
             "Full": 140
         },
+        "mrp":120,
         "image": "images/gravychaap.jpeg"
     },
     {
@@ -571,6 +648,7 @@
             "Half": 90,
             "Full": 150
         },
+        "mrp":120,
         "image": "images/malaikofta.jpeg"
     },
     {
@@ -580,6 +658,7 @@
             "Half": 90,
             "Full": 130
         },
+        "mrp":120,
         "image": "images/chanamasala.jpeg"
     },
     {
@@ -589,6 +668,7 @@
             "Half": 80,
             "Full": 130
         },
+        "mrp":110,
         "image": "images/mixveg.jpeg"
     },
     {
@@ -598,6 +678,7 @@
             "Half": 100,
             "Full": 150
         },
+        "mrp":120,
         "image": "images/mushroom.jpeg"
     },
     {
@@ -607,6 +688,7 @@
             "Half": 80,
             "Full": 130
         },
+        "mrp":120,
         "image": "images/dalmakhani.jpeg"
     },
     {
@@ -616,6 +698,7 @@
             "Half": 50,
             "Full": 80
         },
+        "mrp":80,
         "image": "images/yellowdal.jpeg"
     },
     {
@@ -625,6 +708,7 @@
             "Half": 50,
             "Full": 80
         },
+        "mrp":80,
         "image": "images/rajma.jpeg"
     },
     {
@@ -634,6 +718,7 @@
             "Half": 50,
             "Full": 80
         },
+        "mrp":80,
         "image": "images/kadhi.jpeg"
     },
     {
@@ -643,6 +728,7 @@
             "Half": 50,
             "Full": 80
         },
+        "mrp":80,
         "image": "images/aloomatar.jpeg"
     },
     {
@@ -652,78 +738,91 @@
             "Half": 40,
             "Full": 60
         },
+        "mrp":60,
         "image": "images/mixrayta.jpeg"
     },
     {
         "id": 88,
         "name": "Plain Naan",
         "price": 25,
+        "mrp":35,
         "image": "images/plainnaan.jpeg"
     },
     {
         "id": 89,
         "name": "Butter Naan",
         "price": 30,
+        "mrp":40,
         "image": "images/butternaan.jpeg"
     },
     {
         "id": 90,
         "name": "Stuff Naan",
         "price": 40,
+        "mrp":50,
         "image": "images/stuffnaan.jpeg"
     },
     {
         "id": 91,
         "name": "Onion Naan",
         "price": 45,
+        "mrp":55,
         "image": "images/onionnaan.jpeg"
     },
     {
         "id": 92,
         "name": "Paneer Naan",
         "price": 55,
+        "mrp":65,
         "image": "images/paneernaan.jpeg"
     },
     {
         "id": 93,
         "name": "Garlic Naan",
         "price": 55,
+        "mrp":65,
         "image": "images/garlicnaan.jpeg"
     },
     {
         "id": 94,
         "name": "Tandoori Roti",
         "price": 12,
+        "mrp":15,
         "image": "images/tandooriroti.jpeg"
     },
     {
         "id": 95,
         "name": "Tawa Roti",
         "price": 12,
+        "mrp":15,
         "image": "images/tawaroti.jpeg"
     },
     {
         "id": 96,
         "name": "Ajwain Roti",
         "price": 15,
+        "mrp":18,
         "image": "images/ajwainroti.jpeg"
     },
     {
         "id": 97,
         "name": "Missi Roti",
         "price": 20,
+        "mrp":25,
         "image": "images/misiroti.jpeg"
     },
     {
         "id": 98,
         "name": "Plain Rice",
         "price": 40,
+        "mrp":50,
         "image": "images/plainrice.jpeg"
     },
     {
         "id": 99,
         "name": "Jeera Rice",
         "price": 70,
+        "mrp":90,
         "image": "images/jeerarice.jpeg"
     }
 ]   

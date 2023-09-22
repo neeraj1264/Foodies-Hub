@@ -267,25 +267,40 @@ section {
   position: relative;
   overflow: hidden;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border: 0.1rem solid var(--btn-color);
   cursor: pointer;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
 }
-
-.popular .box-container .box .price {
+.popular .box-container .box .dis {
   position: absolute;
-  left: 3rem;
-  top: 3rem;
-  padding: 0.5rem 1.5rem;
-  font-size: 2rem;
+  right: 0rem;
+  /* top: 3rem; */
+  padding: 0rem .4rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: white;
-  background-color: var(--btn-color);
+  background-color: red;
   border-radius: 10px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
-
+.pricee{
+  font-size: 2rem;
+}
+.mrp{
+  text-decoration: line-through;
+  margin: 1rem;
+  color: grey;
+  font-style: italic;
+}
+.rev{
+  background-color: green;
+  color: white;
+  padding: 0.2rem 1rem;
+  font-size: 1.5rem;
+  border-radius: .5rem;
+  position: absolute;
+  right: 0rem;
+}
 .popular .box-container .box h3 {
   color: #333;
   font-size: 2.5rem;
@@ -679,8 +694,11 @@ header img {
   }
 
   .popular .box-container .box img {
-    height: 12rem;
+    height: 16rem;
   }
+  .popular .box-container .box .dis {
+    font-size: 1.4rem;
+    }
 
   .popular .box-container .box h3 {
     font-size: 1.2rem;
@@ -688,11 +706,6 @@ header img {
 
   .popular .box-container .box .star i {
     font-size: 1.5rem;
-  }
-
-  .popular .box-container .box .price {
-   padding: .3rem 1rem;
-   font-size: 1.5rem;
   }
   .popular .box-container .box .category-dropdown {
     height: 2.5rem;
@@ -714,6 +727,12 @@ header img {
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
     margin-left: 7rem;
+  }
+  .mrp{
+    font-size: 1.5rem;
+  }
+  .rev{
+    font-style: 1.2rem;
   }
   .popup-option{
     font-size: .9rem;

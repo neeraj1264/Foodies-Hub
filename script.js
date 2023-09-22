@@ -530,16 +530,14 @@ const item = products[i];
 if (i < 6) {
   Single += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price.Small}</span>
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Small) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
-  <h3 class="product-name" id="1">${item.name}</h3>
-  <div class="stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  </div>
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price.Small}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
   <h2 class="btnn">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -554,16 +552,14 @@ if (i < 6) {
 if (i >= 6 && i < 12) {
   Double += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price.Small}</span>
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Small) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
-  <h3 class="product-name" id="1">${item.name}</h3>
-  <div class="stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  </div>
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price.Small}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
   <h2 class="btnn">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -579,16 +575,14 @@ if (i >= 6 && i < 12) {
 if (i >= 12 && i < 20) {
   Premium += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price.Regular}</span>
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Regular) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
-  <h3 class="product-name" id="1">${item.name}</h3>
-  <div class="stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  </div>
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price.Regular}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
   <p>${item.p}</p>
   <h2 class="btnn">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
@@ -605,16 +599,15 @@ if (i >= 12 && i < 20) {
 if (i >= 20 && i < 23) {
   Burger += `
 <div class="box" >
-<span class="price product-price"> ₹ ${item.price}</span>
+<span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
 <img src="${item.image}" alt="img">
-<h3 class="product-name" id="1">${item.name}</h3>
-<div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
+<h3 class="product-name" >${item.name}</h3>
+<span class="pricee product-price"> <b>₹ ${item.price}</b> 
+<del class="mrp">₹ ${item.mrp}</del>
+ <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+ </span>
+ <div class="stars"></div>
+
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
 <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -627,40 +620,38 @@ if (i >= 20 && i < 23) {
 }
 if (i >= 23 && i < 27) {
   Sandwich += `
-<div class="box" >
-<span class="price product-price"> ₹ ${item.price}</span>
-<img src="${item.image}" alt="img">
-<h3 class="product-name" id="1">${item.name}</h3>
-<div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
+  <div class="box" >
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
 }
 if (i >= 27 && i < 30 || i === 68 || i === 69) {
-  Wrap += `
+  Wrap +=`
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price}</span>
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
-  <h3 class="product-name" id="1">${item.name}</h3>
-  <div class="stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  </div>
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -673,17 +664,16 @@ if (i >= 27 && i < 30 || i === 68 || i === 69) {
   }
 if (i >= 30 && i < 33) {
     Garlic += `
-      <div class="box" >
-     <span class="price product-price"> ₹ ${item.price}</span>
-     <img src="${item.image}" alt="img">
-     <h3 class="product-name" id="1">${item.name}</h3>
-     <div class="stars">
-     <i class="fas fa-star"></i>
-     <i class="fas fa-star"></i>
-     <i class="fas fa-star"></i>
-     <i class="fas fa-star"></i>
-     <i class="fas fa-star"></i>
-    </div>
+    <div class="box" >
+    <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+    <img src="${item.image}" alt="img">
+    <h3 class="product-name" >${item.name}</h3>
+    <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+    <del class="mrp">₹ ${item.mrp}</del>
+     <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+     </span>
+     <div class="stars"></div>
+    
     <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
     <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -695,18 +685,17 @@ if (i >= 30 && i < 33) {
     `;
 }
 if (i >= 33 && i < 38) {
-  Pasta += `
-    <div class="box" >
-   <span class="price product-price"> ₹ ${item.price}</span>
-   <img src="${item.image}" alt="img">
-   <h3 class="product-name" id="1">${item.name}</h3>
-   <div class="stars">
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-  </div>
+  Pasta +=`
+  <div class="box" >
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -718,18 +707,17 @@ if (i >= 33 && i < 38) {
   `;
 }
 if (i >= 38 && i < 44) {
-  Shakes += `
+  Shakes +=`
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price}</span>
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
-  <h3 class="product-name" id="1">${item.name}</h3>
-  <div class="stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  </div>
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -741,18 +729,17 @@ if (i >= 38 && i < 44) {
   `;
 }
 if (i >= 44 && i < 50) {
-Chaap += `
+Chaap +=`
 <div class="box" >
-<span class="price product-price"> ₹ ${item.price}</span>
-<img src="${item.image}" alt="${item.name}">
-<h3 class="product-name" id="1">${item.name}</h3>
-<div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
+<span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+<img src="${item.image}" alt="img">
+<h3 class="product-name" >${item.name}</h3>
+<span class="pricee product-price"> <b>₹ ${item.price}</b> 
+<del class="mrp">₹ ${item.mrp}</del>
+ <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+ </span>
+ <div class="stars"></div>
+
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
 <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -765,40 +752,38 @@ Chaap += `
 }
 if (i >= 50 && i < 61) {
   Chinese += `
-<div class="box" >
-<span class="price product-price"> ₹ ${item.price}</span>
-<img src="${item.image}" alt="img">
-<h3 class="product-name" id="1">${item.name}</h3>
-<div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
+  <div class="box" >
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+  <div class="Go-to-Cart" style="display: none;">
+  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  `;
 }
 if (i >= 61 && i < 64) {
 Momos += `
 <div class="box" >
-<span class="price product-price"> ₹ ${item.price}</span>
+<span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
 <img src="${item.image}" alt="img">
-<h3 class="product-name" id="1">${item.name}</h3>
-<div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
+<h3 class="product-name" >${item.name}</h3>
+<span class="pricee product-price"> <b>₹ ${item.price}</b> 
+<del class="mrp">₹ ${item.mrp}</del>
+ <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+ </span>
+ <div class="stars"></div>
+
 <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
 <div class="Go-to-Cart" style="display: none;">
 <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -811,17 +796,16 @@ Momos += `
 }
 if (i >= 64 && i < 68) {
   Snacks += `
-    <div class="box" >
-   <span class="price product-price"> ₹ ${item.price}</span>
-   <img src="${item.image}" alt="img">
-   <h3 class="product-name" id="1">${item.name}</h3>
-   <div class="stars">
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-  </div>
+  <div class="box" >
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -835,16 +819,14 @@ if (i >= 64 && i < 68) {
 if (i >= 70 && i < 87) {
   Vegetables += `
   <div class="box" >
-  <span class="price product-price"> ₹ ${item.price.Half}</span>
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Half) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
-  <h3 class="product-name" id="1">${item.name}</h3>
-  <div class="stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  </div>
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price.Half}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
   <h2 class="btnn">ADD</h2>
     <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
@@ -854,21 +836,21 @@ if (i >= 70 && i < 87) {
   <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Full]', ${item.price.Full}, '${item.image}')">Full ${item.price.Full}/-</button>
 </div>
   </div>
-  `;
+  </div>
+  `
 }
 if (i >= 87 && i < 99) {
   Roti += `
-    <div class="box" >
-   <span class="price product-price"> ₹ ${item.price}</span>
-   <img src="${item.image}" alt="img">
-   <h3 class="product-name" id="1">${item.name}</h3>
-   <div class="stars">
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-   <i class="fas fa-star"></i>
-  </div>
+  <div class="box" >
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+  <img src="${item.image}" alt="img">
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
   <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
