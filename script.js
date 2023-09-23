@@ -50,15 +50,15 @@ document.querySelector(".Pasta").addEventListener("click", (event) => {
 });
 
 document.querySelector(".Single_topping").addEventListener("click", (event) => {
-  handleeAddToCartClick(event);
+  handleAddToCartClick(event);
 });
 
 document.querySelector(".Double_topping").addEventListener("click", (event) => {
-  handleeAddToCartClick(event);
+  handleAddToCartClick(event);
 });
 
 document.querySelector(".Premium").addEventListener("click", (event) => {
-  handleeAddToCartClick(event);
+  handleAddToCartClick(event);
 });
 
 document.querySelector(".Chinese").addEventListener("click", (event) => {
@@ -90,7 +90,7 @@ document.querySelector(".Snacks").addEventListener("click", (event) => {
 });
 
 document.querySelector(".Vegetables").addEventListener("click", (event) => {
-  handleeAddToCartClick(event);
+  handleAddToCartClick(event);
 });
 
 document.querySelector(".Roti").addEventListener("click", (event) => {
@@ -106,27 +106,6 @@ function handleAddToCartClick(event) {
     GotoCart.style.display = "flex";
 
     // Update cart count only when "Order Now" button is clicked
-    cartCount++;
-    cartCountElement.textContent = cartCount;
-  }
-}
-function handleeAddToCartClick(event) {
-  const btnn = event.target.closest(".btnn");
-
-  if (btnn) {
-    const newButtonsContainer = btnn.parentNode.querySelector('.new-buttons');
-
-    btnn.style.display = "none";
-    // goButtonContainer.style.display = "none";
-    newButtonsContainer.style.display = "flex";
-  }
-  const newButtonsContainer = event.target.closest(".new-buttons");
-
-  if (newButtonsContainer) {
-    const goButtonContainer = newButtonsContainer.parentNode.querySelector(".Go-to-Cart , .add-to-cart");
-
-    newButtonsContainer.style.display = "none";
-    goButtonContainer.style.display = "flex";
     cartCount++;
     cartCountElement.textContent = cartCount;
   }
@@ -489,6 +468,28 @@ function addToCart(id, name, price, image, quantity) {
   updateCartCount();
 }
 
+function showDropdown(itemId) {
+  const dropdown = document.getElementById(`dropdown-${itemId}`);
+  dropdown.style.display = "block";
+}
+
+function hideDropdown(itemId) {
+  const dropdown = document.getElementById(`dropdown-${itemId}`);
+  dropdown.style.display = "none";
+}
+
+function addToCartWithSize(id, name, image) {
+  const dropdown = document.getElementById(`dropdown-options-${id}`);
+  const selectedOption = dropdown.options[dropdown.selectedIndex].text;
+  const size = selectedOption.split("-")[0].trim();
+  const price = parseInt(selectedOption.split("₹")[1]);
+
+  // You can add the selected size and price to the cartData object
+  addToCart(id, `${name} (${size})`, price, image);
+  hideDropdown(id);
+}
+
+
 function updateCartCount() {
   const cartCountElement = document.getElementById("cart-count");
   let cartItemCount = 0;
@@ -538,14 +539,16 @@ if (i < 6) {
    <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
    </span>
    <div class="stars"></div>
-  <h2 class="btnn">ADD</h2>
-    <div class="Go-to-Cart" style="display: none;">
+   <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
+   <select class="size" id="dropdown-options-${item.id}">
+     <option value="Small">Small - ₹70</option>
+     <option value="Regular">Regular - ₹130</option>
+   </select><br><br>
+ </div>
+ <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
+     <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
-  <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')"><h2>Small ${item.price.Small}/-</h2></button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')"><h2>Regular ${item.price.Regular}/-</h2></button>
-</div>
   </div>
   `;
 }
@@ -560,15 +563,17 @@ if (i >= 6 && i < 12) {
    <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
    </span>
    <div class="stars"></div>
-  <h2 class="btnn">ADD</h2>
-    <div class="Go-to-Cart" style="display: none;">
+   <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
+   <select class="size" id="dropdown-options-${item.id}">
+     <option value="Small">Small - ₹90</option>
+     <option value="Regular">Regular - ₹130</option>
+     <option value="Medium">Medium - ₹210</option>
+   </select><br><br>
+ </div>
+ <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
+      <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
-  <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Small]', ${item.price.Small}, '${item.image}')"><h2>Small ${item.price.Small}/-</h2></button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')"><h2>Reg ${item.price.Regular}/-</h2></button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')"><h2>Med ${item.price.Medium}/-</h2></button>
-</div>
   </div>
   `;
 }
@@ -584,15 +589,17 @@ if (i >= 12 && i < 20) {
    </span>
    <div class="stars"></div>
   <p>${item.p}</p>
-  <h2 class="btnn">ADD</h2>
-    <div class="Go-to-Cart" style="display: none;">
+  <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
+  <select class="size" id="dropdown-options-${item.id}">
+    <option value="Regular">Regular - ₹160</option>
+    <option value="Medium">Medium - ₹310</option>
+    <option value="Large">Large - ₹420</option>
+  </select><br><br>
+</div>
+<button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
+      <div class="Go-to-Cart" style="display: none;">
   <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
-  <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Regular]', ${item.price.Regular}, '${item.image}')"><h2>Reg ${item.price.Regular}/-</h2></button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Medium]', ${item.price.Medium}, '${item.image}')"><h2>Med ${item.price.Medium}/-</h2></button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Large]', ${item.price.Large}, '${item.image}')"><h2>Large ${item.price.Large}/-</h2></button>
-</div>
   </div>
   `;
 }

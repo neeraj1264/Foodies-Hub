@@ -1017,6 +1017,13 @@ body.dark-mode .header a:hover {
   font-size: 3rem;
 }
 
+body.dark-mode .size{
+  color: white;
+  background-color: #333333;
+}
+body.dark-mode .dropdownn{
+  border: 1px solid white;
+}
 /*------------------------contact-us style---------------------------*/
 
 .contact-us {
@@ -1123,4 +1130,17 @@ body.dark-mode .header a:hover {
 
 .scroll-down:hover {
   transform: translateY(4px);
+}
+.size{
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.dropdownn{
+  margin-top: 1rem;
+  border: 1px solid black;
 }
