@@ -541,8 +541,8 @@ if (i < 6) {
    <div class="stars"></div>
    <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
    <select class="size" id="dropdown-options-${item.id}">
-     <option value="Small">Small - ₹70</option>
-     <option value="Regular">Regular - ₹130</option>
+     <option value="Small">Small - ₹${item.price.Small}</option>
+     <option value="Regular">Regular - ₹${item.price.Regular}</option>
    </select><br><br>
  </div>
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
@@ -565,9 +565,9 @@ if (i >= 6 && i < 12) {
    <div class="stars"></div>
    <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
    <select class="size" id="dropdown-options-${item.id}">
-     <option value="Small">Small - ₹90</option>
-     <option value="Regular">Regular - ₹130</option>
-     <option value="Medium">Medium - ₹210</option>
+     <option value="Small">Small - ₹${item.price.Small}</option>
+     <option value="Regular">Regular - ₹${item.price.Regular}</option>
+     <option value="Medium">Medium - ₹${item.price.Medium}</option>
    </select><br><br>
  </div>
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
@@ -591,9 +591,9 @@ if (i >= 12 && i < 20) {
   <p>${item.p}</p>
   <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
   <select class="size" id="dropdown-options-${item.id}">
-    <option value="Regular">Regular - ₹160</option>
-    <option value="Medium">Medium - ₹310</option>
-    <option value="Large">Large - ₹420</option>
+    <option value="Regular">Regular - ₹${item.price.Regular}</option>
+    <option value="Medium">Medium - ₹${item.price.Medium}</option>
+    <option value="Large">Large - ₹${item.price.Large}</option>
   </select><br><br>
 </div>
 <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
@@ -834,14 +834,15 @@ if (i >= 70 && i < 87) {
    <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
    </span>
    <div class="stars"></div>
-  <h2 class="btnn">ADD</h2>
-    <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  <div class="new-buttons" style="display: none;">
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Half]', ${item.price.Half}, '${item.image}')">Half ${item.price.Half}/-</button>
-  <button class="popup-option add-to-cart" onclick="addToCart('${item.id}', '${item.name} [Full]', ${item.price.Full}, '${item.image}')">Full ${item.price.Full}/-</button>
-</div>
+   <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
+   <select class="size" id="dropdown-options-${item.id}">
+     <option value="Half">Half - ₹${item.price.Half}</option>
+     <option value="Full">Full - ₹${item.price.Full}</option>
+   </select><br><br>
+ </div>
+ <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
+ <div class="Go-to-Cart" style="display: none;">
+ <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
   </div>
   </div>
   `
