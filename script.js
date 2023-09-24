@@ -486,7 +486,7 @@ function addToCartWithSize(id, name, image) {
 
   // You can add the selected size and price to the cartData object
   addToCart(id, `${name} (${size})`, price, image);
-  hideDropdown(id);
+  // hideDropdown(id);
 }
 
 
@@ -534,9 +534,6 @@ if (i < 6) {
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Small) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price.Small}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
    </span>
    <div class="stars"></div>
    <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
@@ -558,9 +555,6 @@ if (i >= 6 && i < 12) {
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Small) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price.Small}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
    </span>
    <div class="stars"></div>
    <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
@@ -583,10 +577,6 @@ if (i >= 12 && i < 20) {
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Regular) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price.Regular}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
    <div class="stars"></div>
   <p>${item.p}</p>
   <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
@@ -829,10 +819,6 @@ if (i >= 70 && i < 87) {
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Half) / item.mrp * 100)}</b>% off</span>
   <img src="${item.image}" alt="img">
   <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price.Half}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
    <div class="stars"></div>
    <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
    <select class="size" id="dropdown-options-${item.id}">
