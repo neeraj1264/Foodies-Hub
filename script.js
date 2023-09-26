@@ -200,6 +200,11 @@ let isCartModalOpen = false;
 
 function showCartModal() {
 
+  if (Object.keys(cartData).length === 0) {
+    closeCartModal(); // Close the modal
+    return;
+  }
+
   document.getElementById("cartModal").style.display = "block";
   isCartModalOpen = true;
   document.getElementById("dark-mode-toggle").style.display = "none";

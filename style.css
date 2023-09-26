@@ -1015,6 +1015,7 @@ body.dark-mode .header a:hover {
 
 .dark-mode-toggle #mode-icon {
   font-size: 3rem;
+  cursor: pointer;
 }
 
 body.dark-mode .size{
