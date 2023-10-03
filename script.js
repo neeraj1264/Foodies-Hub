@@ -134,34 +134,44 @@ function  calculateTotal() {
   return `₹ ${Total.toFixed(2)}`;
 }
 function submitOrder(cartData) {
-  var message = "I would like to order:\n";
+  // Retrieve the current order number from localStorage
+  let currentOrderNumber = localStorage.getItem("currentOrderNumber");
 
-  for (const itemId in cartData) {
-    if (cartData.hasOwnProperty(itemId)) {
-      const item = cartData[itemId];
-      message += `${item.quantity}x ${item.name} - ₹ ${item.price}\n`;
-    }
+  // If there's no stored order number, start with 1
+  if (!currentOrderNumber) {
+    currentOrderNumber = 1;
+  } else {
+    // If there's a stored order number, increment it by 1
+    currentOrderNumber = parseInt(currentOrderNumber) + 1;
   }
 
-   // Calculate the total amount
-   var totalAmount =  calculateitemTotal();
-   message += `\nItem amount: ${totalAmount}\nDelivery:         ₹ 20.00`;
+  const formattedOrderNumber = String(currentOrderNumber).padStart(4, '0');
 
-  // Calculate the total amount
-  var totalAmount =  calculateTotal();
-  message += `\nTotal amount: ${totalAmount}`;
+  localStorage.setItem("currentOrderNumber", currentOrderNumber);
 
-  // Replace 'YOUR_WHATSAPP_NUMBER' with the actual WhatsApp number
-  var whatsappNumber = '+917015823645';
+ var message = `Order  : *ORD-${formattedOrderNumber}*\n`;
+ var totalAmount =  calculateTotal();
+ message  += `Amount :- *${totalAmount}*\n\n`;
+ message  += '----------items----------\n\n'
+ for (const itemId in cartData) {
+   if (cartData.hasOwnProperty(itemId)) {
+     const item = cartData[itemId];
+     message += `${item.quantity}.0 x   ${item.name} ${item.code} = ₹ ${item.price}\n`;
+   }
+ }
+  message +=  `Service Charge = ₹ 20.00\n`
 
-  // Construct the WhatsApp link
-  var whatsappLink = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodeURIComponent(message);
+ // Replace 'YOUR_WHATSAPP_NUMBER' with the actual WhatsApp number
+ var whatsappNumber = '+917015823645';
 
-  // Open WhatsApp in a new tab to send the message
-  window.open(whatsappLink, '_blank');
-  
-  location.reload();
+ // Construct the WhatsApp link
+ var whatsappLink = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodeURIComponent(message);
+
+ // Open WhatsApp in a new tab to send the message
+ window.open(whatsappLink, '_blank');
  
+ location.reload();
+
 }
 
 // -------------------------dropdown_menu_Start-----------------------------------
