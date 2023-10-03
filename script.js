@@ -156,7 +156,7 @@ function submitOrder(cartData) {
  for (const itemId in cartData) {
    if (cartData.hasOwnProperty(itemId)) {
      const item = cartData[itemId];
-     message += `${item.quantity}.0 x   ${item.name} ${item.code} = ₹ ${item.price}\n`;
+     message += `${item.quantity}.0 x   ${item.name} = ₹ ${item.price}\n`;
    }
  }
   message +=  `Service Charge = ₹ 20.00\n`
