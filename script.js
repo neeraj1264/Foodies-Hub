@@ -170,7 +170,10 @@ function submitOrder(cartData) {
  // Open WhatsApp in a new tab to send the message
  window.open(whatsappLink, '_blank');
  
- location.reload();
+// Delay the page reload by 5 seconds
+setTimeout(function () {
+  showPopup();
+}, 5000);
 
 }
 
@@ -326,7 +329,8 @@ function showCartModal() {
       cartRow.appendChild(priceCell);
 
       table.appendChild(cartRow);
-
+ // Add product details to the invoice content
+ addToInvoice(item.name, item.quantity, item.price, item.price * item.quantity);
      }
   }
 // ------------------------------------horizontal-line start------------------------------------
@@ -423,17 +427,12 @@ const emptyCell8 = document.createElement("td");
   const submitrow = document.createElement("tr");
 
   const emptyCell = document.createElement("td");
-  emptyCell.setAttribute("colspan", "3"); 
+  emptyCell.setAttribute("colspan", "2"); 
  submitrow.appendChild(emptyCell);
 
-  // const emptyCell2 = document.createElement("td");
-  // emptyCell2.setAttribute("colspan", "1"); 
-  //submitrow.appendChild(emptyCell2);
-
     const submitCell = document.createElement("td");
-    submitCell.setAttribute("colspan", "1"); // Span 3 columns for the submit button
-    submitCell.classList.add("submit-cell"); // Add a custom class to style the submit cell
-   submitrow.appendChild(submitCell);
+    submitCell.setAttribute("colspan", "2"); 
+    submitrow.appendChild(submitCell);
       // Create the "Submit Order" button
    const submitButton = document.createElement("button");
    submitButton.textContent = "Place Order";
@@ -453,6 +452,14 @@ table.appendChild(emptyFooterRow2);
 
    cartItemsContainer.appendChild(table);
 }
+// Function to add product details to the invoice
+function addToInvoice(name, quantity, price, total) {
+  // Create elements or manipulate your invoice content here
+  // For example, you can append this information to a separate invoice content variable
+  const invoiceContent = `Product: ${name}, Quantity: ${quantity}, Price: ₹${price}, Total: ₹${total}`;
+  // Append this content to your invoice
+}
+
 function updatePrice(item, priceCell) {
   // Update the price cell with the new calculated price
   priceCell.textContent = `₹ ${item.price * item.quantity}`;
@@ -928,3 +935,145 @@ document.addEventListener("DOMContentLoaded", function () {
     modeIcon.classList.add("fa-moon");
   }
 });
+// Function to generate and download the invoice using pdfmake
+function generateAndDownloadInvoice(shopName, ownerName, mobileNo, cartData) {
+  // Create an array to store the table body data
+  const tableBody = [];
+
+  // Add header row to the table
+  tableBody.push(['Products', 'Quantity', 'Price', 'Total']);
+
+  // Iterate through the cart items and add them to the table
+  for (const itemId in cartData) {
+    if (cartData.hasOwnProperty(itemId)) {
+      const item = cartData[itemId];
+      tableBody.push([item.name, item.quantity, `₹ ${item.price}`, `₹ ${item.price * item.quantity}`]);
+    }
+  }
+
+ // Calculate the total amount including the delivery charge
+ const deliveryCharge = 20; // You can adjust this value as needed
+ const itemtotal = Object.values(cartData).reduce((total, item) => total + item.price * item.quantity, 0) ;
+ const totalAmount = Object.values(cartData).reduce((total, item) => total + item.price * item.quantity, 0) + deliveryCharge;
+
+  // Define the content for your PDF
+  const docDefinition = {
+    content: [
+      { text: 'Foodies Hub', style: 'header' },
+      {text: `Guru Nanak Colony, Pehowa, Haryana`, style: 'headerr'},
+      {text: `Phone Number - 7015823645`, style: 'headerr'},
+      { text: 'Invoice Details', style: 'subheader' },
+      {
+        table: {
+          widths: ['*', 'auto', 'auto', 'auto'],
+          headerRows: 1,
+          alignment: 'center',
+          body: tableBody,
+        },
+        style: 'tableStyle', // Add style for the table body content
+      },
+      { text: `Item Total:          ₹ ${itemtotal.toFixed(2)}`, style: 'total' },
+      { text: `Service Charge:   ₹ 20.00  `, style: 'totall' },
+      { text: `Total Amount:    ₹ ${totalAmount.toFixed(2)}`, style: 'totall' },
+    ],
+    styles: {
+      header: {
+        fontSize: 35,
+        bold: true,
+        alignment: 'center',
+        margin: [0, 0, 0, 10], // Adjust margins as needed
+      },
+      headerr: {
+        fontSize: 25,
+        alignment: 'center',
+        margin: [0, 0, 0, 10], // Adjust margins as needed
+      },
+      subheader: {
+        fontSize: 25,
+        bold: true,
+        alignment: 'center',
+        margin: [0, 10, 0, 5],
+      },
+      total: {
+        fontSize: 25,
+        bold: true,
+        alignment: 'right',
+        margin: [0, 60, 0, 0],
+      },
+      totall: {
+        fontSize: 25,
+        bold: true,
+        alignment: 'right',
+        margin: [0, 10, 0, 0],
+      },
+      tableStyle: {
+        fontSize: 15,
+      }
+    },
+  };
+
+  // Generate the PDF
+  const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+
+  // Download the PDF
+  pdfDocGenerator.download('invoice.pdf');
+}
+
+
+function showPopup() {
+  // Create the popup element
+  var popup = document.createElement("div");
+  popup.className = "popup";
+  
+  // Create the close button (X button) in the top right corner
+  var closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.className = "close-button";
+
+  // Add a click event listener to the close button to close the popup
+  closeButton.addEventListener("click", function () {
+    location.reload();
+    });
+  // Create the success message
+  var successMessage = document.createElement("p");
+  successMessage.textContent = "Order placed successfully!";
+  
+  // Create a container div for centering the button
+  var buttonContainer = document.createElement("div");
+  buttonContainer.className = "button-container";
+  
+  // Create the "View Invoice" button
+  var viewInvoiceButton = document.createElement("button");
+  viewInvoiceButton.textContent = "Download Invoice";
+  viewInvoiceButton.classList.add("popup-invoice-button");
+
+  // Add an event listener to the button (you can replace the function with your own logic)
+  viewInvoiceButton.addEventListener("click", function () {
+    generateAndDownloadInvoice('Foodies Hub', 'Neeraj Manchanda', '7015823645', cartData);
+});
+  // Append elements to the popup
+  popup.appendChild(closeButton); 
+  popup.appendChild(successMessage);
+  buttonContainer.appendChild(viewInvoiceButton);
+  popup.appendChild(buttonContainer);
+  
+  // Create the overlay element
+  var overlay = document.createElement("div");
+  overlay.className = "overlay";
+  
+  // Append the popup and overlay to the body
+  document.body.appendChild(overlay);
+  document.body.appendChild(popup);
+  
+  // Show the popup and overlay
+  overlay.style.display = "block";
+  popup.style.display = "block";
+  
+  // Function to close the popup
+  function closePopup() {
+    overlay.style.display = "none";
+    popup.style.display = "none";
+  }
+}
+
+
