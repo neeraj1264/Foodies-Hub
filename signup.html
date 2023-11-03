@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10rem;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #signup-form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            margin: 0 auto;
+            padding: 22px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 92%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) { /* Adjust styles for tablets and smaller screens */
+            #signup-form {
+                width: 80%; /* Adjust the width for tablets */
+                padding: 15px; /* Adjust padding for tablets */
+            }
+        }
+
+        @media (max-width: 480px) { /* Adjust styles  for mobile devices */
+            #signup-form {
+                width: 90%; /* Adjust the width for mobile devices */
+                padding: 10px; /* Adjust padding for mobile devices */
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- header section starts  -->
+
+     <header class="header">
+
+        <a href="#" id="logo"> <img src="images/logo1.png" alt=""></a>
+
+        <div id="menu-bars" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="review.html">review</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+
+        </nav>
+        <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <i id="mode-icon" class="fas fa-3x fa-moon"></i>
+        </div>
+    </header>
+
+    <!-- header section ends -->
+    <h1>Sign Up</h1>
+    <form id="signup-form" onsubmit="handleSignUp(event)">
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" placeholder="Enter your name" required>
+        <label for="addressInput">Address</label>
+        <input type="text" id="addressInput" placeholder="Enter your address" required>
+        <label for="mobileInput">Mobile Number</label>
+        <input type="text" id="mobileInput" placeholder="Enter your mobile number" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+<script>
+    function isUserSignedUp() {
+  const userData = localStorage.getItem("userData");
+  return userData !== null;
+}
+// function closeSignUpModal() {
+//   const modal = document.getElementById("signup-modal");
+//   modal.style.display = "none";
+//   location.reload();
+// }
+// Function to handle the signup form submission
+function handleSignUp(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  // Get form input values
+  const name = document.querySelector("#nameInput").value.trim();
+  const address = document.querySelector("#addressInput").value.trim();
+  const mobileNumber = document.querySelector("#mobileInput").value.trim();
+
+  // Validation: Check if name is not empty
+  if (name === "") {
+    alert("Please enter your name.");
+    return;
+  }
+
+  // Validation: Check if address is not empty
+  if (address === "") {
+    alert("Please enter your address.");
+    return;
+  }
+
+  // Validation: Check if mobile number is not empty and follows a valid format
+  const mobilePattern = /^[0-9]{10}$/; // Assuming a 10-digit mobile number format
+  if (!mobilePattern.test(mobileNumber)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  // If all validation passes, you can proceed to store the user data in local storage or send it to the server
+  const userData = {
+    name: name,
+    address: address,
+    mobileNumber: mobileNumber,
+    // Add more user data if needed
+  };
+
+  // Store the user data in local storage
+  localStorage.setItem("userData", JSON.stringify(userData));
+
+  // Close the modal
+//   closeSignUpModal();
+  window.location.href = "index.html"; 
+  // You can also display a success message or redirect the user to a different page
+  alert("Sign up successful!");
+}
+ // navbar
+ let menubar = document.querySelector("#menu-bars");
+    let mynav = document.querySelector(".navbar");
+
+    menubar.onclick = () => {
+        menubar.classList.toggle("fa-times");
+        mynav.classList.toggle("active");
+    };
+    // Add a click event listener to all navigation bar elements except the menu icon
+    const navbarItems = document.querySelectorAll(".navbar a:not(#menu-bars)");
+    navbarItems.forEach(item => {
+        item.addEventListener("click", () => {
+            if (mynav.classList.contains("active")) {
+                menubar.classList.toggle("fa-times");
+                mynav.classList.toggle("active");
+            }
+        });
+    });
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+
+        // Get the mode icon element
+        const modeIcon = document.getElementById("mode-icon");
+
+        // Toggle the icon between moon and sun based on the dark mode class
+        if (body.classList.contains("dark-mode")) {
+            modeIcon.classList.remove("fa-moon");
+            modeIcon.classList.add("fa-sun");
+
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            modeIcon.classList.remove("fa-sun");
+            modeIcon.classList.add("fa-moon");
+
+            localStorage.setItem("darkMode", "disabled");
+
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+        const modeIcon = document.getElementById("mode-icon");
+
+        // Check if the user has a preference in localStorage
+        const darkModePreference = localStorage.getItem("darkMode");
+
+        if (darkModePreference === "enabled") {
+            body.classList.add("dark-mode");
+            modeIcon.classList.remove("fa-moon");
+            modeIcon.classList.add("fa-sun");
+        } else {
+            body.classList.remove("dark-mode");
+            modeIcon.classList.remove("fa-sun");
+            modeIcon.classList.add("fa-moon");
+        }
+    });
+</script>
+</html>

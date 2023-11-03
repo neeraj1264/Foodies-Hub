@@ -100,16 +100,23 @@ document.querySelector(".Roti").addEventListener("click", (event) => {
 function handleAddToCartClick(event) {
   const button = event.target.closest(".add-to-cart");
   if (button) {
-    const GotoCart = button.parentNode.querySelector(".Go-to-Cart");
+    if (!isUserSignedUp()) {
+      event.preventDefault(); 
+      alert("sign up first")
+      window.location.href = 'signup.html'; 
+    } else if(isUserSignedUp()){
+      const GotoCart = button.parentNode.querySelector(".Go-to-Cart");
 
-    button.style.display = "none";
-    GotoCart.style.display = "flex";
+      button.style.display = "none";
+      GotoCart.style.display = "flex";
 
-    // Update cart count only when "Order Now" button is clicked
-    cartCount++;
-    cartCountElement.textContent = cartCount;
+      // Update cart count only when "Order Now" button is clicked
+      cartCount++;
+      cartCountElement.textContent = cartCount;
+    }
   }
 }
+
 
 // ---------------------cart Data code-----------------------------
 
@@ -133,25 +140,21 @@ function  calculateTotal() {
   }
   return `₹ ${Total.toFixed(2)}`;
 }
+function getRandom4DigitNumber() {
+  return Math.floor(1000 + Math.random() * 9000);
+}
 function submitOrder(cartData) {
   // Retrieve the current order number from localStorage
-  let currentOrderNumber = localStorage.getItem("currentOrderNumber");
+  const currentOrderNumber = getRandom4DigitNumber();
 
-  // If there's no stored order number, start with 1
-  if (!currentOrderNumber) {
-    currentOrderNumber = 1;
-  } else {
-    // If there's a stored order number, increment it by 1
-    currentOrderNumber = parseInt(currentOrderNumber) + 1;
-  }
+  const customerData = JSON.parse(localStorage.getItem("userData"));
 
-  const formattedOrderNumber = String(currentOrderNumber).padStart(4, '0');
-
-  localStorage.setItem("currentOrderNumber", currentOrderNumber);
-
- var message = `Order  : *ORD-${formattedOrderNumber}*\n`;
+ var message = `Order      : *ORD-${currentOrderNumber}*\n`;
+ message += `Phone    : *${customerData.mobileNumber}*\n`;
+ message += `Name     : *${customerData.name}*\n`;
  var totalAmount =  calculateTotal();
- message  += `Amount :- *${totalAmount}*\n\n`;
+ message  += `Amount : *${totalAmount}*\n`;
+ message += `Address : *${customerData.address}*\n\n`;
  message  += '----------items----------\n\n'
  for (const itemId in cartData) {
    if (cartData.hasOwnProperty(itemId)) {
@@ -432,6 +435,7 @@ const emptyCell8 = document.createElement("td");
 
     const submitCell = document.createElement("td");
     submitCell.setAttribute("colspan", "2"); 
+    submitCell.classList.add("submit-cell");
     submitrow.appendChild(submitCell);
       // Create the "Submit Order" button
    const submitButton = document.createElement("button");
@@ -935,8 +939,13 @@ document.addEventListener("DOMContentLoaded", function () {
     modeIcon.classList.add("fa-moon");
   }
 });
+
 // Function to generate and download the invoice using pdfmake
-function generateAndDownloadInvoice(shopName, ownerName, mobileNo, cartData) {
+function generateAndDownloadInvoice( shopName,ownerName,mobileNo,cartData) {
+ 
+  const customerData = JSON.parse(localStorage.getItem("userData"));
+
+  const { name: customerName, address: customerAddress, mobileNumber: customerPhone } = customerData;
   // Create an array to store the table body data
   const tableBody = [];
 
@@ -953,8 +962,8 @@ function generateAndDownloadInvoice(shopName, ownerName, mobileNo, cartData) {
 
  // Calculate the total amount including the delivery charge
  const deliveryCharge = 20; // You can adjust this value as needed
- const itemtotal = Object.values(cartData).reduce((total, item) => total + item.price * item.quantity, 0) ;
- const totalAmount = Object.values(cartData).reduce((total, item) => total + item.price * item.quantity, 0) + deliveryCharge;
+ const itemTotal = Object.values(cartData).reduce((total, item) => total + item.price * item.quantity, 0);
+ const totalAmount = itemTotal + deliveryCharge;
 
   // Define the content for your PDF
   const docDefinition = {
@@ -962,17 +971,22 @@ function generateAndDownloadInvoice(shopName, ownerName, mobileNo, cartData) {
       { text: 'Foodies Hub', style: 'header' },
       {text: `Guru Nanak Colony, Pehowa, Haryana`, style: 'headerr'},
       {text: `Phone Number - 7015823645`, style: 'headerr'},
+      { canvas: [{ type: 'line', x1: 0, y1: 10, x2: 515, y2: 10, lineWidth: 2 }], margin: [0, 20] },
       { text: 'Invoice Details', style: 'subheader' },
+      { text: `Customer Name   -     ${customerName}`, style: 'customerInfo' },
+      { text: `Address                 -     ${customerAddress}`, style: 'customerInfo' },
+      { text: ` Phone Number     -     ${customerPhone}`, style: 'customerInfoWithSpace' },
       {
         table: {
           widths: ['*', 'auto', 'auto', 'auto'],
           headerRows: 1,
           alignment: 'center',
+          margin: [0, 10, 0, 0],
           body: tableBody,
         },
         style: 'tableStyle', // Add style for the table body content
       },
-      { text: `Item Total:          ₹ ${itemtotal.toFixed(2)}`, style: 'total' },
+      { text: `Item Total:          ₹ ${itemTotal.toFixed(2)}`, style: 'total' },
       { text: `Service Charge:   ₹ 20.00  `, style: 'totall' },
       { text: `Total Amount:    ₹ ${totalAmount.toFixed(2)}`, style: 'totall' },
     ],
@@ -1008,7 +1022,17 @@ function generateAndDownloadInvoice(shopName, ownerName, mobileNo, cartData) {
       },
       tableStyle: {
         fontSize: 15,
-      }
+      },
+      customerInfo: {
+        fontSize: 20,
+        alignment: 'left',
+        margin: [0, 10, 0, 0],
+      },
+      customerInfoWithSpace: { // Adjusted style with space
+        fontSize: 20,
+        alignment: 'left',
+        margin: [0, 10, 0, 20], // Increase bottom margin
+      },
     },
   };
 
@@ -1074,6 +1098,12 @@ function showPopup() {
     overlay.style.display = "none";
     popup.style.display = "none";
   }
+}
+
+
+function isUserSignedUp() {
+  const userData = localStorage.getItem("userData");
+  return userData !== null;
 }
 
 
