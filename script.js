@@ -102,7 +102,7 @@ function handleAddToCartClick(event) {
   if (button) {
     if (!isUserSignedUp()) {
       event.preventDefault(); 
-      alert("sign up first")
+      alert("Enter Your Address First")
       window.location.href = 'signup.html'; 
     } else if(isUserSignedUp()){
       const GotoCart = button.parentNode.querySelector(".Go-to-Cart");
