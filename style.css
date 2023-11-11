@@ -707,7 +707,7 @@ header img {
 
   .btn {
     padding: .5rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   /* .value-button{
     font-size: 1rem;
@@ -1338,12 +1338,11 @@ form {
   display: inline-block;
   /* border: 1px solid #ddd; */
   margin-top: 2px;
-  /* width: 40px;
-  height: 40px; */
   text-align: center;
   vertical-align: middle;
-  padding: 6px 9px;
-  font-size: 1rem;
+  padding: 3px 9px;
+  font-size: 1.5rem;
+  font-weight: bolder;
   background: repeating-radial-gradient(black, transparent 100px);
   color: white;
 }
