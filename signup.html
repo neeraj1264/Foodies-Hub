@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Sign Up</title>
+    <title>Enter Your Address</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -90,7 +90,7 @@
     </header>
 
     <!-- header section ends -->
-    <h1>Sign Up</h1>
+    <h1>Enter Your Address</h1>
     <form id="signup-form" onsubmit="handleSignUp(event)">
         <label for="nameInput">Name</label>
         <input type="text" id="nameInput" placeholder="Enter your name" required>
@@ -98,7 +98,7 @@
         <input type="text" id="addressInput" placeholder="Enter your address" required>
         <label for="mobileInput">Mobile Number</label>
         <input type="text" id="mobileInput" placeholder="Enter your mobile number" required>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Submit</button>
     </form>
 </body>
 <script>
@@ -154,7 +154,7 @@ function handleSignUp(event) {
 //   closeSignUpModal();
   window.location.href = "index.html"; 
   // You can also display a success message or redirect the user to a different page
-  alert("Sign up successful!");
+  alert("Address Added successful!");
 }
  // navbar
  let menubar = document.querySelector("#menu-bars");

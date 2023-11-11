@@ -105,10 +105,10 @@ function handleAddToCartClick(event) {
       alert("Enter Your Address First")
       window.location.href = 'signup.html'; 
     } else if(isUserSignedUp()){
-      const GotoCart = button.parentNode.querySelector(".Go-to-Cart");
+      const quantity = button.parentNode.querySelector(".quantity-control");
 
       button.style.display = "none";
-      GotoCart.style.display = "flex";
+      quantity.style.display = "flex";
 
       // Update cart count only when "Order Now" button is clicked
       cartCount++;
@@ -280,7 +280,7 @@ function showCartModal() {
 
       const quantityCell = document.createElement("td");
       quantityCell.classList.add("center-align");
-      
+
       const minusIcon = document.createElement("i");
       minusIcon.classList.add("fas", "fa-minus", "quantity-icon");
       minusIcon.setAttribute("data-item-id", itemId);
@@ -290,27 +290,24 @@ function showCartModal() {
           item.quantity--;
           quantityValue.textContent = item.quantity;
           updatePrice(item, priceCell);
-           Itemtotalcell.textContent = `${ calculateitemTotal()}` ; // Update the total amount
-           totalcell.textContent = `${ calculateTotal()}` ; // Update the total amount
-
-        }
-        else {
+          Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
+          totalcell.textContent = `${calculateTotal()}`; // Update the total amount
+        } else {
           // Remove the item from the cart when quantity is less than one
           delete cartData[itemId];
           showCartModal(); // Refresh the cart modal after deleting an item
           updateCartCount(); // Update the cart count
-           Itemtotalcell.textContent = `${ calculateitemTotal()}`; // Update the total amount
-           totalcell.textContent = `${ calculateTotal()}` ; // Update the total amount
-
-              }
+          Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
+          totalcell.textContent = `${calculateTotal()}`; // Update the total amount
+        }
       });
       quantityCell.appendChild(minusIcon);
-      
+
       const quantityValue = document.createElement("span");
-      quantityValue.classList.add("item-quantity")
+      quantityValue.classList.add("item-quantity");
       quantityValue.textContent = item.quantity;
       quantityCell.appendChild(quantityValue);
-      
+
       const plusIcon = document.createElement("i");
       plusIcon.classList.add("fas", "fa-plus", "quantity-icon");
       plusIcon.setAttribute("data-item-id", itemId);
@@ -319,11 +316,11 @@ function showCartModal() {
         item.quantity++;
         quantityValue.textContent = item.quantity;
         updatePrice(item, priceCell);
-         Itemtotalcell.textContent = `${ calculateitemTotal()}`; // Update the total amount
-         totalcell.textContent = `${ calculateTotal()}` ; // Update the total amount
+        Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
+        totalcell.textContent = `${calculateTotal()}`; // Update the total amount
       });
       quantityCell.appendChild(plusIcon);
-      
+
       cartRow.appendChild(quantityCell);
 
       const priceCell = document.createElement("td");
@@ -476,10 +473,10 @@ function closeCartModal() {
   document.getElementById("dark-mode-toggle").style.display = "block";
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
-  location.reload();
+  // location.reload();
 }
 
-function addToCart(id, name, price, image, quantity) {
+function addToCart(id, name, price, image, value) {
   if (cartData.hasOwnProperty(id)) {
     cartData[id].quantity += 1;
   } else {
@@ -537,6 +534,29 @@ http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
 let products = JSON.parse(this.responseText);
+function uncustomize(item) {
+  return `
+  <div class="box" >
+  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
+  <img src="${item.image}" alt="img" onclick="zoomImage(this)">
+  <h3 class="product-name" >${item.name}</h3>
+  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
+  <del class="mrp">₹ ${item.mrp}</del>
+   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
+   </span>
+   <div class="stars"></div>
+  
+  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
+   
+ <form class="quantity-control" style="display: none;">
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <input type="number" class="number" id="number-${item.id}" value="1" readonly />
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+</form>
+
+  </div>
+  `;
+  }
 let Burger = "";
 let Sandwich = "";
 let Pasta = "";
@@ -558,7 +578,7 @@ if (i < 6) {
   Single += `
   <div class="box" >
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Small) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
+  <img src="${item.image}" alt="img" onclick="zoomImage(this)">
   <h3 class="product-name" >${item.name}</h3>
    </span>
    <div class="stars"></div>
@@ -569,17 +589,27 @@ if (i < 6) {
    </select><br><br>
  </div>
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
-     <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
+  
+ <form class="quantity-control" style="display: none;">
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+</form>
+
   </div>
   `;
+  Single += `
+<div class="image-zoom-container" id="image-zoom-container">
+<span class="close-zoom" onclick="closeZoomImage()">&times;</span>
+<img class="zoomed-image" id="zoomed-image">
+</div>
+`;
 }
 if (i >= 6 && i < 12) {
   Double += `
   <div class="box" >
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Small) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
+  <img src="${item.image}" alt="img" onclick="zoomImage(this)">
   <h3 class="product-name" >${item.name}</h3>
    </span>
    <div class="stars"></div>
@@ -591,17 +621,27 @@ if (i >= 6 && i < 12) {
    </select><br><br>
  </div>
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
-      <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
+ 
+ <form class="quantity-control" style="display: none;">
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+</form>
+
   </div>
   `;
+  Double += `
+<div class="image-zoom-container" id="image-zoom-container">
+<span class="close-zoom" onclick="closeZoomImage()">&times;</span>
+<img class="zoomed-image" id="zoomed-image">
+</div>
+`;
 }
 if (i >= 12 && i < 20) {
   Premium += `
   <div class="box" >
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Regular) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
+  <img src="${item.image}" alt="img" onclick="zoomImage(this)">
   <h3 class="product-name" >${item.name}</h3>
    <div class="stars"></div>
   <p>${item.p}</p>
@@ -613,237 +653,65 @@ if (i >= 12 && i < 20) {
   </select><br><br>
 </div>
 <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
-      <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
+    
+ <form class="quantity-control" style="display: none;">
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+</form>
+
   </div>
   `;
+  Premium += `
+<div class="image-zoom-container" id="image-zoom-container">
+<span class="close-zoom" onclick="closeZoomImage()">&times;</span>
+<img class="zoomed-image" id="zoomed-image">
+</div>
+`;
 }
 if (i >= 20 && i < 23) {
+  Burger += uncustomize(item);
+
   Burger += `
-<div class="box" >
-<span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-<img src="${item.image}" alt="img">
-<h3 class="product-name" >${item.name}</h3>
-<span class="pricee product-price"> <b>₹ ${item.price}</b> 
-<del class="mrp">₹ ${item.mrp}</del>
- <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
- </span>
- <div class="stars"></div>
-
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
+<div class="image-zoom-container" id="image-zoom-container">
+<span class="close-zoom" onclick="closeZoomImage()">&times;</span>
+<img class="zoomed-image" id="zoomed-image">
 </div>
 `;
 }
 if (i >= 23 && i < 27) {
-  Sandwich += `
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
+  Sandwich += uncustomize(item);
   
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  `;
 }
 if (i >= 27 && i < 30 || i === 68 || i === 69) {
-  Wrap +=`
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
-  
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  `;
+  Wrap += uncustomize(item);
   }
 if (i >= 30 && i < 33) {
-    Garlic += `
-    <div class="box" >
-    <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-    <img src="${item.image}" alt="img">
-    <h3 class="product-name" >${item.name}</h3>
-    <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-    <del class="mrp">₹ ${item.mrp}</del>
-     <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-     </span>
-     <div class="stars"></div>
-    
-    <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-    <div class="Go-to-Cart" style="display: none;">
-    <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-    </div>
-    
-    </div>
-    </div>
-    </div>
-    `;
+    Garlic += uncustomize(item);
 }
 if (i >= 33 && i < 38) {
-  Pasta +=`
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
-  
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  `;
+  Pasta += uncustomize(item);
 }
 if (i >= 38 && i < 44) {
-  Shakes +=`
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
-  
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  `;
+  Shakes += uncustomize(item);
 }
 if (i >= 44 && i < 50) {
-Chaap +=`
-<div class="box" >
-<span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-<img src="${item.image}" alt="img">
-<h3 class="product-name" >${item.name}</h3>
-<span class="pricee product-price"> <b>₹ ${item.price}</b> 
-<del class="mrp">₹ ${item.mrp}</del>
- <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
- </span>
- <div class="stars"></div>
-
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
+Chaap += uncustomize(item);
 }
 if (i >= 50 && i < 61) {
-  Chinese += `
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
-  
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  `;
+  Chinese += uncustomize(item);
 }
 if (i >= 61 && i < 64) {
-Momos += `
-<div class="box" >
-<span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-<img src="${item.image}" alt="img">
-<h3 class="product-name" >${item.name}</h3>
-<span class="pricee product-price"> <b>₹ ${item.price}</b> 
-<del class="mrp">₹ ${item.mrp}</del>
- <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
- </span>
- <div class="stars"></div>
-
-<h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-<div class="Go-to-Cart" style="display: none;">
-<h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-</div>
-
-</div>
-</div>
-</div>
-`;
+Momos += uncustomize(item);
 }
 if (i >= 64 && i < 68) {
-  Snacks += `
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
-  
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  `;
+  Snacks += uncustomize(item);
 }
 if (i >= 70 && i < 87) {
   Vegetables += `
   <div class="box" >
   <span class="dis product-price"><b>${Math.round((item.mrp - item.price.Half) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
+  <img src="${item.image}" alt="img" onclick="zoomImage(this)">
   <h3 class="product-name" >${item.name}</h3>
    <div class="stars"></div>
    <div class="dropdownn" id="dropdown-${item.id}" style="display: flex;">
@@ -853,33 +721,24 @@ if (i >= 70 && i < 87) {
    </select><br><br>
  </div>
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
- <div class="Go-to-Cart" style="display: none;">
- <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  </div>
-  `
-}
-if (i >= 87 && i < 99) {
-  Roti += `
-  <div class="box" >
-  <span class="dis product-price"><b>${Math.round((item.mrp - item.price) / item.mrp * 100)}</b>% off</span>
-  <img src="${item.image}" alt="img">
-  <h3 class="product-name" >${item.name}</h3>
-  <span class="pricee product-price"> <b>₹ ${item.price}</b> 
-  <del class="mrp">₹ ${item.mrp}</del>
-   <span class="rev"> 4.7 <i class="fas fa-star"></i></span>
-   </span>
-   <div class="stars"></div>
   
-  <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
-  <div class="Go-to-Cart" style="display: none;">
-  <h2 class="go" onclick="showCartModal()">GO <i class="fas fa fa-shopping-cart"></i></h2>
-  </div>
-  
-  </div>
-  </div>
+ <form class="quantity-control" style="display: none;">
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+</form>
+
   </div>
   `;
+  Vegetables += `
+  <div class="image-zoom-container" id="image-zoom-container">
+  <span class="close-zoom" onclick="closeZoomImage()">&times;</span>
+  <img class="zoomed-image" id="zoomed-image">
+  </div>
+  `;
+}
+if (i >= 87 && i < 99) {
+  Roti += uncustomize(item);
 }
 }
 document.querySelector(".Burger").innerHTML = Burger;
@@ -940,6 +799,68 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// JavaScript function to zoom in on an image
+function zoomImage(image) {
+  const zoomedImage = document.getElementById("zoomed-image");
+  const imageZoomContainer = document.getElementById("image-zoom-container");
+
+  zoomedImage.src = image.src;
+  imageZoomContainer.style.display = "block";
+}
+
+// JavaScript function to close the zoomed-in image
+function closeZoomImage() {
+  const imageZoomContainer = document.getElementById("image-zoom-container");
+  imageZoomContainer.style.display = "none";
+}
+
+function increaseValue(itemId) {
+  var value = parseInt(document.getElementById(`number-${itemId}`).value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById(`number-${itemId}`).value = value;
+  updateCartData(itemId, value);
+}
+
+function decreaseValue(itemId) {
+  var valueElement = document.getElementById(`number-${itemId}`);
+  var value = parseInt(valueElement.value, 10);
+  value = isNaN(value) ? 0 : value;
+
+  // Check if the value is greater than 1
+  if (value > 1) {
+    value--;
+    valueElement.value = value;
+    updateCartData(itemId, value);
+  } else {
+    // If the value is 1 or less, hide the quantity container
+    valueElement.value = 1;
+    hideQuantityContainer(itemId);
+    delete cartData[itemId];
+
+    updateCartCount();
+    // Update the total amount
+    // Itemtotalcell.textContent = `${calculateitemTotal()}`;
+    // totalcell.textContent = `${calculateTotal()}`;
+  }
+}
+
+function updateCartData(itemId, quantity) {
+  if (cartData.hasOwnProperty(itemId)) {
+    cartData[itemId].quantity = quantity;
+  }
+}
+
+function hideQuantityContainer(itemId) {
+  const quantityContainer = document.getElementById(`number-${itemId}`).closest(".quantity-control");
+  quantityContainer.style.display = "none";
+  cartCount--;
+
+  const button = quantityContainer.parentNode.querySelector(".add-to-cart");
+  button.style.display = "inline-block";
+
+  
+}
 // Function to generate and download the invoice using pdfmake
 function generateAndDownloadInvoice( shopName,ownerName,mobileNo,cartData) {
  

@@ -55,19 +55,9 @@ header .navbar a {
   margin-left: 2rem;
   color: black;
 }
-
-/* .content .dropdown a {
-  font-size: 2rem;
-  margin-left: 2rem;
-  color: black;
-} */
 header .navbar a:hover {
   color: var(--btn-color);
 }
-
-/* .content .dropdown a:hover {
-  color: var(--btn-color);
-} */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -369,7 +359,7 @@ section {
   margin-top: 2rem;
 }
 
-.btn::before {
+/* .btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -379,11 +369,11 @@ section {
   background: var(--btn-color);
   transition: 0.3s linear;
   z-index: -1;
-}
+} */
 
 .btn:hover {
   color: white;
-  border: none
+  /* border: none */
 }
 
 .btn:hover::before {
@@ -719,7 +709,13 @@ header img {
     padding: .5rem 1.5rem;
     font-size: 1rem;
   }
-
+  /* .value-button{
+    font-size: 1rem;
+    padding: 3px 5px;
+  }
+  input.number{
+    font-size: 1rem;
+  } */
   .btnn {
     padding: .5rem 1.5rem;
     font-size: 1rem;
@@ -928,6 +924,14 @@ body.dark-mode .popup-option {
 body.dark-mode .btn {
   color: black;
   background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
+}
+body.dark-mode .value-button {
+  background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
+  color: black;
+}
+body.dark-mode input.number{
+  background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
+  color: black;
 }
 body.dark-mode .btnn {
   color: black;
@@ -1323,6 +1327,96 @@ body.dark-mode .dropdownn{
 #signup-form button:hover {
   background-color: #0056b3;
 }
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 16px;
+}
 
-/* Add styles for form input validation (e.g., red border on error) as needed */
+.value-button {
+  display: inline-block;
+  /* border: 1px solid #ddd; */
+  margin-top: 2px;
+  /* width: 40px;
+  height: 40px; */
+  text-align: center;
+  vertical-align: middle;
+  padding: 6px 9px;
+  font-size: 1rem;
+  background: repeating-radial-gradient(black, transparent 100px);
+  color: white;
+}
 
+.value-button:hover {
+  cursor: pointer;
+}
+.decrease{
+  border-radius: 5rem 0 0 5rem;
+}
+.increase{
+  border-radius: 0 5rem 5rem 0;
+}
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input.number {
+  text-align: center;
+  border: none;
+  /* border-top: 1px solid black; */
+  /* border-bottom: 1px solid black; */
+  margin-top: 2px;
+  width: 40px;
+  font-size: 1rem;
+  /* height: 40px; */
+  background: repeating-radial-gradient(black, transparent 100px);
+  color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* CSS for the zoomed-in image container */
+.image-zoom-container {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  overflow: auto;
+}
+
+.zoomed-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close-zoom {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
