@@ -55,9 +55,11 @@ header .navbar a {
   margin-left: 2rem;
   color: black;
 }
+
 header .navbar a:hover {
   color: var(--btn-color);
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -261,6 +263,7 @@ section {
   border-radius: 1rem;
   padding: 1rem;
 }
+
 .popular .box-container .box .dis {
   position: absolute;
   right: 0rem;
@@ -273,16 +276,19 @@ section {
   border-radius: 10px;
   /* border: 1px solid white; */
 }
-.pricee{
+
+.pricee {
   font-size: 1.8rem;
 }
-.mrp{
+
+.mrp {
   text-decoration: line-through;
   margin: 1rem;
   color: grey;
   font-style: italic;
 }
-.rev{
+
+.rev {
   background-color: green;
   color: white;
   padding: 0.2rem 1rem;
@@ -291,6 +297,7 @@ section {
   position: absolute;
   right: 0rem;
 }
+
 .popular .box-container .box h3 {
   color: #333;
   font-size: 2.5rem;
@@ -344,12 +351,14 @@ section {
   margin-top: 1.7rem;
   background: transparent;
 }
+
 .btn {
   display: inline-block;
   padding: 0.8rem 3rem;
   border: 0.2rem solid black;
   background: repeating-radial-gradient(black, transparent 100px);
   color: white;
+  font-weight: bolder;
   cursor: pointer;
   font-size: 2rem;
   border-radius: 3.5rem;
@@ -380,9 +389,11 @@ section {
   width: 100%;
   left: 0;
 }
-.btn h4{
+
+.btn h4 {
   text-align: center;
 }
+
 .btnn {
   display: inline-block;
   padding: 0.8rem 3rem;
@@ -499,9 +510,11 @@ header img {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+
 .review {
   padding-top: 10rem;
 }
+
 .review .box-container .box {
   text-align: center;
   padding: 2rem;
@@ -568,11 +581,11 @@ header img {
 }
 
 .footer-hr-cell {
-  border-bottom: 1px solid #acaaaa; 
-  padding: 5px 0; 
+  border-bottom: 1px solid #acaaaa;
+  padding: 5px 0;
 }
 
-.footer-hr-cell > * {
+.footer-hr-cell>* {
   vertical-align: middle;
 }
 
@@ -646,6 +659,7 @@ header img {
   header {
     padding: 2rem;
   }
+
   section {
     padding: 3rem;
   }
@@ -660,12 +674,16 @@ header img {
   html {
     font-size: 50%;
   }
+
   .signup-modal {
     padding: 18rem 10rem 0 5rem;
   }
-.popular, .speciality{
-  padding: 2rem;
-}
+
+  .popular,
+  .speciality {
+    padding: 2rem;
+  }
+
   #menu-bars {
     display: initial;
   }
@@ -677,7 +695,8 @@ header img {
   .main-box-speciality .box p {
     display: none;
   }
-  .main-box-speciality .box .content{
+
+  .main-box-speciality .box .content {
     height: 22rem;
   }
 
@@ -688,9 +707,10 @@ header img {
   .popular .box-container .box img {
     height: 16rem;
   }
+
   .popular .box-container .box .dis {
     font-size: 1.4rem;
-    }
+  }
 
   .popular .box-container .box h3 {
     font-size: 1.2rem;
@@ -699,6 +719,7 @@ header img {
   .popular .box-container .box .star i {
     font-size: 1.5rem;
   }
+
   .popular .box-container .box .category-dropdown {
     height: 2.5rem;
     width: 4rem;
@@ -707,8 +728,9 @@ header img {
 
   .btn {
     padding: .5rem 1.5rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
+
   /* .value-button{
     font-size: 1rem;
     padding: 3px 5px;
@@ -720,24 +742,29 @@ header img {
     padding: .5rem 1.5rem;
     font-size: 1rem;
   }
-  
-  .go{
+
+  .go {
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
     margin-left: 7rem;
   }
-  .mrp{
+
+  .mrp {
     font-size: 1.5rem;
   }
-  .rev{
+
+  .rev {
     font-style: 1.2rem;
   }
-  .popup-option{
+
+  .popup-option {
     font-size: .9rem;
   }
-  .popup{
+
+  .popup {
     width: 80%;
   }
+
   .cart-table .header-spaced {
     font-size: 1.8rem;
     text-align: center;
@@ -753,8 +780,8 @@ header img {
     margin-left: 11rem;
     border: 1px solid black;
     font-size: 1rem;
-}
-  
+  }
+
 
   .cart-table .invoice-button {
     border: 1px solid black;
@@ -776,6 +803,7 @@ header img {
   .cart-table .item-quantity {
     font-size: 2rem;
   }
+
   .navbar {
     position: absolute;
     top: 0;
@@ -913,9 +941,11 @@ body.dark-mode {
   background-color: black;
   color: white;
 }
+
 body.dark-mode .speciality-heading {
   color: white;
 }
+
 body.dark-mode .popup-option {
   color: black;
   background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 100px);
@@ -925,18 +955,22 @@ body.dark-mode .btn {
   color: black;
   background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
 }
+
 body.dark-mode .value-button {
   background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
   color: black;
 }
-body.dark-mode input.number{
+
+body.dark-mode input.number {
   background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
   color: black;
 }
+
 body.dark-mode .btnn {
   color: black;
   background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 100px);
 }
+
 /* body.dark-mode .go {
   background-color: white;
   color: #191919;
@@ -946,6 +980,7 @@ body.dark-mode .home {
   background-image: none;
   background: black
 }
+
 body.dark-mode .popular .box-container .box {
   background-color: #333333;
 }
@@ -970,6 +1005,7 @@ body.dark-mode .home .content p {
 body.dark-mode .header {
   background-color: #191919
 }
+
 body.dark-mode .header a {
   color: white;
   background: #191919
@@ -991,13 +1027,16 @@ body.dark-mode .dropdown-content {
 body.dark-mode .main-box-speciality .box .content {
   background: #333333
 }
+
 body.dark-mode #signup-form {
   background: black;
 }
+
 body.dark-mode input {
   background-color: black;
   color: white;
 }
+
 body.dark-mode .speciality {
   background-color: black;
 }
@@ -1039,19 +1078,22 @@ body.dark-mode .header a:hover {
   cursor: pointer;
 }
 
-body.dark-mode .size{
+body.dark-mode .size {
   color: white;
   background-color: #333333;
 }
-body.dark-mode .dropdownn{
+
+body.dark-mode .dropdownn {
   border: 1px solid white;
 }
+
 /*------------------------contact-us style---------------------------*/
 
 .contact-us {
   margin: auto;
   /* padding: 2rem 16rem; */
 }
+
 .contact {
   padding-top: 10rem;
 }
@@ -1097,7 +1139,8 @@ body.dark-mode .dropdownn{
   font-weight: bold;
   cursor: pointer;
 }
-.invoice-button{
+
+.invoice-button {
   /* margin: 1rem; */
   text-align: center;
   background-color: red;
@@ -1108,6 +1151,7 @@ body.dark-mode .dropdownn{
   font-weight: bold;
   cursor: pointer;
 }
+
 .popup-option {
   padding: 0.8rem;
   border: 0.2rem solid black;
@@ -1145,6 +1189,7 @@ body.dark-mode .dropdownn{
   width: 100%;
   left: 0;
 }
+
 .scroll-down {
   position: fixed;
   bottom: 20px;
@@ -1165,7 +1210,8 @@ body.dark-mode .dropdownn{
 .scroll-down:hover {
   transform: translateY(4px);
 }
-.size{
+
+.size {
   padding: 0;
   width: 100%;
   margin: 0;
@@ -1174,11 +1220,13 @@ body.dark-mode .dropdownn{
   font-size: 1.5rem;
   font-weight: bolder;
 }
-.dropdownn{
+
+.dropdownn {
   margin-top: 1rem;
   border: 1px solid black;
 }
-                             /* invoice generator styles */
+
+/* invoice generator styles */
 .popup {
   display: none;
   position: fixed;
@@ -1207,6 +1255,7 @@ body.dark-mode .dropdownn{
   background-color: #9b9a9a;
   z-index: 999;
 }
+
 .close-button {
   position: absolute;
   top: -27px;
@@ -1221,7 +1270,8 @@ body.dark-mode .dropdownn{
   font-size: 2rem;
   border-radius: 3rem;
 }
-.popup-invoice-button{
+
+.popup-invoice-button {
   /* margin: 1rem; */
   text-align: center;
   align-items: center;
@@ -1233,7 +1283,8 @@ body.dark-mode .dropdownn{
   font-weight: bold;
   cursor: pointer;
 }
-.new-order-button{
+
+.new-order-button {
   /* margin: 1rem; */
   text-align: center;
   align-items: center;
@@ -1246,12 +1297,14 @@ body.dark-mode .dropdownn{
   font-weight: bold;
   cursor: pointer;
 }
+
 /* CSS for centering the button */
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px; /* Adjust the height as needed to center the button vertically */
+  height: 50px;
+  /* Adjust the height as needed to center the button vertically */
 }
 
 /* Style for the signup modal */
@@ -1265,10 +1318,12 @@ body.dark-mode .dropdownn{
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
-.signup{
+
+.signup {
   text-align: center;
-  padding-bottom: 2rem  
+  padding-bottom: 2rem
 }
+
 /* Style for the modal content */
 .signup-modal-content {
   background-color: #fff;
@@ -1314,6 +1369,7 @@ body.dark-mode .dropdownn{
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+
 #signup-form button {
   background-color: #007BFF;
   color: white;
@@ -1327,6 +1383,7 @@ body.dark-mode .dropdownn{
 #signup-form button:hover {
   background-color: #0056b3;
 }
+
 form {
   width: 300px;
   margin: 0 auto;
@@ -1341,7 +1398,7 @@ form {
   text-align: center;
   vertical-align: middle;
   padding: 3px 9px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bolder;
   background: repeating-radial-gradient(black, transparent 100px);
   color: white;
@@ -1350,12 +1407,15 @@ form {
 .value-button:hover {
   cursor: pointer;
 }
-.decrease{
+
+.decrease {
   border-radius: 5rem 0 0 5rem;
 }
-.increase{
+
+.increase {
   border-radius: 0 5rem 5rem 0;
 }
+
 form #decrease {
   margin-right: -4px;
   border-radius: 8px 0 0 8px;
@@ -1377,8 +1437,8 @@ input.number {
   /* border-top: 1px solid black; */
   /* border-bottom: 1px solid black; */
   margin-top: 2px;
-  width: 40px;
-  font-size: 1rem;
+  width: 23px;
+  font-size: 2rem;
   /* height: 40px; */
   background: repeating-radial-gradient(black, transparent 100px);
   color: white;
@@ -1386,8 +1446,8 @@ input.number {
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* CSS for the zoomed-in image container */
@@ -1400,7 +1460,7 @@ input[type=number]::-webkit-outer-spin-button {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   overflow: auto;
 }
 
