@@ -550,9 +550,9 @@ function uncustomize(item) {
   <h2 class="btn add-to-cart "  onclick="addToCart('${item.id}', '${item.name}', ${item.price}, '${item.image}') ">ADD</h2>
    
  <form class="quantity-control" style="display: none;">
- <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value"><i class="fas fa-minus-circle"></i></div>
  <input type="number" class="number" id="number-${item.id}" value="1" readonly />
- <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value"><i class="fas fa-plus-circle"></i></div>
 </form>
 
   </div>

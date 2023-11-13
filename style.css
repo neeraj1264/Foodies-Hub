@@ -731,13 +731,7 @@ header img {
     font-size: 2rem;
   }
 
-  /* .value-button{
-    font-size: 1rem;
-    padding: 3px 5px;
-  }
-  input.number{
-    font-size: 1rem;
-  } */
+
   .btnn {
     padding: .5rem 1.5rem;
     font-size: 1rem;
@@ -957,7 +951,7 @@ body.dark-mode .btn {
 }
 
 body.dark-mode .value-button {
-  background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px);
+  /* background: repeating-radial-gradient(white, rgba(100, 100, 111, 0.2) 200px); */
   color: black;
 }
 
@@ -1394,13 +1388,14 @@ form {
 .value-button {
   display: inline-block;
   /* border: 1px solid #ddd; */
-  margin-top: 2px;
+  margin-top: 0px;
+  position: absolute;
   text-align: center;
   vertical-align: middle;
   padding: 3px 9px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bolder;
-  background: repeating-radial-gradient(black, transparent 100px);
+  /* background: repeating-radial-gradient(black, transparent 100px); */
   color: white;
 }
 
@@ -1409,11 +1404,11 @@ form {
 }
 
 .decrease {
-  border-radius: 5rem 0 0 5rem;
+left: .2rem;
 }
 
 .increase {
-  border-radius: 0 5rem 5rem 0;
+  left: 8.5rem;
 }
 
 form #decrease {
@@ -1436,10 +1431,11 @@ input.number {
   border: none;
   /* border-top: 1px solid black; */
   /* border-bottom: 1px solid black; */
-  margin-top: 2px;
-  width: 23px;
+  margin-top: 1px;
+  width: 92px;
   font-size: 2rem;
-  /* height: 40px; */
+  height: 29px;
+  border-radius: 4rem;
   background: repeating-radial-gradient(black, transparent 100px);
   color: white;
 }
