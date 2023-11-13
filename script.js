@@ -297,6 +297,7 @@ function showCartModal() {
           delete cartData[itemId];
           showCartModal(); // Refresh the cart modal after deleting an item
           updateCartCount(); // Update the cart count
+          hideQuantityContainer(itemId);
           Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
           totalcell.textContent = `${calculateTotal()}`; // Update the total amount
         }
@@ -835,13 +836,9 @@ function decreaseValue(itemId) {
   } else {
     // If the value is 1 or less, hide the quantity container
     valueElement.value = 1;
-    hideQuantityContainer(itemId);
     delete cartData[itemId];
-
-    updateCartCount();
-    // Update the total amount
-    // Itemtotalcell.textContent = `${calculateitemTotal()}`;
-    // totalcell.textContent = `${calculateTotal()}`;
+    updateCartCount(); // Update the cart count
+    hideQuantityContainer(itemId);
   }
 }
 
@@ -855,6 +852,8 @@ function hideQuantityContainer(itemId) {
   const quantityContainer = document.getElementById(`number-${itemId}`).closest(".quantity-control");
   quantityContainer.style.display = "none";
   cartCount--;
+  cartCountElement.textContent = cartCount;
+
 
   const button = quantityContainer.parentNode.querySelector(".add-to-cart");
   button.style.display = "inline-block";
