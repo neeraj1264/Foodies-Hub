@@ -1410,22 +1410,6 @@ left: .2rem;
 .increase {
   left: 8.5rem;
 }
-
-form #decrease {
-  margin-right: -4px;
-  border-radius: 8px 0 0 8px;
-}
-
-form #increase {
-  margin-left: -4px;
-  border-radius: 0 8px 8px 0;
-}
-
-form #input-wrap {
-  margin: 0px;
-  padding: 0px;
-}
-
 input.number {
   text-align: center;
   border: none;
