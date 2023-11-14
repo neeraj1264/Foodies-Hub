@@ -592,9 +592,9 @@ if (i < 6) {
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
   
  <form class="quantity-control" style="display: none;">
- <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value"><i class="fas fa-minus-circle"></i></div>
  <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
- <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value"><i class="fas fa-plus-circle"></i></div>
 </form>
 
   </div>
@@ -624,9 +624,9 @@ if (i >= 6 && i < 12) {
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
  
  <form class="quantity-control" style="display: none;">
- <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value"><i class="fas fa-minus-circle"></i></div>
  <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
- <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value"><i class="fas fa-plus-circle"></i></div>
 </form>
 
   </div>
@@ -656,9 +656,9 @@ if (i >= 12 && i < 20) {
 <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
     
  <form class="quantity-control" style="display: none;">
- <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value"><i class="fas fa-minus-circle"></i></div>
  <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
- <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value"><i class="fas fa-plus-circle"></i></div>
 </form>
 
   </div>
@@ -724,9 +724,9 @@ if (i >= 70 && i < 87) {
  <button class="btn btn-ok add-to-cart" onclick="addToCartWithSize('${item.id}', '${item.name}', '${item.image}')">Add</button>
   
  <form class="quantity-control" style="display: none;">
- <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value">-</div>
+ <div class="value-button decrease" onclick="decreaseValue(${item.id})" value="Decrease Value"><i class="fas fa-minus-circle"></i></div>
  <input type="number" class="number" id="number-${item.id}" value="1" readonly  />
- <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value">+</div>
+ <div class="value-button increase" onclick="increaseValue(${item.id})" value="Increase Value"><i class="fas fa-plus-circle"></i></div>
 </form>
 
   </div>
