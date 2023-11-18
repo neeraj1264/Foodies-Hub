@@ -128,20 +128,38 @@ function  calculateitemTotal() {
       Total += cartData[itemId].quantity * cartData[itemId].price;
     }
   }
-  return `₹ ${Total.toFixed(2)}`;
+  return Total;
 }
 
-function  calculateTotal() {
-  let Total = 20;
+function calculateTotal() {
+  let total = 20; // Initial amount, assuming it includes a fixed charge of ₹20 (delivery or service charge)
+
+  // Calculate the total amount of items in the cart
   for (const itemId in cartData) {
     if (cartData.hasOwnProperty(itemId)) {
-      Total += cartData[itemId].quantity * cartData[itemId].price;
+      total += cartData[itemId].quantity * cartData[itemId].price;
     }
   }
-  return `₹ ${Total.toFixed(2)}`;
+
+  const discountCell = document.querySelector(".disc");
+  if (discountCell && discountCell.textContent) {
+    const discountAmount = parseFloat(discountCell.textContent.replace(/[^\d.-]/g, ''));
+    if (!isNaN(discountAmount)) {
+      // Deduct the discount from the total amount (subtracting the discount)
+      total -= Math.abs(discountAmount); // Use Math.abs() to ensure a negative value is subtracted
+    }
+  }
+
+  return ` ${total.toFixed(2)}`;
 }
+
+
 function getRandom4DigitNumber() {
   return Math.floor(1000 + Math.random() * 9000);
+}
+function calculateDiscount(itemTotalAmount) {
+  const discount = itemTotalAmount * 0.1; // Calculate 10% discount
+  return discount;
 }
 function submitOrder(cartData) {
   // Retrieve the current order number from localStorage
@@ -149,10 +167,21 @@ function submitOrder(cartData) {
 
   const customerData = JSON.parse(localStorage.getItem("userData"));
 
+  var totalAmount =  calculateTotal();
+  totalAmount = `₹ ${totalAmount}`;
+
+  if (typeof totalAmount !== 'string') {
+    console.error('Total amount is not in the expected format');
+    return;
+  }
+
+  var itemTotalAmount = parseFloat(totalAmount.replace('₹', '').trim()); 
+
+  const discount = calculateDiscount(itemTotalAmount);
+
  var message = `Order      : *ORD-${currentOrderNumber}*\n`;
  message += `Phone    : *${customerData.mobileNumber}*\n`;
  message += `Name     : *${customerData.name}*\n`;
- var totalAmount =  calculateTotal();
  message  += `Amount : *${totalAmount}*\n`;
  message += `Address : *${customerData.address}*\n\n`;
  message  += '----------items----------\n\n'
@@ -162,7 +191,11 @@ function submitOrder(cartData) {
      message += `${item.quantity}.0 x   ${item.name} = ₹ ${item.price}\n`;
    }
  }
-  message +=  `Service Charge = ₹ 20.00\n`
+ message +=  `Service Charge = ₹ 20.00\n`
+
+  if (!isNaN(discount)) {
+    message += `Discount : *₹ ${discount.toFixed(2)}*\n`;
+}
 
  // Replace 'YOUR_WHATSAPP_NUMBER' with the actual WhatsApp number
  var whatsappNumber = '+917015823645';
@@ -175,9 +208,21 @@ function submitOrder(cartData) {
  
 // Delay the page reload by 5 seconds
 setTimeout(function () {
-  showPopup();
+  // showPopup();
+  location.reload();
 }, 5000);
 
+}
+
+
+// Function to update the displayed discount amount
+function updateDiscount(discountCell, discountAmount) {
+  // Check if discountCell is defined
+  if (discountCell) {
+    discountCell.textContent = `- ${discountAmount.toFixed(2)}`;
+  } else {
+    console.error('Discount cell is not defined');
+  }
 }
 
 // -------------------------dropdown_menu_Start-----------------------------------
@@ -289,19 +334,32 @@ function showCartModal() {
         if (item.quantity > 1) {
           item.quantity--;
           quantityValue.textContent = item.quantity;
+       
           updatePrice(item, priceCell);
-          Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
-          totalcell.textContent = `${calculateTotal()}`; // Update the total amount
+          const discountCell = document.querySelector(".disc");
+          const itemTotalAmount = calculateitemTotal();
+          if (!isNaN(itemTotalAmount)) {
+            Itemtotalcell.textContent = `₹ ${itemTotalAmount.toFixed(2)}`; // Update the item total
+      
+            // Update the discount
+            const discountAmount = calculateDiscount(itemTotalAmount);
+            updateDiscount(discountCell, discountAmount);
+      
+            // Update the total amount
+            const totalAmount = itemTotalAmount + 20 - discountAmount; // Assuming delivery is ₹20
+            totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; // Update the total amount
+          } else {
+            // Handle the case where itemTotalAmount is not a number
+            console.error('Invalid item total amount:', itemTotalAmount);
+          }
         } else {
           // Remove the item from the cart when quantity is less than one
           delete cartData[itemId];
           showCartModal(); // Refresh the cart modal after deleting an item
           updateCartCount(); // Update the cart count
           hideQuantityContainer(itemId);
-          Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
-          totalcell.textContent = `${calculateTotal()}`; // Update the total amount
         }
-      });
+        });
       quantityCell.appendChild(minusIcon);
 
       const quantityValue = document.createElement("span");
@@ -317,9 +375,23 @@ function showCartModal() {
         item.quantity++;
         quantityValue.textContent = item.quantity;
         updatePrice(item, priceCell);
-        Itemtotalcell.textContent = `${calculateitemTotal()}`; // Update the total amount
-        totalcell.textContent = `${calculateTotal()}`; // Update the total amount
-      });
+        const discountCell = document.querySelector(".disc");
+  const itemTotalAmount = calculateitemTotal();
+  if (!isNaN(itemTotalAmount)) {
+    Itemtotalcell.textContent = `₹ ${itemTotalAmount.toFixed(2)}`; // Update the item total
+
+    // Update the discount
+    const discountAmount = calculateDiscount(itemTotalAmount);
+    updateDiscount(discountCell, discountAmount);
+
+    // Update the total amount
+    const totalAmount = itemTotalAmount + 20 - discountAmount; // Assuming delivery is ₹20
+    totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; // Update the total amount
+  } else {
+    // Handle the case where itemTotalAmount is not a number
+    console.error('Invalid item total amount:', itemTotalAmount);
+  }
+});
       quantityCell.appendChild(plusIcon);
 
       cartRow.appendChild(quantityCell);
@@ -334,7 +406,41 @@ function showCartModal() {
  addToInvoice(item.name, item.quantity, item.price, item.price * item.quantity);
      }
   }
-// ------------------------------------horizontal-line start------------------------------------
+  // -------------------------- Coupon Section ---------------------------------
+
+  const coupon = document.createElement("tr");
+  coupon.classList.add("coupon")
+
+  const couponInputCell = document.createElement("td");
+  couponInputCell.setAttribute("colspan", "2"); 
+  coupon.appendChild(couponInputCell);
+  
+const couponInput = document.createElement("input");
+couponInput.setAttribute("type", "text");
+couponInput.setAttribute("placeholder", "Enter coupon code");
+couponInput.classList.add("coupon-input");
+couponInput.setAttribute("id", "couponInput"); 
+// couponInput.classList.add("center-align");
+couponInputCell.appendChild(couponInput);
+// coupon.appendChild(couponInputCell);
+
+const applyCouponCell = document.createElement("td");
+applyCouponCell.setAttribute("colspan", "2"); 
+  coupon.appendChild(applyCouponCell);
+
+const applyButton = document.createElement("button");
+applyButton.textContent = "Apply";
+applyButton.classList.add("apply-button");
+// applyButton.classList.add("center-align");
+applyButton.addEventListener("click", () => {
+  applyCoupon(); // Function to apply the coupon logic
+});
+applyCouponCell.appendChild(applyButton);
+// coupon.appendChild(applyCouponCell);
+
+   table.appendChild(coupon);   
+  
+  // ------------------------------------horizontal-line start------------------------------------
 
 const emptyFooterRow1 = document.createElement("tr");
 
@@ -367,6 +473,7 @@ table.appendChild(emptyFooterRow);
 // ------------------------------------itemtotal-row------------------------------------
 
 const itemtotal = document.createElement("tr");
+itemtotal.classList.add("cart-footer");
 
 const emptyCell3 = document.createElement("td");
       emptyCell3.textContent = ("Item-Total");
@@ -378,7 +485,7 @@ const emptyCell4 = document.createElement("td");
   itemtotal.appendChild(emptyCell4);
 
   const  Itemtotalcell = document.createElement("td");
-   Itemtotalcell.textContent = `${ calculateitemTotal()}`  ;
+   Itemtotalcell.textContent = `₹ ${ calculateitemTotal().toFixed(2)}`  ;
    Itemtotalcell.classList.add("cart-footer");
   itemtotal.appendChild( Itemtotalcell);
 
@@ -398,12 +505,74 @@ const emptyCell6 = document.createElement("td");
   delivery.appendChild(emptyCell6);
 
   const deliverycell = document.createElement("td");
-  deliverycell.textContent = ("₹ 20")  ;
+  deliverycell.textContent = ("+ 20")  ;
   deliverycell.classList.add("cart-footer");
   delivery.appendChild(deliverycell);
 
   table.appendChild(delivery);
   
+  // ----------------------------------- discount row ----------------------------------
+
+function applyCoupon() {
+  const couponInput = document.getElementById("couponInput");
+  const userInput = couponInput.value.trim().toLowerCase();
+
+  if (userInput === "india") {
+    let itemTotalAmount = parseFloat(Itemtotalcell.textContent.replace('₹', '').trim());
+  
+    // Calculate the discount based on the item total
+    const discount = itemTotalAmount * 0.1; // Calculate 10% discount
+
+    // Update the displayed item total amount
+    Itemtotalcell.textContent = `₹ ${itemTotalAmount.toFixed(2)}`;
+
+    // Recalculate the total amount by summing up the updated item total and the delivery (if applicable)
+    const deliveryAmount = 20; // Assuming delivery is ₹20
+    const totalAmount = itemTotalAmount + deliveryAmount - discount;
+
+    // Update the displayed total amount
+    totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`;
+
+    // Create the discount row
+    const discountRow = document.createElement("tr");
+    discountRow.classList.add("discount-row"); // Add a class to identify the discount row
+
+    // Create cells for displaying discount information
+    const discountCellLabel = document.createElement("td");
+    discountCellLabel.textContent = "Discount";
+    discountCellLabel.classList.add("cart-footer");
+    discountRow.appendChild(discountCellLabel);
+
+    const emptyCell9 = document.createElement("td")
+    emptyCell9.setAttribute("colspan", "2");
+    discountRow.appendChild(emptyCell9);
+
+    const discountCell = document.createElement("td");
+    discountCell.textContent = "[Coupon Apply]";
+    discountCell.classList.add("cart-footer");
+    emptyCell9.appendChild(discountCell);
+
+    // Create a cell to display the actual discount amount
+    const discountAmountCell = document.createElement("td");
+    discountAmountCell.textContent = `- ${discount.toFixed(2)}`; // Display the calculated discount
+    discountAmountCell.classList.add("cart-footer");
+    discountAmountCell.classList.add("disc");
+    discountRow.appendChild(discountAmountCell);
+
+    // Append the discountRow to the table after the item total row
+    const itemTotalRow = table.querySelector('.cart-footer'); // Assuming this class identifies the item total row
+    itemTotalRow.parentNode.insertBefore(discountRow, itemTotalRow.nextSibling);
+
+    // Hide the coupon row
+    const couponRow = document.getElementsByClassName("coupon")[0];
+    couponRow.style.display = "none";
+  } else {
+    alert("Invalid coupon code or no discount available.");
+  }
+}
+
+// ... (rest of your code remains unchanged)
+
 // ------------------------------------Total-row------------------------------------
 
 const Total = document.createElement("tr");
@@ -466,6 +635,7 @@ function updatePrice(item, priceCell) {
   // Update the price cell with the new calculated price
   priceCell.textContent = `₹ ${item.price * item.quantity}`;
 }
+
 // -------------------------Cart_data_End------------------------------------
 
 function closeCartModal() {
