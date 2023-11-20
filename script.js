@@ -265,9 +265,22 @@ function showCartModal() {
     closeCartModal(); // Close the modal
     return;
   }
+ // Get the reference to the marquee element
+ const marqueeElement = document.getElementById("marqueeElement");
 
+ // Check if the marquee element exists and hide it if found
+ if (marqueeElement) {
+   marqueeElement.style.display = "none";
+ }
   document.getElementById("cartModal").style.display = "block";
   isCartModalOpen = true;
+
+    // Hide the menu-header when the cart modal is open
+    const menuHeader = document.getElementById("menu-head");
+    if (menuHeader) {
+      menuHeader.style.display = "none";
+    }
+  
   document.getElementById("dark-mode-toggle").style.display = "none";
 
   if (cartCount < 1) {
@@ -641,10 +654,22 @@ function updatePrice(item, priceCell) {
 function closeCartModal() {
   document.getElementById("cartModal").style.display = "none";
   isCartModalOpen = false;
+
+    // Show the menu-header when the cart modal is closed
+    const menuHeader = document.getElementById("menu-head");
+    if (menuHeader) {
+      menuHeader.style.display = "flex";
+    }
   document.getElementById("dark-mode-toggle").style.display = "block";
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
-  // location.reload();
+
+  const marqueeElement = document.getElementById("marqueeElement");
+
+  // Check if the marquee element exists and show it if found
+  if (marqueeElement) {
+    marqueeElement.style.display = "block";
+  }
 }
 
 function addToCart(id, name, price, image, value) {
@@ -1196,4 +1221,23 @@ function isUserSignedUp() {
   return userData !== null;
 }
 
+
+
+// Get references to the menuheader elements
+const menuheader = document.getElementById("menu-head");
+const navbar = document.querySelector(".navbar");
+
+const specificScrollPosition = 1896;
+
+window.addEventListener("scroll", function() {
+  let scrollPosition = window.scrollY || window.scrollY;
+// console.log('Scroll position:', scrollPosition);
+  if (scrollPosition > specificScrollPosition && !isCartModalOpen) {
+    menuheader.style.display = "flex"
+    navbar.classList.add("activee"); 
+  }else{
+    menuheader.style.display = "none"
+    navbar.classList.remove("activee"); 
+  }
+});
 

@@ -7,7 +7,7 @@
   <title>FOODIES HUB </title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
-  
+
   <link rel="shortcut icon" type="image" href="./images/logo1.png">
   <!-- font awesome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -21,14 +21,14 @@
 
   <!-- header section starts  -->
 
-  <header class="header">
+  <header class="header" id="header">
 
     <a href="#" id="logo"> <img src="images/logo1.png" alt=""></a>
 
     <div id="menu-bars" class="fas fa-bars"></div>
 
     <nav class="navbar">
-      <a href="#home">home</a>
+      <a href="index.html">home</a>
       <a href="#speciality">Menu</a>
       <a href="review.html">Review</a>
       <a href="about.html">About Us</a>
@@ -46,7 +46,7 @@
     <!-- Modify the cart icon to call the function to show the cart data -->
     <div id="cart" class="cart" onclick="showCartModal()">
       <span id="cart-count">0</span>
-      <i class="fas fa-3x fa-shopping-cart"></i>
+      <i class="fas fa-3x fa-shopping-cart" ></i>
     </div>
 
     <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
@@ -55,7 +55,72 @@
   </header>
 
   <!-- header section ends -->
+  <!-- <marquee width="100%" direction="left"  margin-top="200px" id="marqueeElement">
+Now you will get extra 10% OFF use code "INDIA"    </marquee> -->
+  <div class="menu-head" id="menu-head">
+    <div class="menu-item">
+      <a href="#Burger" > <img src="images/s-img-1.jpg" alt="burger">
+     <span class="menu-name">Burger</span></a>
+    </div>
 
+    <div class="menu-item">
+      <a href="#Sandwich"><img src="images/Sandwich.jpg" alt="">
+      <span class="menu-name">Sandwich</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Pasta"><img src="images/whitepasta.jpg" alt="">
+      <span class="menu-name">Pasta</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#pizza"> <img src="images/s-img-2.jpg" alt="">
+     <span class="menu-name">Pizza</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Chinese"><img src="images/noodles1.jpg" alt="">
+      <span class="menu-name">Chinese</span>
+    </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Shakes"><img src="images/choco.jpg" alt="">
+      <span class="menu-name">Shakes</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Garlic"><img src="images/gb.jpg" alt="">
+      <span class="menu-name">Garlic Bread</span>
+   </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Wrap"><img src="images/paneerwrap.jpeg" alt="">
+      <span class="menu-name">Wraps</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Snacks"> <img src="images/bhalle.jpeg" alt="">
+      <span class="menu-name">Snacks</span>
+    </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Momos"> <img src="images/momo.jpg" alt="">
+    <span class="menu-name">Momos</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Chaap"><img src="images/chaap1.jpg" alt="">
+     <span class="menu-name">Chaap</span></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#Dinner"> <img src="images/shahipaneer.jpeg" alt="">
+     <span class="menu-name">Dinner</span></a>
+    </div>
+  </div>
   <!-- home section starts  -->
 
   <section id="home" class="home">
@@ -68,7 +133,9 @@
       <h3>FOODIES HUB</h3>
       <p> Foodies Hub is your go-to resource for discovering new flavors, experimenting in the kitchen, and satisfying
         your food cravings!</p>
-      <a href="#speciality" class="btn"><h4>MENU</h4></a>
+      <a href="#speciality" class="btn">
+        <h4>MENU</h4>
+      </a>
     </div>
 
   </section>
