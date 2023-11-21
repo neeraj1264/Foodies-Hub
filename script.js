@@ -161,6 +161,7 @@ function calculateDiscount(itemTotalAmount) {
   const discount = itemTotalAmount * 0.1; // Calculate 10% discount
   return discount;
 }
+let isCouponApplied = false;
 function submitOrder(cartData) {
   // Retrieve the current order number from localStorage
   const currentOrderNumber = getRandom4DigitNumber();
@@ -174,10 +175,12 @@ function submitOrder(cartData) {
     console.error('Total amount is not in the expected format');
     return;
   }
-
-  var itemTotalAmount = parseFloat(totalAmount.replace('₹', '').trim()); 
+  const discountCell = document.querySelector(".disc");
+  const itemTotalAmount = calculateitemTotal();
+  // var itemTotalAmount = parseFloat(totalAmount.replace('₹', '').trim()); 
 
   const discount = calculateDiscount(itemTotalAmount);
+  updateDiscount(discountCell, discount);
 
  var message = `Order      : *ORD-${currentOrderNumber}*\n`;
  message += `Phone    : *${customerData.mobileNumber}*\n`;
@@ -193,7 +196,7 @@ function submitOrder(cartData) {
  }
  message +=  `Service Charge = ₹ 20.00\n`
 
-  if (!isNaN(discount)) {
+  if (isCouponApplied) {
     message += `Discount : *₹ ${discount.toFixed(2)}*\n`;
 }
 
@@ -207,10 +210,9 @@ function submitOrder(cartData) {
  window.open(whatsappLink, '_blank');
  
 // Delay the page reload by 5 seconds
-setTimeout(function () {
-  // showPopup();
-  location.reload();
-}, 5000);
+// setTimeout(function () {
+//   // showPopup();
+// }, 5000);
 
 }
 
@@ -525,6 +527,11 @@ const emptyCell6 = document.createElement("td");
   emptyCell6.setAttribute("colspan", "2"); 
   delivery.appendChild(emptyCell6);
 
+  const emptyCell10 = document.createElement("td");
+      emptyCell10.textContent = ("[ Upto 2km ]");
+      emptyCell10.classList.add("cart-footer");
+      emptyCell6.appendChild(emptyCell10);
+
   const deliverycell = document.createElement("td");
   deliverycell.textContent = ("+ 20")  ;
   deliverycell.classList.add("cart-footer");
@@ -533,7 +540,7 @@ const emptyCell6 = document.createElement("td");
   table.appendChild(delivery);
   
   // ----------------------------------- discount row ----------------------------------
-  let isCouponApplied = false;
+  // let isCouponApplied = false;
 function applyCoupon() {
   const couponInput = document.getElementById("couponInput");
   const userInput = couponInput.value.trim().toLowerCase();
