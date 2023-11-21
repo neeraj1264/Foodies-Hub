@@ -220,9 +220,7 @@ function updateDiscount(discountCell, discountAmount) {
   // Check if discountCell is defined
   if (discountCell) {
     discountCell.textContent = `- ${discountAmount.toFixed(2)}`;
-  } else {
-    console.error('Discount cell is not defined');
-  }
+  } 
 }
 
 // -------------------------dropdown_menu_Start-----------------------------------
@@ -359,8 +357,13 @@ function showCartModal() {
             updateDiscount(discountCell, discountAmount);
       
             // Update the total amount
-            const totalAmount = itemTotalAmount + 20 - discountAmount; // Assuming delivery is ₹20
-            totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; // Update the total amount
+            if(!isCouponApplied){
+            const totalAmount = itemTotalAmount + 20 ; 
+            totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; 
+            }else{
+              const totalAmount = itemTotalAmount + 20 - discountAmount; 
+            totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; 
+            }
           } else {
             // Handle the case where itemTotalAmount is not a number
             console.error('Invalid item total amount:', itemTotalAmount);
@@ -398,8 +401,13 @@ function showCartModal() {
     updateDiscount(discountCell, discountAmount);
 
     // Update the total amount
-    const totalAmount = itemTotalAmount + 20 - discountAmount; // Assuming delivery is ₹20
-    totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; // Update the total amount
+    if(!isCouponApplied){
+      const totalAmount = itemTotalAmount + 20 ; 
+      totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; 
+      }else{
+        const totalAmount = itemTotalAmount + 20 - discountAmount; 
+      totalcell.textContent = `₹ ${totalAmount.toFixed(2)}`; 
+      }
   } else {
     // Handle the case where itemTotalAmount is not a number
     console.error('Invalid item total amount:', itemTotalAmount);
@@ -525,7 +533,7 @@ const emptyCell6 = document.createElement("td");
   table.appendChild(delivery);
   
   // ----------------------------------- discount row ----------------------------------
-
+  let isCouponApplied = false;
 function applyCoupon() {
   const couponInput = document.getElementById("couponInput");
   const userInput = couponInput.value.trim().toLowerCase();
@@ -535,7 +543,7 @@ function applyCoupon() {
   
     // Calculate the discount based on the item total
     const discount = itemTotalAmount * 0.1; // Calculate 10% discount
-
+    isCouponApplied = true;
     // Update the displayed item total amount
     Itemtotalcell.textContent = `₹ ${itemTotalAmount.toFixed(2)}`;
 
@@ -1241,3 +1249,20 @@ window.addEventListener("scroll", function() {
   }
 });
 
+const marqueeElement = document.getElementById("marqueeElement");
+const scrollThreshold = window.innerHeight; // 100vh
+
+  function handleScroll() {
+  let scrollPosition = window.scrollY || window.scrollY;
+  
+  if (scrollPosition <= scrollThreshold) {
+    marqueeElement.style.display = "block"; // Hide the marquee element
+  } else {
+    marqueeElement.style.display = "none"; // Show the marquee element
+  }
+}
+// Add a one-time listener to handle initial display
+window.addEventListener("DOMContentLoaded", handleScroll);
+
+// Add the scroll listener to handle subsequent scrolling
+window.addEventListener("scroll", handleScroll);

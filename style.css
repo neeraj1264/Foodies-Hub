@@ -891,6 +891,9 @@ header img {
   .activee{
     margin-top: 105px;
   }
+  marquee{
+  margin-top: 60px;
+  }
 }
 
 /* Styling for the cart modal */
@@ -1129,7 +1132,7 @@ body.dark-mode .dropdownn {
   border: 1px solid white;
 }
 body.dark-mode marquee{
-  background-color: #000000;
+  background-color: #191919;
 }
 body.dark-mode .menu-head{
   background-color: #191919;
@@ -1551,12 +1554,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 marquee {
   display: none;
-  margin-top: 62px;
+  margin-top: 60px;
   font-size: 3rem;
   background-color: whitesmoke;
   position: fixed;
   /* top: 0px; */
-  height: 8rem;
+  /* height: 8rem; */
   z-index: 100;
 }
 .menu-head{
