@@ -210,9 +210,9 @@ function submitOrder(cartData) {
  window.open(whatsappLink, '_blank');
  
 // Delay the page reload by 5 seconds
-// setTimeout(function () {
-//   // showPopup();
-// }, 5000);
+setTimeout(function () {
+  showPopup();
+}, 5000);
 
 }
 
@@ -1094,6 +1094,8 @@ function generateAndDownloadInvoice( shopName,ownerName,mobileNo,cartData) {
  const deliveryCharge = 20; // You can adjust this value as needed
  const itemTotal = Object.values(cartData).reduce((total, item) => total + item.price * item.quantity, 0);
  const totalAmount = itemTotal + deliveryCharge;
+ const Discount = itemTotal*.1 ;
+ const FinalAmount = itemTotal + deliveryCharge - Discount;
 
   // Define the content for your PDF
   const docDefinition = {
@@ -1116,9 +1118,9 @@ function generateAndDownloadInvoice( shopName,ownerName,mobileNo,cartData) {
         },
         style: 'tableStyle', // Add style for the table body content
       },
-      { text: `Item Total:          ₹ ${itemTotal.toFixed(2)}`, style: 'total' },
-      { text: `Service Charge:   ₹ 20.00  `, style: 'totall' },
-      { text: `Total Amount:    ₹ ${totalAmount.toFixed(2)}`, style: 'totall' },
+      { text: `Item Total:          ₹ ${itemTotal.toFixed(2)}/-`, style: 'total' },
+      { text: `Service Charge:     + 20.00/-`, style: 'totall' },
+           
     ],
     styles: {
       header: {
@@ -1163,9 +1165,21 @@ function generateAndDownloadInvoice( shopName,ownerName,mobileNo,cartData) {
         alignment: 'left',
         margin: [0, 10, 0, 20], // Increase bottom margin
       },
+      
     },
   };
-
+  if (isCouponApplied) {
+    // If coupon applied, show the Discount and Final Amount
+    docDefinition.content.push(
+      { text: `Discount:          - ${Discount.toFixed(2)}/-`, style: 'totall' },
+      { text: `Final Amount:    ₹ ${FinalAmount.toFixed(2)}/-`, style: 'totall' },
+    );
+  } else {
+    // If no coupon applied, show the Total Amount
+    docDefinition.content.push(
+      { text: `Total Amount:    ₹ ${totalAmount.toFixed(2)}/-`, style: 'totall' },
+    );
+  }
   // Generate the PDF
   const pdfDocGenerator = pdfMake.createPdf(docDefinition);
 
