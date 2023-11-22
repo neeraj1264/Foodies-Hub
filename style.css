@@ -891,9 +891,12 @@ header img {
   .activee{
     margin-top: 105px;
   }
-  marquee{
+  .main-marquee{
   margin-top: 60px;
   }
+  .sign-marquee{
+    margin-top: 60px;
+    }
 }
 
 /* Styling for the cart modal */
@@ -1131,7 +1134,10 @@ body.dark-mode .size {
 body.dark-mode .dropdownn {
   border: 1px solid white;
 }
-body.dark-mode marquee{
+body.dark-mode .main-marquee{
+  background-color: #191919;
+}
+body.dark-mode .sign-marquee{
   background-color: #191919;
 }
 body.dark-mode .menu-head{
@@ -1552,7 +1558,7 @@ input[type=number]::-webkit-outer-spin-button {
 .disc{
   color: green;
 }
-marquee {
+.main-marquee {
   display: none;
   margin-top: 60px;
   font-size: 3rem;
@@ -1560,6 +1566,18 @@ marquee {
   position: fixed;
   /* top: 0px; */
   /* height: 8rem; */
+  z-index: 100;
+}
+.sign-marquee {
+  width: 100%;
+  margin-top: 91px;
+  font-size: 3rem;
+  background-color: white;
+  position: fixed;
+  /* top: 1px; */
+  right: 0px;
+  /* height: 8rem; */
+  padding: 0px;
   z-index: 100;
 }
 .menu-head{
