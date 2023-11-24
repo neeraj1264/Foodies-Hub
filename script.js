@@ -540,7 +540,7 @@ const emptyCell6 = document.createElement("td");
   table.appendChild(delivery);
   
   // ----------------------------------- discount row ----------------------------------
-  // let isCouponApplied = false;
+          isCouponApplied = false;
 function applyCoupon() {
   const couponInput = document.getElementById("couponInput");
   const userInput = couponInput.value.trim().toLowerCase();
