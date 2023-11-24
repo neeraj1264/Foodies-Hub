@@ -468,20 +468,22 @@ applyCouponCell.appendChild(applyButton);
 const emptyFooterRow1 = document.createElement("tr");
 
 const emptyFooterCell1 = document.createElement("td");
+emptyFooterCell1.setAttribute("colspan", "4"); 
 emptyFooterCell1.classList.add("footer-hr-cell"); // Add a class to this cell
 emptyFooterRow1.appendChild(emptyFooterCell1);
 
-const emptyFooterCell2 = document.createElement("td");
-emptyFooterCell2.classList.add("footer-hr-cell"); // Add a class to this cell
-emptyFooterRow1.appendChild(emptyFooterCell2);
 
-const emptyFooterCell3 = document.createElement("td");
-emptyFooterCell3.classList.add("footer-hr-cell"); // Add a class to this cell
-emptyFooterRow1.appendChild(emptyFooterCell3);
+// const emptyFooterCell2 = document.createElement("td");
+// emptyFooterCell2.classList.add("footer-hr-cell"); // Add a class to this cell
+// emptyFooterRow1.appendChild(emptyFooterCell2);
 
-const emptyFooterCell4 = document.createElement("td");
-emptyFooterCell4.classList.add("footer-hr-cell"); // Add a class to this cell
-emptyFooterRow1.appendChild(emptyFooterCell4);
+// const emptyFooterCell3 = document.createElement("td");
+// emptyFooterCell3.classList.add("footer-hr-cell"); // Add a class to this cell
+// emptyFooterRow1.appendChild(emptyFooterCell3);
+
+// const emptyFooterCell4 = document.createElement("td");
+// emptyFooterCell4.classList.add("footer-hr-cell"); // Add a class to this cell
+// emptyFooterRow1.appendChild(emptyFooterCell4);
 
 table.appendChild(emptyFooterRow1);
 
