@@ -771,9 +771,10 @@ header img {
   }
 
   .cart-table .submit-button {
-    margin-left: 11rem;
+    /* margin-left: 11rem;  */
     border: 1px solid black;
-    font-size: 1rem;
+    font-size: 2rem;
+    padding: 7px 5px;
   }
 
 
@@ -1537,7 +1538,7 @@ input[type=number]::-webkit-outer-spin-button {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
-  margin: 3rem;
+  margin: 3rem 3rem 0.5rem 3rem;
 }
 
 /* Style for the Apply button */
@@ -1549,7 +1550,7 @@ input[type=number]::-webkit-outer-spin-button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 1rem 6rem;
+  margin: 3rem 3rem 0.5rem 3rem;
 }
 
 .coupon button:hover {
@@ -1585,4 +1586,37 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .menu-head{
 display: none;
+}
+.removecouponlable{
+  font-size: 14px;
+    margin: 3rem;
+    color: green;
+}
+.Remove-Coupon{
+  display: none;
+}
+.remove-code{
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-left: -4rem;
+}
+.remove-button{
+  color: red;
+  background: transparent;
+  font-size: 3rem;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error-label {
+  display: none;
+    color: red;
+    /* margin-top: 5px; */
+    padding: 0 0 0 3rem;
+    font-size: 1.5rem;
 }
