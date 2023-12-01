@@ -226,38 +226,6 @@ function updateDiscount(discountCell, discountAmount) {
     discountCell.textContent = `- ${discountAmount.toFixed(2)}`;
   }
 }
-
-// -------------------------dropdown_menu_Start-----------------------------------
-
-// const dropdownContent = document.querySelector(".dropdown-content");
-// const menuButton = document.querySelector(".dropbtn");
-
-// dropdownContent.querySelectorAll("a").forEach((link) => {
-//   link.addEventListener("click", () => {
-//     // Close the dropdown after an option is clicked
-//     dropdownContent.style.display = "none";
-//   });
-// });
-
-// menuButton.addEventListener("click", () => {
-//   // Toggle the dropdown when the menu button is clicked
-//   if (dropdownContent.style.display === "none") {
-//     dropdownContent.style.display = "block";
-//   } else {
-//     dropdownContent.style.display = "none";
-//   }
-// });
-// menuButton.addEventListener("mouseover", () => {
-//   // Open the dropdown when hovering over the menu button
-//   dropdownContent.style.display = "block";
-// });
-
-// // Close the dropdown when the mouse leaves the dropdown area
-// dropdownContent.addEventListener("mouseleave", () => {
-//   dropdownContent.style.display = "none";
-// });
-
-// -------------------------dropdown_menu_End----------------------------------
 let isCartModalOpen = false;
 // -------------------------Cart_data_Start------------------------------------
 
@@ -266,13 +234,7 @@ function showCartModal() {
     closeCartModal(); // Close the modal
     return;
   }
-  // Get the reference to the marquee element
-  const marqueeElement = document.getElementById("marqueeElement");
-
-  // Check if the marquee element exists and hide it if found
-  if (marqueeElement) {
-    marqueeElement.style.display = "none";
-  }
+ 
   document.getElementById("cartModal").style.display = "block";
   isCartModalOpen = true;
 
@@ -282,6 +244,11 @@ function showCartModal() {
     menuHeader.style.display = "none";
   }
 
+   // Get the reference to the marquee element
+   const marqueeElement = document.getElementById("marqueeElement");
+   if (marqueeElement) {
+     marqueeElement.style.display = "none";
+   }
   document.getElementById("dark-mode-toggle").style.display = "none";
 
   if (cartCount < 1) {
@@ -729,20 +696,20 @@ function closeCartModal() {
   isCartModalOpen = false;
 
   // Show the menu-header when the cart modal is closed
-  const menuHeader = document.getElementById("menu-head");
-  if (menuHeader) {
-    menuHeader.style.display = "flex";
-  }
+  // const menuHeader = document.getElementById("menu-head");
+  // if (menuHeader) {
+  //   menuHeader.style.display = "flex";
+  // }
   document.getElementById("dark-mode-toggle").style.display = "block";
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
 
-  const marqueeElement = document.getElementById("marqueeElement");
+  // const marqueeElement = document.getElementById("marqueeElement");
 
-  // Check if the marquee element exists and show it if found
-  if (marqueeElement) {
-    marqueeElement.style.display = "block";
-  }
+  // // Check if the marquee element exists and show it if found
+  // if (marqueeElement) {
+  //   marqueeElement.style.display = "block";
+  // }
 }
 
 function addToCart(id, name, price, image, value) {
