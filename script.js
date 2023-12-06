@@ -559,7 +559,7 @@ function showCartModal() {
     const couponInput = document.getElementById("couponInput");
     const userInput = couponInput.value.trim().toLowerCase();
 
-    if (userInput === "india") {
+    if (userInput === "foodies") {
       let itemTotalAmount = parseFloat(
         Itemtotalcell.textContent.replace("₹", "").trim()
       );
@@ -769,6 +769,23 @@ http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
     let products = JSON.parse(this.responseText);
+    //       const output = products.reduce((acc,curr)=>{
+// if(acc[curr.mrp]){
+//   acc[curr.mrp] = ++acc[curr.mrp]
+// }else{
+//   acc[curr.mrp] = 1
+// }return acc ;
+//       },{})
+//       console.log(output)
+
+// const output = products.filter((x)=>x.mrp<100).map((x)=> x.name)
+// console.log(output)
+// const output = products.reduce((acc , curr)=>{
+//   if (curr.mrp < 100){
+//     acc.push(curr.name)
+//   }return acc
+// }, [])
+// console.log(output)
     function uncustomize(item) {
       return `
   <div class="box" >
