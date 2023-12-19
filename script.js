@@ -162,6 +162,7 @@ function calculateDiscount(itemTotalAmount) {
   return discount;
 }
 let isCouponApplied = false;
+
 function submitOrder(cartData) {
   // Retrieve the current order number from localStorage
   const currentOrderNumber = getRandom4DigitNumber();
@@ -694,22 +695,9 @@ function updatePrice(item, priceCell) {
 function closeCartModal() {
   document.getElementById("cartModal").style.display = "none";
   isCartModalOpen = false;
-
-  // Show the menu-header when the cart modal is closed
-  // const menuHeader = document.getElementById("menu-head");
-  // if (menuHeader) {
-  //   menuHeader.style.display = "flex";
-  // }
   document.getElementById("dark-mode-toggle").style.display = "block";
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
-
-  // const marqueeElement = document.getElementById("marqueeElement");
-
-  // // Check if the marquee element exists and show it if found
-  // if (marqueeElement) {
-  //   marqueeElement.style.display = "block";
-  // }
 }
 
 function addToCart(id, name, price, image, value) {
@@ -1407,3 +1395,49 @@ window.addEventListener("DOMContentLoaded", handleScroll);
 
 // Add the scroll listener to handle subsequent scrolling
 window.addEventListener("scroll", handleScroll);
+
+// Menu items data
+const menuItems = [
+  { id: 'paneer', image: 'shahipaneer.jpeg', name: 'Burger' },
+  { id: 'Sandwich', image: 'Sandwich.jpg', name: 'Sandwich' },
+  { id: 'Pasta', image: 'whitepasta.jpg', name: 'Pasta' },
+  { id: 'pizza', image: 's-img-2.jpg', name: 'Pizza' },
+  { id: 'Chinese', image: 'noodles1.jpg', name: 'Chinese' },
+  { id: 'Shakes', image: 'choco.jpg', name: 'Shakes' },
+  { id: 'Garlic', image: 'gb.jpg', name: 'Garlic Bread' },
+  { id: 'Wrap', image: 'paneerwrap.jpeg', name: 'Wraps' },
+  { id: 'Snacks', image: 'bhalle.jpeg', name: 'Snacks' },
+  { id: 'Momos', image: 'momo.jpg', name: 'Momos' },
+  { id: 'Chaap', image: 'chaap1.jpg', name: 'Chaap' },
+  { id: 'Dinner', image: 'shahipaneer.jpeg', name: 'Dinner' },
+];
+
+// Function to generate HTML for menu items
+function generateMenuItems() {
+  const menuHead = document.getElementById('menu-head');
+
+  menuItems.forEach(item => {
+    const menuItem = document.createElement('div');
+    menuItem.classList.add('menu-item');
+
+    const anchor = document.createElement('a');
+    anchor.href = `#${item.id}`;
+
+    const img = document.createElement('img');
+    img.src = `images/${item.image}`;
+    img.alt = item.name;
+
+    const menuName = document.createElement('span');
+    menuName.classList.add('menu-name');
+    menuName.textContent = item.name;
+
+    anchor.appendChild(img);
+    anchor.appendChild(menuName);
+    menuItem.appendChild(anchor);
+
+    menuHead.appendChild(menuItem);
+  });
+}
+
+// Call the function to generate menu items
+generateMenuItems();
