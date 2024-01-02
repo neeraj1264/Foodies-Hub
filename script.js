@@ -202,7 +202,7 @@ function submitOrder(cartData) {
   }
 
   // Replace 'YOUR_WHATSAPP_NUMBER' with the actual WhatsApp number
-  var whatsappNumber = "+917015823645";
+  var whatsappNumber = "+917015516336";
 
   // Construct the WhatsApp link
   var whatsappLink =
