@@ -17,19 +17,6 @@ navbarItems.forEach((item) => {
   });
 });
 
-// const sr = ScrollReveal({
-//   distance: "45px",
-//   duration: 2700,
-//   reset: true,
-// });
-
-// sr.reveal(".myimage", { delay: 350, origin: "left" });
-// sr.reveal(".home .content", { delay: 350, origin: "right" });
-// sr.reveal(".speciality", { delay: 350, origin: "top" });
-// sr.reveal(".popular", { delay: 350, origin: "bottom" });
-// sr.reveal(".review .box", { delay: 350, origin: "top" });
-// sr.reveal(".myform", { delay: 350, origin: "bottom" });
-
 // ------------------------------------------Add button Code--------------------------------------------------
 
 var cartData = {};
@@ -37,65 +24,6 @@ let cartCount = 0;
 let cartCountElement = document.getElementById("cart-count"); // Declare cartCountElement in the global scope
 
 // Event delegation for "Add to Cart" functionality
-document.querySelector(".Burger").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Sandwich").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Pasta").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Single_topping").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Double_topping").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Premium").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Chinese").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Shakes").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Garlic").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Wrap").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Chaap").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Momos").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Snacks").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Vegetables").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
-
-document.querySelector(".Roti").addEventListener("click", (event) => {
-  handleAddToCartClick(event);
-});
 
 function handleAddToCartClick(event) {
   const button = event.target.closest(".add-to-cart");
@@ -227,9 +155,9 @@ function updateDiscount(discountCell, discountAmount) {
     discountCell.textContent = `- ${discountAmount.toFixed(2)}`;
   }
 }
-let isCartModalOpen = false;
 // -------------------------Cart_data_Start------------------------------------
 
+let isCartModalOpen = false;
 function showCartModal() {
   if (Object.keys(cartData).length === 0) {
     closeCartModal(); // Close the modal
@@ -757,23 +685,6 @@ http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
     let products = JSON.parse(this.responseText);
-    //       const output = products.reduce((acc,curr)=>{
-// if(acc[curr.mrp]){
-//   acc[curr.mrp] = ++acc[curr.mrp]
-// }else{
-//   acc[curr.mrp] = 1
-// }return acc ;
-//       },{})
-//       console.log(output)
-
-// const output = products.filter((x)=>x.mrp<100).map((x)=> x.name)
-// console.log(output)
-// const output = products.reduce((acc , curr)=>{
-//   if (curr.mrp < 100){
-//     acc.push(curr.name)
-//   }return acc
-// }, [])
-// console.log(output)
     function uncustomize(item) {
       return `
   <div class="box" >
