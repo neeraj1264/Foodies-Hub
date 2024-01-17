@@ -30,7 +30,7 @@ function handleAddToCartClick(event) {
   if (button) {
     if (!isUserSignedUp()) {
       event.preventDefault();
-      alert("Enter Your Address First");
+      alert("Enter Your Address First\n\nNote: This is a one-time requirement.");
       window.location.href = "signup.html";
     } else if (isUserSignedUp()) {
       const quantity = button.parentNode.querySelector(".quantity-control");

@@ -22,11 +22,12 @@
 
         #signup-form {
             background-color: #fff;
-            border: 1px solid #ccc;
+            /* border: 1px solid #ccc; */
             border-radius: 5px;
             width: 400px;
             margin: 0 auto;
             padding: 22px;
+            box-shadow: 5px 5px 10px;
         }
 
         label {
@@ -53,6 +54,20 @@
             cursor: pointer;
             margin-top: 10px;
         }
+        .note{
+            margin: auto;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: large;
+            /* background: #333333; */
+            width: fit-content;
+            padding: 0 1rem;
+            font-style: italic;
+        }
+        .note-content{
+            color: #e58f00; 
+            font-size: x-large;
+        }
         @media (max-width: 768px) { /* Adjust styles for tablets and smaller screens */
             #signup-form {
                 width: 80%; /* Adjust the width for tablets */
@@ -65,6 +80,12 @@
                 width: 90%; /* Adjust the width for mobile devices */
                 padding: 10px; /* Adjust padding for mobile devices */
             }
+            .note {
+                font-size: 1.3rem;
+            }
+            .note-content{
+            font-size: 2rem;
+        }
         }
     </style>
 </head>
@@ -87,9 +108,9 @@
         <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
             <i id="mode-icon" class="fas fa-3x fa-moon"></i>
         </div>
-        <marquee class="sign-marquee" width="100%" direction="left"  margin-top="200px" id="marqueeElement">
-            It's a one-time step for faster future orders   </marquee>
+
     </header>
+    <div class="note"><span class="note-content">Note: </span> This is a one-time requirement only.</div>
 
    
     
